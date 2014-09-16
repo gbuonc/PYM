@@ -1,0 +1,102 @@
+/* colors */
+$bg: #fff;
+$baseColor: #2d2d23;
+$mainColor: #839E39;
+$subtleColor: #c0b599;
+$lightGrey: #efefef;
+
+/* fonts */
+$montserrat: 'Montserrat', sans-serif;
+$oswald: 'Oswald', sans-serif;
+
+/* helpers */
+::-moz-selection, ::selection { background: $mainColor; text-shadow: none; }
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+	*zoom:1;
+	
+	&:before,
+	&:after {
+	    content:"";
+	    display:table;
+	}
+	&:after {
+	    clear:both;
+	}
+}
+
+/* debug */
+body{
+   text-align: center; 
+   min-height: 100%;
+   font-family: $oswald;
+   font-weight: 300;
+   color: $baseColor;
+   font-size: 13px;
+   line-height: 1.45;
+   background:#fff; /* url('../img/pattern.jpg') repeat; */
+}
+body:after{
+   position:absolute;
+   top:10px;
+   right:10px;
+   background-color: #000;
+   color: $bg;
+   padding: 4px;
+}
+section{
+   position: relative; 
+   overflow: hidden;
+   .clearfix();
+}
+.gridWrap{   
+   text-align: left;
+   margin: 0 auto;
+   .clearfix();
+}
+ul{
+   list-style-type: none; 
+   padding: 0; 
+   margin: 0;   
+}
+a{
+   color: $mainColor;
+}
+h1, h2, h3, h4{
+   font-weight: normal;   
+   margin: 0px;   
+}
+strong{
+   font-weight: 400;
+}
+/* inset bottom border with icon */
+.title:before{
+   content:'';
+   position: absolute;
+   bottom:50%;
+	left:0;
+   height: 1px;
+   background-color: $subtleColor;
+   width:100%;
+   border-bottom: 1px solid #fff;
+}
+
+.upper{font-variant:small-caps;}
+.inset{
+   color:$mainColor;
+   text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;
+}
+.hidden{display: none;}
+
+/* fancibox modals */
+.fancybox-skin {
+   background: transparent;
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   border-radius: 0;
+   -webkit-box-shadow: none !important;
+   -moz-box-shadow: none !important;
+   box-shadow: none !important;
+}
+

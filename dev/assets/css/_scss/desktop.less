@@ -1,0 +1,122 @@
+.mobile-only{display: none!important;}
+.tablet-only{display: none!important;}
+.desktopOnly{display: block !important;}
+
+/* animations */
+.elasticAnimation($duration; $delay:0){   
+	.transition-property(all);  
+	.transition-duration($duration);
+	.transition-delay($delay);
+	.transition-timing-function(cubic-bezier(0.015, 0.565, 0, 1.245));
+}
+$-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotating {
+   -webkit-animation: rotating 2s linear infinite;
+}
+
+/* common */
+body.init .main-wrap {
+   position: fixed; 
+   top:0;
+   width:100%; 
+}
+section{padding-top: 50px;}
+/* header */
+header{
+   top:0;
+   padding: 0;
+   box-shadow: none;
+   .translateY(0); 
+}
+nav{
+   padding: 5px 0px;
+   .elasticAnimation(250ms);
+}
+.shrink nav{padding: 15px 0px;}
+nav:after {content: '';}
+nav:before{
+   content:''; 
+   z-index: -1;
+   position: absolute; 
+   left:18%;
+   right:18%;
+   bottom:3px; 
+   height:10px; 
+   .border-radius(50%); 
+   .box-shadow(0 0 10px #000);
+   
+}
+#main-nav{display: inline-block;}
+#main-nav li {font-size: 16px; display: inline-block; padding: 0 30px; .elasticAnimation(250ms);}
+.shrink nav #main-nav li {padding: 0 10px;}
+#main-nav li a span{border:none; padding:0;}
+#main-nav li.logoPym{position: absolute; top:-16px; right:100%;}
+#main-nav li.logoPym a{opacity:0; .scale(3); .elasticAnimation(250ms, 0ms);}
+#main-nav li.logoPym img{height: 50px; width: auto;}
+.shrink nav #main-nav li.logoPym a{opacity:1; .scale(1); .elasticAnimation(250ms, 500ms);}
+#main-nav li.logoPym a{height:auto;} 
+
+/* menu animation */
+#main-nav li a {
+	overflow: hidden;
+	padding: 0;
+	height: 1em;
+}
+#main-nav li a span {
+	position: relative;
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.25s;
+	-moz-transition: -moz-transform 0.25s;
+	transition: transform 0.25s;
+}
+#main-nav li a span::before {
+	position: absolute;
+	color: $baseColor;
+	top: 100%;
+	content: attr(data-hover);
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+#main-nav li a:hover span,
+#main-nav li a.active span {
+   .translateY(-100%);
+}
+nav #main-nav li.logoPym a:hover span,
+#main-nav li.logoPym a.active span{
+   .translateY(0);
+}
+nav #main-nav li.logoPym a:hover span{
+ .scale(0.8);
+}
+
+#main-nav li a.active span{cursor: default;}
+
+/* hero */
+.hero{
+   position: relative;
+   background-image: url('../img/bg2.jpg');
+   background-position: center;
+   background-size:cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;   
+}
+.hero h1{position: fixed; top:50%; .elasticAnimation(450ms); background:rgba(255, 255, 255, 0.4);}
+.hero h1 a{ bottom:10px; background: transparent url('../img/pym.png') center no-repeat; background-size:contain;}
+
+.outLogo .hero h1{position: absolute; top: auto; bottom:-60px; .opacity(0);}
+.outLogo .hero h1 a{display:block; position:absolute; -webkit-animation: rotating 500ms linear infinite;}
+.bgImage {display: none;}
+
+/* about */
+.about h1{
+   margin-top: 50px;
+}

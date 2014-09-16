@@ -1,0 +1,12 @@
+// mobile breakpoint & col width--------------------
+$desktopBP : 641px;
+$main-column-width: 675px;
+$big-column-width: 815px;
+$center-column-width: 430px;
+
+html body .no-mobile{display: none;}
+html body .only-mobile{display: block;}
+@media screen and (min-width: $desktopBP){
+    html body .no-mobile{display: block;}
+    html body .only-mobile{display: none;}
+}
