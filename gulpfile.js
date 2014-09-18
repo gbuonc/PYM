@@ -63,7 +63,7 @@ gulp.task('scripts-libs', function() {
 	 .pipe(reload({stream: true}))
 });
 gulp.task('scripts-mobile', function() {
-  return gulp.src(['./dist/assets/js/_libs.js', './dev/assets/js/vendor/touch/*.js', './dev/assets/js/vendor/mobile/*.js', './dev/assets/js/common.js', './dev/assets/js/mobile.js'])
+  return gulp.src(['./dist/assets/js/_libs.js', './dev/assets/js/vendor/touch/*.js', './dev/assets/js/vendor/mobile/**/*.js', './dev/assets/js/common.js', './dev/assets/js/mobile.js'])
   	 //.pipe(sourcemaps.init())
 	 .pipe(concat('pym-mobile.js'))
 	 //.pipe(uglify())
@@ -72,7 +72,7 @@ gulp.task('scripts-mobile', function() {
 	 .pipe(reload({stream: true}))
 });
 gulp.task('scripts-tablet', function() {
-  return gulp.src(['./dist/assets/js/_libs.js', './dev/assets/js/vendor/touch/*.js', './dev/assets/js/vendor/tablet/*.js', './dev/assets/js/common.js', './dev/assets/js/tablet.js'])
+  return gulp.src(['./dist/assets/js/_libs.js', './dev/assets/js/vendor/touch/*.js', './dev/assets/js/vendor/tablet/**/*.js', './dev/assets/js/common.js', './dev/assets/js/tablet.js'])
   	 //.pipe(sourcemaps.init())
 	 .pipe(concat('pym-tablet.js'))
 	 //.pipe(uglify())

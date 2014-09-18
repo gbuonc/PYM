@@ -10,3 +10,4 @@ coverage
 sandbox
 test
 __old
+.sass-cache

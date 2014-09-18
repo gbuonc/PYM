@@ -2580,6 +2580,54 @@ if ( typeof( module ) !== 'undefined' )
     module.exports = Swiper;
 }
 
+//fgnass.github.com/spin.js#v2.0.1
+!function(a,b){"object"==typeof exports?module.exports=b():"function"==typeof define&&define.amd?define(b):a.Spinner=b()}(this,function(){"use strict";function a(a,b){var c,d=document.createElement(a||"div");for(c in b)d[c]=b[c];return d}function b(a){for(var b=1,c=arguments.length;c>b;b++)a.appendChild(arguments[b]);return a}function c(a,b,c,d){var e=["opacity",b,~~(100*a),c,d].join("-"),f=.01+c/d*100,g=Math.max(1-(1-a)/b*(100-f),a),h=j.substring(0,j.indexOf("Animation")).toLowerCase(),i=h&&"-"+h+"-"||"";return l[e]||(m.insertRule("@"+i+"keyframes "+e+"{0%{opacity:"+g+"}"+f+"%{opacity:"+a+"}"+(f+.01)+"%{opacity:1}"+(f+b)%100+"%{opacity:"+a+"}100%{opacity:"+g+"}}",m.cssRules.length),l[e]=1),e}function d(a,b){var c,d,e=a.style;for(b=b.charAt(0).toUpperCase()+b.slice(1),d=0;d<k.length;d++)if(c=k[d]+b,void 0!==e[c])return c;return void 0!==e[b]?b:void 0}function e(a,b){for(var c in b)a.style[d(a,c)||c]=b[c];return a}function f(a){for(var b=1;b<arguments.length;b++){var c=arguments[b];for(var d in c)void 0===a[d]&&(a[d]=c[d])}return a}function g(a,b){return"string"==typeof a?a:a[b%a.length]}function h(a){this.opts=f(a||{},h.defaults,n)}function i(){function c(b,c){return a("<"+b+' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">',c)}m.addRule(".spin-vml","behavior:url(#default#VML)"),h.prototype.lines=function(a,d){function f(){return e(c("group",{coordsize:k+" "+k,coordorigin:-j+" "+-j}),{width:k,height:k})}function h(a,h,i){b(m,b(e(f(),{rotation:360/d.lines*a+"deg",left:~~h}),b(e(c("roundrect",{arcsize:d.corners}),{width:j,height:d.width,left:d.radius,top:-d.width>>1,filter:i}),c("fill",{color:g(d.color,a),opacity:d.opacity}),c("stroke",{opacity:0}))))}var i,j=d.length+d.width,k=2*j,l=2*-(d.width+d.length)+"px",m=e(f(),{position:"absolute",top:l,left:l});if(d.shadow)for(i=1;i<=d.lines;i++)h(i,-2,"progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)");for(i=1;i<=d.lines;i++)h(i);return b(a,m)},h.prototype.opacity=function(a,b,c,d){var e=a.firstChild;d=d.shadow&&d.lines||0,e&&b+d<e.childNodes.length&&(e=e.childNodes[b+d],e=e&&e.firstChild,e=e&&e.firstChild,e&&(e.opacity=c))}}var j,k=["webkit","Moz","ms","O"],l={},m=function(){var c=a("style",{type:"text/css"});return b(document.getElementsByTagName("head")[0],c),c.sheet||c.styleSheet}(),n={lines:12,length:7,width:5,radius:10,rotate:0,corners:1,color:"#000",direction:1,speed:1,trail:100,opacity:.25,fps:20,zIndex:2e9,className:"spinner",top:"50%",left:"50%",position:"absolute"};h.defaults={},f(h.prototype,{spin:function(b){this.stop();{var c=this,d=c.opts,f=c.el=e(a(0,{className:d.className}),{position:d.position,width:0,zIndex:d.zIndex});d.radius+d.length+d.width}if(e(f,{left:d.left,top:d.top}),b&&b.insertBefore(f,b.firstChild||null),f.setAttribute("role","progressbar"),c.lines(f,c.opts),!j){var g,h=0,i=(d.lines-1)*(1-d.direction)/2,k=d.fps,l=k/d.speed,m=(1-d.opacity)/(l*d.trail/100),n=l/d.lines;!function o(){h++;for(var a=0;a<d.lines;a++)g=Math.max(1-(h+(d.lines-a)*n)%l*m,d.opacity),c.opacity(f,a*d.direction+i,g,d);c.timeout=c.el&&setTimeout(o,~~(1e3/k))}()}return c},stop:function(){var a=this.el;return a&&(clearTimeout(this.timeout),a.parentNode&&a.parentNode.removeChild(a),this.el=void 0),this},lines:function(d,f){function h(b,c){return e(a(),{position:"absolute",width:f.length+f.width+"px",height:f.width+"px",background:b,boxShadow:c,transformOrigin:"left",transform:"rotate("+~~(360/f.lines*k+f.rotate)+"deg) translate("+f.radius+"px,0)",borderRadius:(f.corners*f.width>>1)+"px"})}for(var i,k=0,l=(f.lines-1)*(1-f.direction)/2;k<f.lines;k++)i=e(a(),{position:"absolute",top:1+~(f.width/2)+"px",transform:f.hwaccel?"translate3d(0,0,0)":"",opacity:f.opacity,animation:j&&c(f.opacity,f.trail,l+k*f.direction,f.lines)+" "+1/f.speed+"s linear infinite"}),f.shadow&&b(i,e(h("#000","0 0 4px #000"),{top:"2px"})),b(d,b(i,h(g(f.color,k),"0 0 1px rgba(0,0,0,.1)")));return d},opacity:function(a,b,c){b<a.childNodes.length&&(a.childNodes[b].style.opacity=c)}});var o=e(a("group"),{behavior:"url(#default#VML)"});return!d(o,"transform")&&o.adj?i():j=d(o,"animation"),h});
+
+(function(factory) {
+
+  if (typeof exports == 'object') {
+    // CommonJS
+    factory(require('jquery'), require('spin'))
+  }
+  else if (typeof define == 'function' && define.amd) {
+    // AMD, register as anonymous module
+    define(['jquery', 'spin'], factory)
+  }
+  else {
+    // Browser globals
+    if (!window.Spinner) throw new Error('Spin.js not present')
+    factory(window.jQuery, window.Spinner)
+  }
+
+}(function($, Spinner) {
+
+  $.fn.spin = function(opts, color) {
+
+    return this.each(function() {
+      var $this = $(this),
+        data = $this.data();
+
+      if (data.spinner) {
+        data.spinner.stop();
+        delete data.spinner;
+      }
+      if (opts !== false) {
+        opts = $.extend(
+          { color: color || $this.css('color') },
+          $.fn.spin.presets[opts] || opts
+        )
+        data.spinner = new Spinner(opts).spin(this)
+      }
+    })
+  }
+
+  $.fn.spin.presets = {
+    tiny: { lines: 8, length: 2, width: 2, radius: 3 },
+    small: { lines: 8, length: 4, width: 3, radius: 5 },
+    large: { lines: 10, length: 8, width: 4, radius: 8 }
+  }
+
+}));
 /**
  * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
  *
@@ -3319,6 +3367,275 @@ if (typeof define !== 'undefined' && define.amd) {
 }
 
 
-pym.init = function(){
-console.log('mobile');
+(function(document) {
+
+    window.MBP = window.MBP || {};
+
+    /**
+     * Fix for iPhone viewport scale bug
+     * http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+     */
+
+    MBP.viewportmeta = document.querySelector && document.querySelector('meta[name="viewport"]');
+    MBP.ua = navigator.userAgent;
+
+    MBP.scaleFix = function() {
+        if (MBP.viewportmeta && /iPhone|iPad|iPod/.test(MBP.ua) && !/Opera Mini/.test(MBP.ua)) {
+            MBP.viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0';
+            document.addEventListener('gesturestart', MBP.gestureStart, false);
+        }
+    };
+
+    MBP.gestureStart = function() {
+        MBP.viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
+    };
+
+    /**
+     * Normalized hide address bar for iOS & Android
+     * (c) Scott Jehl, scottjehl.com
+     * MIT License
+     */
+
+    // If we split this up into two functions we can reuse
+    // this function if we aren't doing full page reloads.
+
+    // If we cache this we don't need to re-calibrate everytime we call
+    // the hide url bar
+    MBP.BODY_SCROLL_TOP = false;
+
+    // So we don't redefine this function everytime we
+    // we call hideUrlBar
+    MBP.getScrollTop = function() {
+        var win = window;
+        var doc = document;
+
+        return win.pageYOffset || doc.compatMode === 'CSS1Compat' && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+    };
+
+    // It should be up to the mobile
+    MBP.hideUrlBar = function() {
+        var win = window;
+
+        // if there is a hash, or MBP.BODY_SCROLL_TOP hasn't been set yet, wait till that happens
+        if (!location.hash && MBP.BODY_SCROLL_TOP !== false) {
+            win.scrollTo( 0, MBP.BODY_SCROLL_TOP === 1 ? 0 : 1 );
+        }
+    };
+
+    MBP.hideUrlBarOnLoad = function() {
+        var win = window;
+        var doc = win.document;
+        var bodycheck;
+
+        // If there's a hash, or addEventListener is undefined, stop here
+        if ( !location.hash && win.addEventListener ) {
+
+            // scroll to 1
+            window.scrollTo( 0, 1 );
+            MBP.BODY_SCROLL_TOP = 1;
+
+            // reset to 0 on bodyready, if needed
+            bodycheck = setInterval(function() {
+                if ( doc.body ) {
+                    clearInterval( bodycheck );
+                    MBP.BODY_SCROLL_TOP = MBP.getScrollTop();
+                    MBP.hideUrlBar();
+                }
+            }, 15 );
+
+            win.addEventListener('load', function() {
+                setTimeout(function() {
+                    // at load, if user hasn't scrolled more than 20 or so...
+                    if (MBP.getScrollTop() < 20) {
+                        // reset to hide addr bar at onload
+                        MBP.hideUrlBar();
+                    }
+                }, 0);
+            });
+        }
+    };
+})(document);
+MBP.hideUrlBarOnLoad();
+MBP.scaleFix();
+
+app.touch ={
+	init: function(){	 	 
+		app.common.getTwitter(app.touch.initSocialSlider);	
+	   console.warn('init touch');
+	},	
+	// touch sliders ----------------------------------------------------	
+	initSliders: function(cat){
+	   if(sliderz.slide[cat]){
+	      sliderz.slide[cat].reInit();
+	   }else{
+	      var category = '.swiper-container-'+cat;
+   	   var $caption = $(category).find('.bCaption');
+   	   var setInfo = function(){
+            var $current = $(sliderz.slide[cat].activeSlide());  
+            var captionContent = $current.find('.caption').html();
+   			$caption.html(captionContent);
+         }      
+   	   sliderz.slide[cat] = new Swiper(category,{
+            mode:'horizontal',
+            loop: true,
+            centeredSlides:true,
+            slidesPerView: 3,
+            onSlideChangeEnd:setInfo
+         }); 
+         setInfo();
+	   }
+	},
+	initSocialSlider: function(socialData, spinner){
+	   var content = '';
+	   var string = '<div class="swiper-slide"><a href="{url}" target="_blank"><p><strong 				class="date">{date}</strong>{content}</p></a></div>'
+	   var l = socialData.length;
+	   for(i=0; i<l; i++){
+	      var obj = socialData[i];
+	      var t = microTemplate(string, obj);
+	      content += t+'\n';
+	   }
+		spinner.spin(false);
+	   $('#social-content').html(content);
+      // init social slider
+	   var jsSwiper = new Swiper('.swiper-container-social',{
+         mode:'horizontal',
+         loop: true,
+         centeredSlides:true,
+         slidesPerView: 3,
+         DOMAnimation:true,
+         useCSS3Transforms: true,
+         pagination: '.pager'
+      });  
+      jsSwiper.reInit();	   
+	},
+	clear: function(){
+	   console.log('mobile clear');
+	}
+}
+var sliderz ={
+   slide:{},
+   onload: ['cover', 'graphic', 'editing', 'adv']     
+} 
+window.onload = function() {  
+   for(var i =0, l = sliderz.onload.length; i<l; i++){
+      app.touch.initSliders(sliderz.onload[i])
+   }    
+   app.common.initMap();
+	// main menu ------------------------------------------
+   $('.main-wrap').on('click', 'header', function(){
+      $(this).toggleClass('open');
+   });
+   $('.main-wrap').on('click', '#main-nav a', function(e){
+      e.preventDefault();
+      var el = $(this).attr('href');
+      $('html, body').animate({
+        scrollTop: $(el).offset().top-50
+    }, 600);
+   });
+}
+app.common = {
+   initMap: function(){
+      var map = L.map('map', {
+      attributionControl: false,
+      scrollWheelZoom: false,
+      zoomControl:false
+      }).setView([45.4633, 9.1796], 16);
+      L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
+      attribution: '&copy;2014 Esri & Stamen, Data from OSM and Natural Earth',
+      subdomains: '0123',
+      minZoom: 13,
+      maxZoom: 17,
+      detectRetina: false
+      }).addTo(map);
+      var pymIcon = L.icon({
+         iconUrl: 'assets/img/marker.png',
+         iconRetinaUrl: 'assets/img/marker.png',
+         iconSize: [120, 100],
+         iconAnchor: [60, 100],
+      });
+      L.control.zoom({position: 'topright'});
+      var marker = L.marker([45.4633, 9.1796], {icon: pymIcon}).addTo(map);
+   },
+   getTwitter: function(callback){
+		var $social = $('#social');
+		$social.spin();
+      var getTweets = $.getJSON(twitterStream);
+      $.when(getTweets)
+      .then(function(twitterResponse){
+         // success         
+         var TWR = twitterResponse[1];
+         var socialArray = [];
+			var l = TWR.length;
+         for(var i = 0; i<l; i++){
+            var TwObj = {};
+            TwObj.site = 'twitter';
+            TwObj.date = new Date(TWR[i].created_at).toLocaleDateString();
+            TwObj.content = urlHyperlinks(TWR[i].text);
+				TwObj.url = 	TWR[i].entities.urls[TWR[i].entities.urls.length-1].url;
+            socialArray.push(TwObj); 
+         }
+         // callback function 
+         if(callback) callback(socialArray, $social);
+      }, function(){
+         // error
+			$social.spin(false);
+         console.log('Error retrieving twitter stream');
+      });
+   },
+   fancyboxConfig:{
+      helpers : {
+         overlay : {
+            css : {
+               'background' : 'rgba(255, 255, 255, 0.85)'
+            }
+         }
+      }
+   }
+}
+
+// Common helpers -------------------------------------------------------------
+var fbPostsGraph = 'https://graph.facebook.com/letlovin/posts?access_token=390253567719306%7C-MSuVYmEpw5bLY-bsmopJd4ISS8&limit=3&callback=?'; 
+
+var twitterStream = 'http://gianlucabuoncompagni.net/twitter/sample.php?callback=?';
+
+function urlHyperlinks(str){
+	//return str.replace(/\b((http|https):\/\/\S+)/g, '<a href="$1" target="_blank">$1</a>');
+	return str.replace(/\b((http|https):\/\/t.co\S+)/g,'');
+}
+
+function microTemplate(s,d){
+ for(var p in d)
+   s=s.replace(new RegExp('{'+p+'}','g'), d[p]);
+ return s;
+}
+
+// Analytics 
+var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src='//www.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));
+app.mobile ={
+    init: function(){
+       app.touch.init();
+        app.mobile.initMapSlider();
+       console.warn('Init mobile');
+    },
+    // mappa -------------------------------------------------------------
+    initMapSlider: function(){
+       var w= (90 / 100) * ($(document).width()); // 90% of document width
+       $('.swiper-container-map').find('.swiper-slide').css('width', w);
+       var mapSwiper = new Swiper('.swiper-container-map',{
+         slidesPerView: 'auto',
+         onSlideClick : function(slide) {
+            if(slide.activeIndex <= 0){
+               mapSwiper.swipeNext();
+            }else{
+               mapSwiper.swipePrev();
+            }
+         }
+      });
+    },
+    clear: function(){
+       console.log('mobile clear');
+    }
 }

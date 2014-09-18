@@ -1,16 +1,13 @@
+$breakpointTablet : 641px;
+$breakpointDesktop : 1025px;
 @import '_scss/reset/__normalize.scss';
-@import '_scss/fonts/_webfonts.scss';
-@import '_scss/fonts/_iconfonts.scss';
-@import '_scss/config/_breakpoints.scss';
-@import '_scss/config/_colors.scss';
-@import '_scss/config/_fonts.scss';
-// --------------------------------------------
-@import '_scss/config/_components.scss';
-@import '_scss/config/_grids.scss';
-@import '_scss/config/_animations.scss';
-// --------------------------------------------
+@import '_scss/plugins/_swiper.scss';
+@import '_scss/_mixins.scss';
+@import '_scss/_common.scss';
 @import '_scss/_mobile.scss';
-@media screen and (min-width: $desktopBP) {
+@media screen and (min-width: $breakpointTablet) {
+	@import '_scss/_tablet.scss';
+}
+@media screen and (min-width: $breakpointDesktop) {
 	@import '_scss/_desktop.scss';
 }
-// --------------------------------------------

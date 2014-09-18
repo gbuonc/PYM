@@ -12,23 +12,9 @@ $oswald: 'Oswald', sans-serif;
 /* helpers */
 ::-moz-selection, ::selection { background: $mainColor; text-shadow: none; }
 
-// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
-.clearfix() {
-	*zoom:1;
-	
-	&:before,
-	&:after {
-	    content:"";
-	    display:table;
-	}
-	&:after {
-	    clear:both;
-	}
-}
-
 /* debug */
 body{
-   text-align: center; 
+   text-align: center;
    min-height: 100%;
    font-family: $oswald;
    font-weight: 300;
@@ -46,26 +32,26 @@ body:after{
    padding: 4px;
 }
 section{
-   position: relative; 
+   position: relative;
    overflow: hidden;
-   .clearfix();
+
 }
-.gridWrap{   
+.gridWrap{
    text-align: left;
    margin: 0 auto;
-   .clearfix();
+   
 }
 ul{
-   list-style-type: none; 
-   padding: 0; 
-   margin: 0;   
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
 }
 a{
    color: $mainColor;
 }
 h1, h2, h3, h4{
-   font-weight: normal;   
-   margin: 0px;   
+   font-weight: normal;
+   margin: 0px;
 }
 strong{
    font-weight: 400;
@@ -99,4 +85,3 @@ strong{
    -moz-box-shadow: none !important;
    box-shadow: none !important;
 }
-
