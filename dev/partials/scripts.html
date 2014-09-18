@@ -1,0 +1,14 @@
+<script>
+    var app ={};
+    var isTouch = head.touch;
+    var isPhone =  head.touch && head.screen.width <= 640;
+    var isTablet = head.touch && head.screen.width > 640 && !head.desktop;
+    var isDesktop = head.desktop;
+    var device = isDesktop ? 'desktop': 'mobile'; //(isPhone ? 'mobile' : 'tablet');
+        device = isPhone ? 'mobile': device;
+        device = isTablet ? 'tablet': device;
+    // load assets based on device
+    head.load(["./assets/js/pym-"+device+".js"], function(){
+        app[device].init();
+    });
+</script>

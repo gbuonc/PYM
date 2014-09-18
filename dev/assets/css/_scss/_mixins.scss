@@ -8,6 +8,15 @@
 @mixin transition($val){	transition: $val;}
 @mixin border-radius($val){border-radius: $val;}
 
+@mixin animate($ms: 150ms){transition: all $ms ease;  transform: translate3d(0, 0, 0);}
+
+@keyframes fadeSubMenu{
+	0%{	opacity:0; display:none; transform: translate3d(0, 0, 0);}
+	1%{	opacity:0; display:block; transform: translate3d(0, -5px, 0);}
+	100%{	opacity:1; display:block; transform: translate3d(0, 0, 0);}
+}
+
+
 @mixin elasticAnimation($duration, $delay:0){
 	transition-property:all;
 	transition-duration: $duration;

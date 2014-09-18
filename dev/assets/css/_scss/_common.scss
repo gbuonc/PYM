@@ -8,6 +8,89 @@ $lightGrey: #efefef;
 /* fonts */
 $montserrat: 'Montserrat', sans-serif;
 $oswald: 'Oswald', sans-serif;
+/* ICONZ */
+@font-face {
+  font-family: 'pym';
+  src: url('../icon-fonts/pym.eot');
+  src: url('../icon-fonts/pym.eot?#iefix') format('embedded-opentype'),
+       url('../icon-fonts/pym.woff') format('woff'),
+       url('../icon-fonts/pym.ttf') format('truetype'),
+       url('../icon-fonts/pym.svg?#pym') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "pym";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "pym";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  /* font-size: 120%; */
+}
+
+.icon-fb:before { content: '\e800'; } /* '' */
+.icon-tw:before { content: '\e801'; } /* '' */
+.icon-chat:before { content: '\e802'; } /* '' */
+.icon-prev:before { content: '\e803'; } /* '' */
+.icon-next:before { content: '\e804'; } /* '' */
+.icon-down:before { content: '\e805'; } /* '' */
+.icon-left:before { content: '\e806'; } /* '' */
+.icon-right:before { content: '\e807'; } /* '' */
+.icon-up:before { content: '\e808'; } /* '' */
+.icon-gplus:before { content: '\e809'; } /* '' */
+.icon-share:before { content: '\e80a'; } /* '' */
+.icon-email:before { content: '\e80b'; } /* '' */
+.icon-yt:before { content: '\e80c'; } /* '' */
+.icon-flickr:before { content: '\e80d'; } /* '' */
+.icon-rss:before { content: '\e80e'; } /* '' */
+.icon-triangle-down:before { content: '\e80f'; } /* '' */
+.icon-triangle-up:before { content: '\e810'; } /* '' */
+.icon-menu:before { content: '\e811'; } /* '' */
+.icon-cancel:before { content: '\e812'; } /* '' */
+.icon-search:before { content: '\e813'; } /* '' */
+.icon-pinterest:before { content: '\e814'; } /* '' */
+.icon-instagram:before { content: '\e815'; } /* '' */
+.icon-location:before { content: '\e816'; } /* '' */
+.icon-location-1:before { content: '\e817'; } /* '' */
+
+.icon{color: $baseColor;
+font-size: 15px;
+padding: 0 5px;}
 
 /* helpers */
 ::-moz-selection, ::selection { background: $mainColor; text-shadow: none; }
@@ -39,7 +122,7 @@ section{
 .gridWrap{
    text-align: left;
    margin: 0 auto;
-   
+
 }
 ul{
    list-style-type: none;
@@ -84,4 +167,53 @@ strong{
    -webkit-box-shadow: none !important;
    -moz-box-shadow: none !important;
    box-shadow: none !important;
+}
+
+section{
+    margin-bottom: 15px;
+}
+
+// accordion --------------------
+.accordion-label > .icon-cancel:before{
+    transform: rotate(-45deg) translate3d(0, 0, 0);
+    transition: all 300ms ease-in-out;
+}
+.accordion{
+    margin:10px;
+	& input{display: none;}
+	input ~ .accordion-content{
+		display: none;
+		animation: fadeSubMenu 150ms ease-out;
+	}
+	input:checked ~ .accordion-content{
+		display: block;
+	}
+	input:checked ~ .accordion-label > .icon-cancel:before{
+        transform: rotate(0);
+    }
+}
+
+// cassetto ---------------------
+.closet{
+    & input{display: none;}
+    .closet-content{
+        @include animate(400ms);
+    }
+    input ~ .closet-content{
+        height: 0;
+        overflow: hidden;
+    }
+    input:checked ~ .closet-content{
+        height: 150px;
+    }
+}
+
+.basicBtn{
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid $subtleColor;
+    background: $bg;
+    letter-spacing: 0.05em;
+    margin: 10px auto;
 }

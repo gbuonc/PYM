@@ -123,7 +123,6 @@ $(function(){
 });
 
 // waypoints animations ----------------------------------------------------------------
-
 var anims = [
    {offset: app.windowHeight, cls: 'shrink'},
    {offset: app.windowHeight/2.8, cls: 'outLogo'}

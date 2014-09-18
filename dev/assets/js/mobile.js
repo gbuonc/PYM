@@ -1,7 +1,8 @@
 app.mobile ={
     init: function(){
-       app.touch.init();
-        app.mobile.initMapSlider();
+    //    app.touch.init();
+    // app.common.getTwitter(app.desktop.initTwitter);
+       //app.mobile.initMapSlider();
        console.warn('Init mobile');
     },
     // mappa -------------------------------------------------------------

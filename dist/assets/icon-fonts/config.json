@@ -1,5 +1,5 @@
 {
-  "name": "ifqn",
+  "name": "pym",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -10,6 +10,12 @@
       "uid": "5211af474d3a9848f67f945e2ccaf143",
       "css": "cancel",
       "code": 59410,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "0d08dbb1dd648a43bdea81b7e6c9e036",
+      "css": "location-1",
+      "code": 59415,
       "src": "fontawesome"
     },
     {
@@ -85,6 +91,12 @@
       "src": "fontawesome"
     },
     {
+      "uid": "4c1ef492f1d2c39a2250ae457cee2a6e",
+      "css": "instagram",
+      "code": 59413,
+      "src": "fontawesome"
+    },
+    {
       "uid": "627abcdb627cb1789e009c08e2678ef9",
       "css": "tw",
       "code": 59393,
@@ -121,10 +133,22 @@
       "src": "entypo"
     },
     {
+      "uid": "689febe699d74bc8862965555503e445",
+      "css": "pinterest",
+      "code": 59412,
+      "src": "entypo"
+    },
+    {
       "uid": "a58032f4aafd0eec54803075f5b320d4",
       "css": "email",
       "code": 59403,
       "src": "zocial"
+    },
+    {
+      "uid": "22cfc7af2c4f158b37317c65c92b48c2",
+      "css": "location",
+      "code": 59414,
+      "src": "elusive"
     }
   ]
 }

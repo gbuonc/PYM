@@ -3,14 +3,14 @@ app.common = {
       var map = L.map('map', {
       attributionControl: false,
       scrollWheelZoom: false,
-      zoomControl:false
-      }).setView([45.4633, 9.1796], 16);
+      zoomControl:true
+    }).setView([45.4640, 9.1796], 15);
       L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
       attribution: '&copy;2014 Esri & Stamen, Data from OSM and Natural Earth',
       subdomains: '0123',
       minZoom: 13,
       maxZoom: 17,
-      detectRetina: false
+      detectRetina: true
       }).addTo(map);
       var pymIcon = L.icon({
          iconUrl: 'assets/img/marker.png',
@@ -27,7 +27,7 @@ app.common = {
       var getTweets = $.getJSON(twitterStream);
       $.when(getTweets)
       .then(function(twitterResponse){
-         // success         
+         // success
          var TWR = twitterResponse[1];
          var socialArray = [];
 			var l = TWR.length;
@@ -37,9 +37,9 @@ app.common = {
             TwObj.date = new Date(TWR[i].created_at).toLocaleDateString();
             TwObj.content = urlHyperlinks(TWR[i].text);
 				TwObj.url = 	TWR[i].entities.urls[TWR[i].entities.urls.length-1].url;
-            socialArray.push(TwObj); 
+            socialArray.push(TwObj);
          }
-         // callback function 
+         // callback function
          if(callback) callback(socialArray, $social);
       }, function(){
          // error
@@ -59,22 +59,18 @@ app.common = {
 }
 
 // Common helpers -------------------------------------------------------------
-var fbPostsGraph = 'https://graph.facebook.com/letlovin/posts?access_token=390253567719306%7C-MSuVYmEpw5bLY-bsmopJd4ISS8&limit=3&callback=?'; 
-
+var fbPostsGraph = 'https://graph.facebook.com/letlovin/posts?access_token=390253567719306%7C-MSuVYmEpw5bLY-bsmopJd4ISS8&limit=3&callback=?';
 var twitterStream = 'http://gianlucabuoncompagni.net/twitter/sample.php?callback=?';
-
 function urlHyperlinks(str){
 	//return str.replace(/\b((http|https):\/\/\S+)/g, '<a href="$1" target="_blank">$1</a>');
 	return str.replace(/\b((http|https):\/\/t.co\S+)/g,'');
 }
-
 function microTemplate(s,d){
  for(var p in d)
    s=s.replace(new RegExp('{'+p+'}','g'), d[p]);
  return s;
 }
-
-// Analytics 
+// Analytics
 var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 g.src='//www.google-analytics.com/ga.js';

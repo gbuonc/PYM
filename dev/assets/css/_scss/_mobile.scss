@@ -5,7 +5,9 @@
 .desktopOnly{display: none;}
 
 a{-webkit-tap-highlight-color: rgba(0,0,0,0);}
-body{ font-size: 15px; line-height: 1.2;}
+body{ font-size: 15px; line-height: 1.2;
+background: repeating-linear-gradient(-45deg,$bg,$bg 50%,$mainColor 49%,$mainColor 45.2%,$bg 50.2%);
+background-size: 150px 150px;}
 p{margin:0.5em 0 1em}
 section{ margin-bottom:1em;}
 .title{
@@ -28,6 +30,9 @@ section{ margin-bottom:1em;}
    z-index: 2;
    padding: 0 .4em;
 
+}
+.accordion-content{
+    @include animate(200)
 }
 
 /* Justify Grid
@@ -121,12 +126,12 @@ header{
    -webkit-transform: translateZ(0);
    text-align: center;
    z-index: 3;
-   @include translateY(-100%);
-   @include box-shadow('0px 0px 10px #000');
-   @include transition('300ms all cubic-bezier(.77,-0.32,.23,1.35)');
+   transform: translateY(-100%);
+   box-shadow: 0px 0px 10px #000;
+   transition: 300ms all cubic-bezier(.77,-0.32,.23,1.35);
 }
 header.open{
-   /* .translateY(-80px); */
+   transform: translateY(-80px);
 }
 nav{
    position: relative;
@@ -156,7 +161,7 @@ header.open nav:after{   content:'';}
    padding: 0 10%;
    text-decoration: none;
    text-transform: uppercase;
-   @include transition('200ms all ease-in-out');
+   transition: 200ms all ease-in-out;
 }
 #main-nav li a {
    display: block;
@@ -173,8 +178,8 @@ header.open nav:after{   content:'';}
    position: relative;
    display: block;
    font-weight: 400;
-   @include transition('150ms all ease-in-out');
-   @include translateY(0px);
+   transition: 150ms all ease-in-out;
+   transform:translateY(0px);
 }
 #main-nav li a img{
    width: 40%;
@@ -188,6 +193,8 @@ header.open nav:after{   content:'';}
 #main-nav li a span.hover{
    display: none;
 }
+
+
 /* Main Box
 ====================================================== */
 .hero{
@@ -202,15 +209,15 @@ header.open nav:after{   content:'';}
    position: absolute;
    font-size:0;
    z-index: 2;
-   @include border-radius(50%);
+    border-radius: 50%;
    background: rgba(255,255,255, 0.6) url('../img/pym.png') 50% no-repeat;
    background-size: 100px auto;
    width: 120px;
    height: 120px;
    left: 50%;
    top: 50%;
-   @include translate3d('-50%,-38%,0');
-   @include box-shadow('0px 22px 15px -18px #779241, 23px -22px 15px -28px #779241');
+   transform: translate3d(-50%,-38%,0);
+   box-shadow: 0px 22px 15px -18px #779241, 23px -22px 15px -28px #779241;
    }
 .hero h1 a{
    display:block;
@@ -218,12 +225,11 @@ header.open nav:after{   content:'';}
    top:0; left:0; right:0; bottom:0
 }
 .logo{text-indent:-5000px;}
-.logo-shadow{ background: none;   z-index:-1;   @include box-shadow('0px 0px 10px #000');}
+.logo-shadow{ background: none;   z-index:-1;   box-shadow: 0px 0px 10px #000}
 .bgImage{
    position: fixed;
    z-index: -1;
    background: url('../img/bg2.jpg') center no-repeat;
-   background-position:center;
    background-size: cover;
    height:250px;
    width: 100%;
@@ -265,7 +271,6 @@ header.open nav:after{   content:'';}
 	font-weight:400;
 }
 .about p{
-   margin-bottom: 3em;
    font-size: 20px;
    padding: 0 20px;
 }
@@ -284,8 +289,31 @@ header.open nav:after{   content:'';}
    height: auto;
    margin: 1%;
 }
+
+.small.small{
+    font-size: 14px;
+    text-align: justify;
+    background: $bg;
+}
+.accordion-label{
+    font-size: 22px;
+    line-height: 30px;
+    width: 30px;
+    padding: 0;
+    color: $bg;
+    display: inline-block;
+    border-radius:50%;
+    background: $mainColor;
+    i{
+        position: relative;
+        top:-2px;
+        left:-1px;
+    }
+}
+
 /* Social Swipe
 ====================================================== */
+.social{display: none;}
 #social-content{
 height: 180px !important;
 }
@@ -388,19 +416,16 @@ height: 180px !important;
    color: $bg;
 }
 .standalone {
-   background-color: #839e39;
-   color: #fff;
+   font-weight: 300;
+   color: $mainColor;
    padding: 5px 20px;
    font-size: 18px;
    margin-bottom: 0px;
    margin: 0 auto;
    text-align: center;
    text-transform: uppercase;
-   font-weight: 400;
    display: inline-block;
    position: relative;
-   left: 50%;
-   @include translateX(-50%);
 }
 
 /* scroller */
@@ -442,21 +467,20 @@ height: 180px !important;
    margin-left:-75%;
    text-align:center;
       .swiper-slide .cover{
-         width:98%;
-         position: relative;
-         height:200px;
-         margin: 0 auto;
-              img{
-               max-width:94%;
-            	max-height: 94%;
-               height:auto;
-            	width:auto;
-            	position:absolute;
-            	top:50%;
-            	left:50%;
-            	@include translate('-50%, -50%');
-
-            }
+        width:100%;
+        position: relative;
+        height:200px;
+        margin: 0 auto;
+            img{
+            max-width:100%;
+            max-height: 100%;
+            height:auto;
+        	width:auto;
+        	position:absolute;
+        	top:50%;
+        	left:50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
       }
 }
 /* cover */
@@ -497,141 +521,77 @@ height: 180px !important;
    height: auto;
 }
 
+/* Dove siamo
+====================================================== */
+.map-wrapper{
+    overflow: hidden;
+    height: 0;
+    @include animate(300ms);
+}
+.map-wrapper.open{
+    overflow: hidden;
+    height: 150px;
+}
+#map{
+    height: 150px;
+    margin:0;
+    position: relative;
+    overflow: hidden;
+    &:after{
+        content:'';
+        position: absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        height: 1px;
+        box-shadow: -6px 0px 6px #000;
+        z-index: 1;
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #999;
+        box-shadow: 6px 0px 6px #000;
+        z-index: 1;
+    }
+
+}
+.address{
+    margin-top: -100px;
+    z-index: 1000;
+}
+
 /* Footer & Contacts
 ====================================================== */
+#contacts{
+    line-height: 1.5;
+    margin-bottom: 0;
+    h3{
+        background: $bg;
+        display: inline-block;
+    }
+    p{
+        background: $bg;
+        display: inline-block;
+        padding: 3px;
+        margin: 0;
+    }
+}
+.social-iconz{
+    display: inline-block;
+    padding:5px 20px;
+    border-top: 1px solid $subtleColor;
+    border-bottom: 1px solid $subtleColor;
+    margin: 30px auto;
+    background: $bg;
+}
 footer{
-   background-color: $baseColor;
-   color: $subtleColor;
-   padding-bottom: 0px;
-   position: relative;
-}
-#map{height: 200px; margin:0}
-.swiper-container-map{
-   position:absolute;
-   top:0;
-   left:0;
-   width:320px;
-   height: 200px;
-   z-index:2;
-   overflow:hidden;
-}
-.contact-details {
-   background-color: $baseColor;
-   height: auto !important;
-   height: 200px;
-   min-height: 200px;
-   text-align: left;
-   padding: 5% 8% 5% 5%;
-   position: relative;
-   color: $bg;
-   font-size: 14px;
-}
-.contact-details h2{
-   font-family: $montserrat;
-   font-weight: 400;
-   font-size: 1.5em;
-   line-height: 1;
-   margin-bottom: 1em;
-   text-align: center;
-}
-.contact-details:before {
-   content:'';
-   background-color: $baseColor;
-   height: auto !important;
-   height: 200px;
-   min-height: 200px;
-   width: 100%;
-   position: absolute;
-   top:0;
-   left:-100%;
-}
-.slide-map{
-   position: relative;
-   height: auto !important;
-   height: 200px;
-   min-height: 200px;
-}
-.slide-map:before {
-   font-family: 'fontello';
-   content:'\e808';   /* icon right open */
-   width: 30px;
-   height: 30px;
-   font-size: 2em;
-   position: absolute;
-   top:50%;
-   left:1%;
-   color: fade($baseColor, 40);
-   text-align: center;
-   @include transition(all 500ms ease);
-   @include rotate(180deg);
-}
-.slide-map.swiper-slide-active:before {
-   @include rotate(0deg);
-   left:-11%;
-   color: fade($bg, 40);
-}
-.see-map{
-   position: absolute;
-   bottom: 10px;
-   right: 10px;
-   background: $mainColor;
-   color: $bg;
-   padding: 5px 10px;
-   text-decoration: none;
-   text-transform: uppercase;
-   font-weight: 800;
-   font-size: 12px;
-}
-.contacts-map-wrapper{
-   overflow: hidden;
-}
-.swiper-container-map .swiper-slide{
-   overflow: visible;
-}
-.contact-detail{
-   @include clearfix();
-}
-.contact-detail i{
-   font-size: 2em;
-   float: left;
-   margin-right: 10px;
-   color: $subtleColor;
-}
-.contact-detail p{
-   margin: 0px;
-}
-.contact-detail.cd-map{
-   @include clearfix();
-   padding-bottom: 1em;
-   border-bottom: 1px solid darken($baseColor, 3);
-}
-.contact-detail.cd-chat{
-   @include clearfix();
-   padding-top: 1em;
-   border-top: 1px solid lighten($baseColor, 8);
-}
-.legals{
-   background-color: #000;
-   font-size: 12px;
-   margin-top: -10px;
-   color: $bg;
-   padding: 20px 10px 10px;
-   text-align: left;
-   @include clearfix();
-}
-.legals p{
-   margin: 0px;
-   float: left;
-   width: 70%;
-   line-height: 25px;
-}
-.social-links{
-   float: right;
-   text-align: right;
-   width: 30%;
-}
-.social-links a{
-   text-decoration: none;
-   color: $bg;
-   font-size: 15px;
+    padding: 30px 0;
+    background: url('../img/test/graphic3.jpg') center no-repeat;
+    background-size: cover;
+    margin-bottom: 0;
 }
