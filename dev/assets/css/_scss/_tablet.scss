@@ -61,9 +61,16 @@ header.open {@include translateY(-80px);}
 .contacts-map-wrapper,
 .contact-details,
 #map-content .swiper-slide,
-#map {height: 350px !important;    font-size: 20px;    }
-#map{left:40%; right:0; position: absolute; z-index: 2;}
+#map {height: 550px !important;    font-size: 20px;    }
+#map{left:0; right:0; position: absolute; z-index: 2;}
 .slide-contacts{width: 40%;}
 .slide-map:before{content:''; display: none;}
 .see-map {bottom: 15px; right: 15px; font-size: 18px; white-space: nowrap;}
 .legals p{font-size: 16px;}
+
+#contacts{
+  font-size: 18px;
+}
+footer{
+    padding: 50px 0;
+}

@@ -6,8 +6,7 @@
 
 a{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 body{ font-size: 15px; line-height: 1.2;
-background: repeating-linear-gradient(-45deg,$bg,$bg 50%,$mainColor 49%,$mainColor 45.2%,$bg 50.2%);
-background-size: 150px 150px;}
+}
 p{margin:0.5em 0 1em}
 section{ margin-bottom:1em;}
 .title{
@@ -25,7 +24,7 @@ section{ margin-bottom:1em;}
    letter-spacing: 0.13em;
    line-height: 1;
    color: $baseColor;
-   background: url('../img/pattern.jpg') repeat;
+   background: $bg;
    position: relative;
    z-index: 2;
    padding: 0 .4em;
@@ -128,6 +127,7 @@ header{
    z-index: 3;
    transform: translateY(-100%);
    box-shadow: 0px 0px 10px #000;
+   -webkit-backface-visibility: hidden;
    transition: 300ms all cubic-bezier(.77,-0.32,.23,1.35);
 }
 header.open{
@@ -291,7 +291,7 @@ header.open nav:after{   content:'';}
 }
 
 .small.small{
-    font-size: 14px;
+    font-size: 22px;
     text-align: justify;
     background: $bg;
 }
@@ -570,6 +570,7 @@ height: 180px !important;
 #contacts{
     line-height: 1.5;
     margin-bottom: 0;
+    font-size: 18px;
     h3{
         background: $bg;
         display: inline-block;
@@ -588,6 +589,10 @@ height: 180px !important;
     border-bottom: 1px solid $subtleColor;
     margin: 30px auto;
     background: $bg;
+    line-height: 20px;
+    i{
+      font-size: 22px;
+    }
 }
 footer{
     padding: 30px 0;

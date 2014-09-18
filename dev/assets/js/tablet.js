@@ -3,7 +3,7 @@ app.tablet ={
        app.touch.init();
        console.log('init tablet');
        $(function(){
-          $('.fancyBox').fancybox(app.common.fancyboxConfig);
+          // $('.fancyBox').fancybox(app.common.fancyboxConfig);
        });
     },
     clear: function(){

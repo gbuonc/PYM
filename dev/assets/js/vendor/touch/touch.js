@@ -2,10 +2,11 @@ MBP.hideUrlBarOnLoad();
 MBP.scaleFix();
 
 app.touch ={
-// init: function(){
+init: function(){
+	FastClick.attach(document.body);
 // 		app.common.getTwitter(app.touch.initSocialSlider);
 // 	   console.warn('init touch');
-//	},
+},
 // 	// touch sliders ----------------------------------------------------
 	initSliders: function(cat){
 		if(sliderz.slide[cat]){

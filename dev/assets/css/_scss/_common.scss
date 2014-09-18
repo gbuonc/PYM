@@ -200,7 +200,7 @@ section{
         @include animate(400ms);
     }
     input ~ .closet-content{
-        height: 0;
+        height: 0px;
         overflow: hidden;
     }
     input:checked ~ .closet-content{
