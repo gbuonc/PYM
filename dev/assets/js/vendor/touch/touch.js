@@ -3,8 +3,9 @@ MBP.scaleFix();
 
 app.touch ={
 init: function(){
-	FastClick.attach(document.body);
-// 		app.common.getTwitter(app.touch.initSocialSlider);
+	//FastClick.attach(document.body);
+	$('.fancyBox').fluidbox();
+	app.common.getTwitter(app.touch.initSocialSlider);
 // 	   console.warn('init touch');
 },
 // 	// touch sliders ----------------------------------------------------
@@ -28,33 +29,33 @@ init: function(){
 		});
 			setInfo();
 		}
+	},
+	initSocialSlider: function(socialData, spinner){
+	   var content = '';
+	   var string = '<div class="swiper-slide"><a href="{url}" target="_blank"><p><strong class="date center"><span><i class="icon-tw"></i></span><br>{date}</strong>{content}</p></a></div>'
+	   var l = socialData.length;
+	   for(i=0; i<l; i++){
+	      var obj = socialData[i];
+	      var t = microTemplate(string, obj);
+	      content += t+'\n';
+	   }
+		spinner.spin(false);
+	   $('#social-content').html(content);
+      // init social slider
+	   var jsSwiper = new Swiper('.swiper-container-social',{
+         mode:'horizontal',
+         loop: true,
+         centeredSlides:true,
+         slidesPerView: 3,
+         DOMAnimation:true,
+         useCSS3Transforms: true,
+         pagination: '.pager'
+      });
+      jsSwiper.reInit();
+	},
+	clear: function(){
+	   console.log('mobile clear');
 	}
-// 	initSocialSlider: function(socialData, spinner){
-// 	   var content = '';
-// 	   var string = '<div class="swiper-slide"><a href="{url}" target="_blank"><p><strong 				class="date">{date}</strong>{content}</p></a></div>'
-// 	   var l = socialData.length;
-// 	   for(i=0; i<l; i++){
-// 	      var obj = socialData[i];
-// 	      var t = microTemplate(string, obj);
-// 	      content += t+'\n';
-// 	   }
-// 		spinner.spin(false);
-// 	   $('#social-content').html(content);
-//       // init social slider
-// 	   var jsSwiper = new Swiper('.swiper-container-social',{
-//          mode:'horizontal',
-//          loop: true,
-//          centeredSlides:true,
-//          slidesPerView: 3,
-//          DOMAnimation:true,
-//          useCSS3Transforms: true,
-//          pagination: '.pager'
-//       });
-//       jsSwiper.reInit();
-// 	},
-// 	clear: function(){
-// 	   console.log('mobile clear');
-// 	}
 }
 var sliderz ={
    slide:{},

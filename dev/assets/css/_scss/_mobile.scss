@@ -291,14 +291,14 @@ header.open nav:after{   content:'';}
 }
 
 .small.small{
-    font-size: 22px;
-    text-align: justify;
+    font-size: 18px;
+    text-align: left;
     background: $bg;
 }
 .accordion-label{
-    font-size: 22px;
-    line-height: 30px;
-    width: 30px;
+    font-size: 25px;
+    line-height: 50px;
+    width: 50px;
     padding: 0;
     color: $bg;
     display: inline-block;
@@ -306,19 +306,19 @@ header.open nav:after{   content:'';}
     background: $mainColor;
     i{
         position: relative;
-        top:-2px;
-        left:-1px;
+        top:-3px;
     }
 }
 
 /* Social Swipe
 ====================================================== */
-.social{display: none;}
+.social{}
 #social-content{
 height: 180px !important;
 }
 .swiper-container-social {
    display: block;
+   margin-top:-40px;
    width:240%;
    margin-left:-70%;
 	position:relative;
@@ -338,7 +338,9 @@ height: 180px !important;
             }
             p{
                padding: 10px;
-               background: lighten($mainColor, 45%);
+               border-top: 1px solid $mainColor;
+               border-bottom: 1px solid $mainColor;
+               //background: lighten($mainColor, 45%);
                text-align: left;
                line-height: 1.3;
             }
@@ -347,6 +349,10 @@ height: 180px !important;
                font-weight: bold;
                font-family: $montserrat;
                color: $mainColor;
+               margin-top:-20px;
+               text-align:center;
+
+               i{background: $bg;}
             }
 
       }
@@ -531,6 +537,10 @@ height: 180px !important;
 .map-wrapper.open{
     overflow: hidden;
     height: 150px;
+}
+.gmap{position: absolute; bottom:0; left:0; right:0; text-align:center; display:none;}
+input:checked ~ .closet-content .gmap{
+  display:block;
 }
 #map{
     height: 150px;
