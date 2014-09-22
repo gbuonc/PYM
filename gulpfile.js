@@ -81,7 +81,7 @@ gulp.task('scripts-tablet', function() {
 	 .pipe(reload({stream: true}))
 });
 gulp.task('scripts-desktop', function() {
-  return gulp.src(['./dist/assets/js/_libs.js', './dev/assets/js/vendor/desktop/*.js', './dev/assets/js/common.js', './dev/assets/js/desktop.js'])
+  return gulp.src(['./dist/assets/js/_libs.js', './dev/assets/js/vendor/desktop/**/*.js', './dev/assets/js/common.js', './dev/assets/js/desktop.js'])
   	 //.pipe(sourcemaps.init())
     .pipe(concat('pym-desktop.js'))
 	 //.pipe(uglify())

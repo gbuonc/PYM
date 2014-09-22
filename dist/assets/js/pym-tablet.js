@@ -2580,6 +2580,7 @@ if ( typeof( module ) !== 'undefined' )
     module.exports = Swiper;
 }
 
+!function(t,i,e){"use strict";function s(t,i){this.element=t,this.layers=t.getElementsByClassName("layer");var e={calibrateX:this.data(this.element,"calibrate-x"),calibrateY:this.data(this.element,"calibrate-y"),invertX:this.data(this.element,"invert-x"),invertY:this.data(this.element,"invert-y"),limitX:this.data(this.element,"limit-x"),limitY:this.data(this.element,"limit-y"),scalarX:this.data(this.element,"scalar-x"),scalarY:this.data(this.element,"scalar-y"),frictionX:this.data(this.element,"friction-x"),frictionY:this.data(this.element,"friction-y"),originX:this.data(this.element,"origin-x"),originY:this.data(this.element,"origin-y")};for(var s in e)null===e[s]&&delete e[s];this.extend(this,r,i,e),this.calibrationTimer=null,this.calibrationFlag=!0,this.enabled=!1,this.depths=[],this.raf=null,this.bounds=null,this.ex=0,this.ey=0,this.ew=0,this.eh=0,this.ecx=0,this.ecy=0,this.erx=0,this.ery=0,this.cx=0,this.cy=0,this.ix=0,this.iy=0,this.mx=0,this.my=0,this.vx=0,this.vy=0,this.onMouseMove=this.onMouseMove.bind(this),this.onDeviceOrientation=this.onDeviceOrientation.bind(this),this.onOrientationTimer=this.onOrientationTimer.bind(this),this.onCalibrationTimer=this.onCalibrationTimer.bind(this),this.onAnimationFrame=this.onAnimationFrame.bind(this),this.onWindowResize=this.onWindowResize.bind(this),this.initialise()}var n="Parallax",o=30,r={relativeInput:!1,clipRelativeInput:!1,calibrationThreshold:100,calibrationDelay:500,supportDelay:500,calibrateX:!1,calibrateY:!0,invertX:!0,invertY:!0,limitX:!1,limitY:!1,scalarX:10,scalarY:10,frictionX:.1,frictionY:.1,originX:.5,originY:.5};s.prototype.extend=function(){if(arguments.length>1)for(var t=arguments[0],i=1,e=arguments.length;e>i;i++){var s=arguments[i];for(var n in s)t[n]=s[n]}},s.prototype.data=function(t,i){return this.deserialize(t.getAttribute("data-"+i))},s.prototype.deserialize=function(t){return"true"===t?!0:"false"===t?!1:"null"===t?null:!isNaN(parseFloat(t))&&isFinite(t)?parseFloat(t):t},s.prototype.camelCase=function(t){return t.replace(/-+(.)?/g,function(t,i){return i?i.toUpperCase():""})},s.prototype.transformSupport=function(s){for(var n=i.createElement("div"),o=!1,r=null,a=!1,h=null,l=null,p=0,c=this.vendors.length;c>p;p++)if(null!==this.vendors[p]?(h=this.vendors[p][0]+"transform",l=this.vendors[p][1]+"Transform"):(h="transform",l="transform"),n.style[l]!==e){o=!0;break}switch(s){case"2D":a=o;break;case"3D":if(o){var m=i.body||i.createElement("body"),u=i.documentElement,y=u.style.overflow;i.body||(u.style.overflow="hidden",u.appendChild(m),m.style.overflow="hidden",m.style.background=""),m.appendChild(n),n.style[l]="translate3d(1px,1px,1px)",r=t.getComputedStyle(n).getPropertyValue(h),a=r!==e&&r.length>0&&"none"!==r,u.style.overflow=y,m.removeChild(n)}}return a},s.prototype.ww=null,s.prototype.wh=null,s.prototype.wcx=null,s.prototype.wcy=null,s.prototype.wrx=null,s.prototype.wry=null,s.prototype.portrait=null,s.prototype.desktop=!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i),s.prototype.vendors=[null,["-webkit-","webkit"],["-moz-","Moz"],["-o-","O"],["-ms-","ms"]],s.prototype.motionSupport=!!t.DeviceMotionEvent,s.prototype.orientationSupport=!!t.DeviceOrientationEvent,s.prototype.orientationStatus=0,s.prototype.transform2DSupport=s.prototype.transformSupport("2D"),s.prototype.transform3DSupport=s.prototype.transformSupport("3D"),s.prototype.propertyCache={},s.prototype.initialise=function(){this.transform3DSupport&&this.accelerate(this.element);var i=t.getComputedStyle(this.element);"static"===i.getPropertyValue("position")&&(this.element.style.position="relative"),this.updateLayers(),this.updateDimensions(),this.enable(),this.queueCalibration(this.calibrationDelay)},s.prototype.updateLayers=function(){this.layers=this.element.getElementsByClassName("layer"),this.depths=[];for(var t=0,i=this.layers.length;i>t;t++){var e=this.layers[t];this.transform3DSupport&&this.accelerate(e),e.style.position=t?"absolute":"relative",e.style.display="block",e.style.left=0,e.style.top=0,this.depths.push(this.data(e,"depth")||0)}},s.prototype.updateDimensions=function(){this.ww=t.innerWidth,this.wh=t.innerHeight,this.wcx=this.ww*this.originX,this.wcy=this.wh*this.originY,this.wrx=Math.max(this.wcx,this.ww-this.wcx),this.wry=Math.max(this.wcy,this.wh-this.wcy)},s.prototype.updateBounds=function(){this.bounds=this.element.getBoundingClientRect(),this.ex=this.bounds.left,this.ey=this.bounds.top,this.ew=this.bounds.width,this.eh=this.bounds.height,this.ecx=this.ew*this.originX,this.ecy=this.eh*this.originY,this.erx=Math.max(this.ecx,this.ew-this.ecx),this.ery=Math.max(this.ecy,this.eh-this.ecy)},s.prototype.queueCalibration=function(t){clearTimeout(this.calibrationTimer),this.calibrationTimer=setTimeout(this.onCalibrationTimer,t)},s.prototype.enable=function(){this.enabled||(this.enabled=!0,this.orientationSupport?(this.portrait=null,t.addEventListener("deviceorientation",this.onDeviceOrientation),setTimeout(this.onOrientationTimer,this.supportDelay)):(this.cx=0,this.cy=0,this.portrait=!1,t.addEventListener("mousemove",this.onMouseMove)),t.addEventListener("resize",this.onWindowResize),this.raf=requestAnimationFrame(this.onAnimationFrame))},s.prototype.disable=function(){this.enabled&&(this.enabled=!1,this.orientationSupport?t.removeEventListener("deviceorientation",this.onDeviceOrientation):t.removeEventListener("mousemove",this.onMouseMove),t.removeEventListener("resize",this.onWindowResize),cancelAnimationFrame(this.raf))},s.prototype.calibrate=function(t,i){this.calibrateX=t===e?this.calibrateX:t,this.calibrateY=i===e?this.calibrateY:i},s.prototype.invert=function(t,i){this.invertX=t===e?this.invertX:t,this.invertY=i===e?this.invertY:i},s.prototype.friction=function(t,i){this.frictionX=t===e?this.frictionX:t,this.frictionY=i===e?this.frictionY:i},s.prototype.scalar=function(t,i){this.scalarX=t===e?this.scalarX:t,this.scalarY=i===e?this.scalarY:i},s.prototype.limit=function(t,i){this.limitX=t===e?this.limitX:t,this.limitY=i===e?this.limitY:i},s.prototype.origin=function(t,i){this.originX=t===e?this.originX:t,this.originY=i===e?this.originY:i},s.prototype.clamp=function(t,i,e){return t=Math.max(t,i),t=Math.min(t,e)},s.prototype.css=function(t,i,s){var n=this.propertyCache[i];if(!n)for(var o=0,r=this.vendors.length;r>o;o++)if(n=null!==this.vendors[o]?this.camelCase(this.vendors[o][1]+"-"+i):i,t.style[n]!==e){this.propertyCache[i]=n;break}t.style[n]=s},s.prototype.accelerate=function(t){this.css(t,"transform","translate3d(0,0,0)"),this.css(t,"transform-style","preserve-3d"),this.css(t,"backface-visibility","hidden")},s.prototype.setPosition=function(t,i,e){i+="px",e+="px",this.transform3DSupport?this.css(t,"transform","translate3d("+i+","+e+",0)"):this.transform2DSupport?this.css(t,"transform","translate("+i+","+e+")"):(t.style.left=i,t.style.top=e)},s.prototype.onOrientationTimer=function(){this.orientationSupport&&0===this.orientationStatus&&(this.disable(),this.orientationSupport=!1,this.enable())},s.prototype.onCalibrationTimer=function(){this.calibrationFlag=!0},s.prototype.onWindowResize=function(){this.updateDimensions()},s.prototype.onAnimationFrame=function(){this.updateBounds();var t=this.ix-this.cx,i=this.iy-this.cy;(Math.abs(t)>this.calibrationThreshold||Math.abs(i)>this.calibrationThreshold)&&this.queueCalibration(0),this.portrait?(this.mx=this.calibrateX?i:this.iy,this.my=this.calibrateY?t:this.ix):(this.mx=this.calibrateX?t:this.ix,this.my=this.calibrateY?i:this.iy),this.mx*=this.ew*(this.scalarX/100),this.my*=this.eh*(this.scalarY/100),isNaN(parseFloat(this.limitX))||(this.mx=this.clamp(this.mx,-this.limitX,this.limitX)),isNaN(parseFloat(this.limitY))||(this.my=this.clamp(this.my,-this.limitY,this.limitY)),this.vx+=(this.mx-this.vx)*this.frictionX,this.vy+=(this.my-this.vy)*this.frictionY;for(var e=0,s=this.layers.length;s>e;e++){var n=this.layers[e],o=this.depths[e],r=this.vx*o*(this.invertX?-1:1),a=this.vy*o*(this.invertY?-1:1);this.setPosition(n,r,a)}this.raf=requestAnimationFrame(this.onAnimationFrame)},s.prototype.onDeviceOrientation=function(t){if(!this.desktop&&null!==t.beta&&null!==t.gamma){this.orientationStatus=1;var i=(t.beta||0)/o,e=(t.gamma||0)/o,s=this.wh>this.ww;this.portrait!==s&&(this.portrait=s,this.calibrationFlag=!0),this.calibrationFlag&&(this.calibrationFlag=!1,this.cx=i,this.cy=e),this.ix=i,this.iy=e}},s.prototype.onMouseMove=function(t){var i=t.clientX,e=t.clientY;!this.orientationSupport&&this.relativeInput?(this.clipRelativeInput&&(i=Math.max(i,this.ex),i=Math.min(i,this.ex+this.ew),e=Math.max(e,this.ey),e=Math.min(e,this.ey+this.eh)),this.ix=(i-this.ex-this.ecx)/this.erx,this.iy=(e-this.ey-this.ecy)/this.ery):(this.ix=(i-this.wcx)/this.wrx,this.iy=(e-this.wcy)/this.wry)},t[n]=s}(window,document),function(){for(var t=0,i=["ms","moz","webkit","o"],e=0;e<i.length&&!window.requestAnimationFrame;++e)window.requestAnimationFrame=window[i[e]+"RequestAnimationFrame"],window.cancelAnimationFrame=window[i[e]+"CancelAnimationFrame"]||window[i[e]+"CancelRequestAnimationFrame"];window.requestAnimationFrame||(window.requestAnimationFrame=function(i){var e=(new Date).getTime(),s=Math.max(0,16-(e-t)),n=window.setTimeout(function(){i(e+s)},s);return t=e+s,n}),window.cancelAnimationFrame||(window.cancelAnimationFrame=function(t){clearTimeout(t)})}();
 //fgnass.github.com/spin.js#v2.0.1
 !function(a,b){"object"==typeof exports?module.exports=b():"function"==typeof define&&define.amd?define(b):a.Spinner=b()}(this,function(){"use strict";function a(a,b){var c,d=document.createElement(a||"div");for(c in b)d[c]=b[c];return d}function b(a){for(var b=1,c=arguments.length;c>b;b++)a.appendChild(arguments[b]);return a}function c(a,b,c,d){var e=["opacity",b,~~(100*a),c,d].join("-"),f=.01+c/d*100,g=Math.max(1-(1-a)/b*(100-f),a),h=j.substring(0,j.indexOf("Animation")).toLowerCase(),i=h&&"-"+h+"-"||"";return l[e]||(m.insertRule("@"+i+"keyframes "+e+"{0%{opacity:"+g+"}"+f+"%{opacity:"+a+"}"+(f+.01)+"%{opacity:1}"+(f+b)%100+"%{opacity:"+a+"}100%{opacity:"+g+"}}",m.cssRules.length),l[e]=1),e}function d(a,b){var c,d,e=a.style;for(b=b.charAt(0).toUpperCase()+b.slice(1),d=0;d<k.length;d++)if(c=k[d]+b,void 0!==e[c])return c;return void 0!==e[b]?b:void 0}function e(a,b){for(var c in b)a.style[d(a,c)||c]=b[c];return a}function f(a){for(var b=1;b<arguments.length;b++){var c=arguments[b];for(var d in c)void 0===a[d]&&(a[d]=c[d])}return a}function g(a,b){return"string"==typeof a?a:a[b%a.length]}function h(a){this.opts=f(a||{},h.defaults,n)}function i(){function c(b,c){return a("<"+b+' xmlns="urn:schemas-microsoft.com:vml" class="spin-vml">',c)}m.addRule(".spin-vml","behavior:url(#default#VML)"),h.prototype.lines=function(a,d){function f(){return e(c("group",{coordsize:k+" "+k,coordorigin:-j+" "+-j}),{width:k,height:k})}function h(a,h,i){b(m,b(e(f(),{rotation:360/d.lines*a+"deg",left:~~h}),b(e(c("roundrect",{arcsize:d.corners}),{width:j,height:d.width,left:d.radius,top:-d.width>>1,filter:i}),c("fill",{color:g(d.color,a),opacity:d.opacity}),c("stroke",{opacity:0}))))}var i,j=d.length+d.width,k=2*j,l=2*-(d.width+d.length)+"px",m=e(f(),{position:"absolute",top:l,left:l});if(d.shadow)for(i=1;i<=d.lines;i++)h(i,-2,"progid:DXImageTransform.Microsoft.Blur(pixelradius=2,makeshadow=1,shadowopacity=.3)");for(i=1;i<=d.lines;i++)h(i);return b(a,m)},h.prototype.opacity=function(a,b,c,d){var e=a.firstChild;d=d.shadow&&d.lines||0,e&&b+d<e.childNodes.length&&(e=e.childNodes[b+d],e=e&&e.firstChild,e=e&&e.firstChild,e&&(e.opacity=c))}}var j,k=["webkit","Moz","ms","O"],l={},m=function(){var c=a("style",{type:"text/css"});return b(document.getElementsByTagName("head")[0],c),c.sheet||c.styleSheet}(),n={lines:12,length:7,width:5,radius:10,rotate:0,corners:1,color:"#000",direction:1,speed:1,trail:100,opacity:.25,fps:20,zIndex:2e9,className:"spinner",top:"50%",left:"50%",position:"absolute"};h.defaults={},f(h.prototype,{spin:function(b){this.stop();{var c=this,d=c.opts,f=c.el=e(a(0,{className:d.className}),{position:d.position,width:0,zIndex:d.zIndex});d.radius+d.length+d.width}if(e(f,{left:d.left,top:d.top}),b&&b.insertBefore(f,b.firstChild||null),f.setAttribute("role","progressbar"),c.lines(f,c.opts),!j){var g,h=0,i=(d.lines-1)*(1-d.direction)/2,k=d.fps,l=k/d.speed,m=(1-d.opacity)/(l*d.trail/100),n=l/d.lines;!function o(){h++;for(var a=0;a<d.lines;a++)g=Math.max(1-(h+(d.lines-a)*n)%l*m,d.opacity),c.opacity(f,a*d.direction+i,g,d);c.timeout=c.el&&setTimeout(o,~~(1e3/k))}()}return c},stop:function(){var a=this.el;return a&&(clearTimeout(this.timeout),a.parentNode&&a.parentNode.removeChild(a),this.el=void 0),this},lines:function(d,f){function h(b,c){return e(a(),{position:"absolute",width:f.length+f.width+"px",height:f.width+"px",background:b,boxShadow:c,transformOrigin:"left",transform:"rotate("+~~(360/f.lines*k+f.rotate)+"deg) translate("+f.radius+"px,0)",borderRadius:(f.corners*f.width>>1)+"px"})}for(var i,k=0,l=(f.lines-1)*(1-f.direction)/2;k<f.lines;k++)i=e(a(),{position:"absolute",top:1+~(f.width/2)+"px",transform:f.hwaccel?"translate3d(0,0,0)":"",opacity:f.opacity,animation:j&&c(f.opacity,f.trail,l+k*f.direction,f.lines)+" "+1/f.speed+"s linear infinite"}),f.shadow&&b(i,e(h("#000","0 0 4px #000"),{top:"2px"})),b(d,b(i,h(g(f.color,k),"0 0 1px rgba(0,0,0,.1)")));return d},opacity:function(a,b,c){b<a.childNodes.length&&(a.childNodes[b].style.opacity=c)}});var o=e(a("group"),{behavior:"url(#default#VML)"});return!d(o,"transform")&&o.adj?i():j=d(o,"animation"),h});
 
@@ -3455,13 +3456,387 @@ if (typeof define !== 'undefined' && define.amd) {
         }
     };
 })(document);
+// Fluidbox
+// Description: Replicating the seamless lightbox transition effect seen on Medium.com, with some improvements
+// Version: 1.3.5
+// Author: Terry Mun
+// Author URI: http://terrymun.com
+
+// --------------------------------------------------------
+//  Dependency: Paul Irish's jQuery debounced resize event
+// --------------------------------------------------------
+(function($,sr){
+
+	// debouncing function from John Hann
+	// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+	var debounce = function (func, threshold, execAsap) {
+		var timeout;
+
+		return function debounced () {
+			var obj = this, args = arguments;
+			function delayed () {
+				if (!execAsap)
+				func.apply(obj, args);
+				timeout = null;
+			};
+
+			if (timeout)
+				clearTimeout(timeout);
+			else if (execAsap)
+				func.apply(obj, args);
+
+			timeout = setTimeout(delayed, threshold || 100);
+		};
+	}
+	// smartresize
+	jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');
+
+// -----------------------------
+//  Fluidbox plugin starts here
+// -----------------------------
+(function ($) {
+
+	$.fn.fluidbox = function (opts) {
+
+		// Default settings
+		var settings = $.extend(true, {
+			viewportFill: 0.95,
+			debounceResize: true,
+			stackIndex: 1000,
+			stackIndexDelta: 10,
+			closeTrigger: [
+				{
+					selector: '.fluidbox-overlay',
+					event: 'click'
+				},
+				{
+					selector: 'document',
+					event: 'keyup',
+					keyCode: 27
+				}
+			]
+		}, opts);
+
+		// Ensure that the stackIndex does not become negative
+		if(settings.stackIndex < settings.stackIndexDelta) settings.stackIndexDelta = settings.stackIndex;
+
+		// Dynamically create overlay
+		$fbOverlay = $('<div />', {
+			class: 'fluidbox-overlay',
+			css: {
+				'z-index': settings.stackIndex
+			}
+		});
+
+		// Declare variables
+		var $fb = this,
+			$w = $(window),		// Shorthand for $(window)
+			vpRatio,
+
+			// Function:
+			// 1. funcCloseFb()		- used to close any instance of opened Fluidbox
+			// 2. funcPositionFb()	- used for dynamic positioning of any instance of opened Fluidbox
+			// 3. funcCalcAll()		- used to run funcCalc() for every instance of targered Fluidbox thumbnail
+			// 4. funcCalc()		- used to store dimensions of image, ghost element and wrapper element upon initialization or resize
+			// 5. fbClickhandler()	- universal click handler for all Fluidbox items
+			funcCloseFb = function () {
+				$('.fluidbox-opened').trigger('click');
+			},
+			funcPositionFb = function ($activeFb) {
+				// Get shorthand for more objects
+				var $img    = $activeFb.find('img'),
+					$ghost  = $activeFb.find('.fluidbox-ghost'),
+					$wrap	= $activeFb.find('.fluidbox-wrap'),
+					$data	= $activeFb.data(),
+					fHeight = 0,
+					fWidth	= 0;
+
+				// Check natural dimensions
+				if(vpRatio > $img.data().imgRatio) {
+					if($data.natHeight < $w.height()*settings.viewportFill) {
+						fHeight = $data.natHeight;
+					} else {
+						fHeight = $w.height()*settings.viewportFill;
+					}
+					$data.imgScale = fHeight/$img.height();
+				} else {
+					if($data.natWidth < $w.width()*settings.viewportFill) {
+						fWidth = $data.natWidth;
+					} else {
+						fWidth = $w.width()*settings.viewportFill;
+					}
+					$data.imgScale = fWidth/$img.width();
+				}	
+
+				// Calculation goes here
+				var offsetY = $w.scrollTop()-$img.offset().top+0.5*($img.data('imgHeight')*($img.data('imgScale')-1))+0.5*($w.height()-$img.data('imgHeight')*$img.data('imgScale')),
+					offsetX = 0.5*($img.data('imgWidth')*($img.data('imgScale')-1))+0.5*($w.width()-$img.data('imgWidth')*$img.data('imgScale'))-$img.offset().left,
+					scale   = $data.imgScale;
+
+				// Apply CSS transforms to ghost element
+				// For offsetX and Y, we round to one decimal place
+				// For scale, we round to three decimal places
+				$ghost.css({
+					'transform': 'translate('+parseInt(offsetX*10)/10+'px,'+parseInt(offsetY*10)/10+'px) scale('+parseInt(scale*1000)/1000+')',
+					top: $img.offset().top - $wrap.offset().top,
+					left: $img.offset().left - $wrap.offset().left
+				});
+			},
+			funcCalcAll = function() {
+				$fb.each(function () {
+					funcCalc($(this));
+				});
+			},
+			funcCalc = function ($fbItem) {
+				// Get viewport ratio
+				vpRatio = $w.width() / $w.height();
+
+				// Get image dimensions and aspect ratio
+				if($fbItem.hasClass('fluidbox')) {
+					var $img	= $fbItem.find('img'),
+						$ghost	= $fbItem.find('.fluidbox-ghost'),
+						$wrap	= $fbItem.find('.fluidbox-wrap'),
+						data	= $img.data();
+
+					function imageProp() {
+						// Store image dimensions in jQuery object
+						data.imgWidth	= $img.width();
+						data.imgHeight	= $img.height();
+						data.imgRatio	= $img.width()/$img.height();
+
+						// Resize and position ghost element
+						$ghost.css({
+							width: $img.width(),
+							height: $img.height(),
+							top: $img.offset().top - $wrap.offset().top + parseInt($img.css('borderTopWidth')) + parseInt($img.css('paddingTop')),
+							left: $img.offset().left - $wrap.offset().left + parseInt($img.css('borderLeftWidth')) + parseInt($img.css('paddingLeft'))
+						});
+
+						// Calculate scale based on orientation
+						if(vpRatio > data.imgRatio) {
+							data.imgScale = $w.height()*settings.viewportFill/$img.height();
+						} else {
+							data.imgScale = $w.width()*settings.viewportFill/$img.width();
+						}						
+					}
+
+					imageProp();					
+
+					// Rerun everything on imageload, to overcome issue in Firefox
+					$img.load(imageProp);
+				}
+			},
+			fbClickHandler = function(e) {
+
+				// Check if the fluidbox element does have .fluidbox assigned to it
+				if($(this).hasClass('fluidbox')) {
+
+					// Variables
+					var $activeFb	= $(this),
+						$img		= $(this).find('img'),
+						$ghost		= $(this).find('.fluidbox-ghost'),
+						$wrap   	= $(this).find('.fluidbox-wrap'),
+						timer   	= {};
+
+					if($(this).data('fluidbox-state') === 0 || !$(this).data('fluidbox-state')) {
+						// State: Closed
+						// Action: Open fluidbox
+
+						// Wait for ghost image to be loaded successfully first, then do the rest
+						$('<img />', {
+							src: $img.attr('src')
+						}).load(function () {
+							// Preload ghost image
+							$('<img />', {
+								src: $activeFb.attr('href')
+							}).load(function() {
+								// Store natural width and heights
+								$activeFb
+								.data('natWidth', $(this)[0].naturalWidth)
+								.data('natHeight', $(this)[0].naturalHeight);
+
+								// What are we doing here:
+								// 1. Append overlay in fluidbox
+								// 2. Toggle fluidbox state with data attribute
+								// 3. Store original z-index with data attribute (so users can change z-index when they see fit in CSS file)
+								// 4. Class toggle
+								$activeFb
+								.append($fbOverlay)
+								.data('fluidbox-state', 1)
+								.removeClass('fluidbox-closed')
+								.addClass('fluidbox-opened');
+
+								// Force timer to completion
+								if(timer['close']) window.clearTimeout(timer['close']);
+
+								// Set timer for opening
+								timer['open'] = window.setTimeout(function() {
+									// Show overlay
+									$('.fluidbox-overlay').css({ opacity: 1 });
+								}, 10);
+
+								// Change wrapper z-index, so it is above everything else
+								// Decrease all siblings z-index by 1 just in case
+								$('.fluidbox-wrap').css({ zIndex: settings.stackIndex - settings.stackIndexDelta - 1 });
+								$wrap.css({ 'z-index': settings.stackIndex + settings.stackIndexDelta });
+
+								// Set thumbnail image source as background image first, preload later
+								$ghost.css({
+									'background-image': 'url('+$img.attr('src')+')',
+									opacity: 1
+								});
+
+								// Hide original image
+								$img.css({ opacity: 0 });
+
+								$ghost.css({ 'background-image': 'url('+$activeFb.attr('href')+')' });
+
+								// Position Fluidbox
+								funcPositionFb($activeFb);
+							});
+						});
+
+					} else {
+						// State: Open
+						// Action: Close fluidbox
+
+						// Switch state
+						$activeFb
+						.data('fluidbox-state', 0)
+						.removeClass('fluidbox-opened')
+						.addClass('fluidbox-closed');
+
+						// Set timer for closing
+						if(timer['open']) window.clearTimeout(timer['open']);
+						timer['close'] = window.setTimeout(function() {
+							$('.fluidbox-overlay').remove();
+							$wrap.css({ 'z-index': settings.stackIndex - settings.stackIndexDelta });
+						}, 10);
+
+						// Hide overlay
+						$('.fluidbox-overlay').css({ opacity: 0 });
+
+						// Reverse animation on wrapped elements, and restore stacking order
+						// You might want to change this value if your transition timing is longer
+						$ghost.css({
+							'transform': 'translate(0,0) scale(1)',
+							opacity: 0,
+							top: $img.offset().top - $wrap.offset().top + parseInt($img.css('borderTopWidth')) + parseInt($img.css('paddingTop')),
+							left: $img.offset().left - $wrap.offset().left + parseInt($img.css('borderLeftWidth')) + parseInt($img.css('paddingLeft'))
+						});
+						$img.css({ opacity: 1 });
+					}
+
+					e.preventDefault();
+				}
+			};
+
+		// When should we close Fluidbox?
+		if(settings.closeTrigger) {
+			// Go through array
+			$.each(settings.closeTrigger, function (i) {
+				var trigger = settings.closeTrigger[i];
+
+				// Attach events
+				if(trigger.selector != 'window') {
+					// If it is not 'window', we append click handler to $(document) object, allow it to bubble up
+					// However, if thes selector is 'document', we use a different .on() syntax
+					if(trigger.selector == 'document') {
+						if(trigger.keyCode) {
+							$(document).on(trigger.event, function (e) {
+								if(e.keyCode == trigger.keyCode) funcCloseFb();
+							});
+						} else {
+							$(document).on(trigger.event, funcCloseFb);
+						}
+					} else {
+						$(document).on(trigger.event, settings.closeTrigger[i].selector, funcCloseFb);
+					}
+				} else {
+					// If it is 'window', append click handler to $(window) object
+					$w.on(trigger.event, funcCloseFb);
+				}
+			});
+		}
+
+		// Go through each individual object
+		$fb.each(function (i) {
+
+			// Check if Fluidbox:
+			// 1. Is an anchor element ,<a>
+			// 2. Contains one and ONLY one child
+			// 3. The only child is an image element, <img>
+			// 4. If the element is hidden
+			if($(this).is('a') && $(this).children().length === 1 && $(this).children().is('img') && $(this).css('display') !== 'none' && $(this).parents().css('display') !=='none') {
+
+				// Define wrap
+				var $fbInnerWrap = $('<div />', {
+					class: 'fluidbox-wrap',
+					css: {
+						'z-index': settings.stackIndex - settings.stackIndexDelta
+					}
+				});
+
+				// Add class
+				var $fbItem = $(this);
+				$fbItem
+				.addClass('fluidbox')
+				.wrapInner($fbInnerWrap)
+				.find('img')
+					.css({ opacity: 1 })
+					.after('<div class="fluidbox-ghost" />')
+					.each(function(){
+						var $img = $(this);
+						
+						if ($img.width() > 0 && $img.height() > 0) {
+							// if image is already loaded (from cache)
+							funcCalc($fbItem);
+							$fbItem.click(fbClickHandler);
+						} else {
+							// wait for image to load
+							$img.load(function(){
+								funcCalc($fbItem);
+								$fbItem.click(fbClickHandler);
+							});
+						}
+				});
+
+			}
+		});
+
+		// Listen to window resize event
+		// Check if user wants to debounce the resize event (it is debounced by default)
+		var funcResize = function () {
+			// Recalculate dimensions
+			funcCalcAll();
+
+			// Reposition Fluidbox, but only if one is found to be open
+			var $activeFb = $('a.fluidbox.fluidbox-opened');
+			if($activeFb.length > 0) funcPositionFb($activeFb);
+		}
+
+		if(settings.debounceResize) {
+			$(window).smartresize(funcResize);
+		} else {
+			$(window).resize(funcResize);
+		}
+
+		// Return to allow chaining
+		return $fb;
+	};
+
+})(jQuery);
 MBP.hideUrlBarOnLoad();
 MBP.scaleFix();
 
 app.touch ={
 init: function(){
-	FastClick.attach(document.body);
-// 		app.common.getTwitter(app.touch.initSocialSlider);
+	//FastClick.attach(document.body);
+	$('.fancyBox').fluidbox();
+	app.common.getTwitter(app.touch.initSocialSlider);
+	$('.hero').parallax();
 // 	   console.warn('init touch');
 },
 // 	// touch sliders ----------------------------------------------------
@@ -3485,33 +3860,33 @@ init: function(){
 		});
 			setInfo();
 		}
+	},
+	initSocialSlider: function(socialData, spinner){
+	   var content = '';
+	   var string = '<div class="swiper-slide"><a href="{url}" target="_blank"><p><strong class="date center"><span><i class="icon-tw"></i></span><br>{date}</strong>{content}</p></a></div>'
+	   var l = socialData.length;
+	   for(i=0; i<l; i++){
+	      var obj = socialData[i];
+	      var t = microTemplate(string, obj);
+	      content += t+'\n';
+	   }
+		spinner.spin(false);
+	   $('#social-content').html(content);
+      // init social slider
+	   var jsSwiper = new Swiper('.swiper-container-social',{
+         mode:'horizontal',
+         loop: true,
+         centeredSlides:true,
+         slidesPerView: 3,
+         DOMAnimation:true,
+         useCSS3Transforms: true,
+         pagination: '.pager'
+      });
+      jsSwiper.reInit();
+	},
+	clear: function(){
+	   console.log('mobile clear');
 	}
-// 	initSocialSlider: function(socialData, spinner){
-// 	   var content = '';
-// 	   var string = '<div class="swiper-slide"><a href="{url}" target="_blank"><p><strong 				class="date">{date}</strong>{content}</p></a></div>'
-// 	   var l = socialData.length;
-// 	   for(i=0; i<l; i++){
-// 	      var obj = socialData[i];
-// 	      var t = microTemplate(string, obj);
-// 	      content += t+'\n';
-// 	   }
-// 		spinner.spin(false);
-// 	   $('#social-content').html(content);
-//       // init social slider
-// 	   var jsSwiper = new Swiper('.swiper-container-social',{
-//          mode:'horizontal',
-//          loop: true,
-//          centeredSlides:true,
-//          slidesPerView: 3,
-//          DOMAnimation:true,
-//          useCSS3Transforms: true,
-//          pagination: '.pager'
-//       });
-//       jsSwiper.reInit();
-// 	},
-// 	clear: function(){
-// 	   console.log('mobile clear');
-// 	}
 }
 var sliderz ={
    slide:{},
@@ -3533,8 +3908,7 @@ $(function(){
 	for(var i =0, l = sliderz.onload.length; i<l; i++){
 		app.touch.initSliders(sliderz.onload[i])
 	}
-	// map
-	app.common.initMap();
+
 });
 
 /*!
@@ -6088,12 +6462,12 @@ d[0].offsetTop||15===d[0].offsetTop;d.remove();a.fixedPosition=e}f.extend(b.defa
 
 }(jQuery));
 app.common = {
-   initMap: function(){
+   initMap: function(zoom){
       var map = L.map('map', {
       attributionControl: false,
       scrollWheelZoom: false,
       zoomControl:true
-    }).setView([45.4640, 9.1796], 15);
+  }).setView([45.4640, 9.1796], zoom);
       L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
       attribution: '&copy;2014 Esri & Stamen, Data from OSM and Natural Earth',
       subdomains: '0123',
@@ -6168,7 +6542,7 @@ s.parentNode.insertBefore(g,s)}(document,'script'));
 app.tablet ={
     init: function(){
        app.touch.init();
-       console.log('init tablet');
+       app.common.initMap(15);
        $(function(){
           // $('.fancyBox').fancybox(app.common.fancyboxConfig);
        });

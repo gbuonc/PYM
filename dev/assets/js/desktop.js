@@ -106,7 +106,7 @@ app.desktop ={
           content += t+'\n';
        }
         spinner.spin(false);
-       var tk = $('#social-dk-content').html(content).newsTicker(); 
+       var tk = $('#social-dk-content').html(content).newsTicker();
    },
     clear: function(){
        console.log('desktop clear');
@@ -120,10 +120,10 @@ $(function(){
    app.desktop.setScrollSpy();
    app.desktop.doParallax();
    new WOW().init();
+   new CBPGridGallery( document.getElementById( 'masonry-grid-gallery' ) );
 });
 
 // waypoints animations ----------------------------------------------------------------
 var anims = [
-   {offset: app.windowHeight/1.8, cls: 'shrink'},
-   {offset: app.windowHeight/4.8, cls: 'outLogo'}
+   {offset: app.windowHeight/1.8, cls: 'shrink'}
 ]

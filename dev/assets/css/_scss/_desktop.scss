@@ -1,6 +1,7 @@
 .mobile-only{display: none!important;}
 .tablet-only{display: none!important;}
 .desktopOnly{display: block !important;}
+.no-desktop{display: none!important;}
 
 @-webkit-keyframes rotating {
     from{-webkit-transform: rotate(0deg);
@@ -17,6 +18,7 @@ body.init .main-wrap {
    position: fixed;
    top:0;
    width:100%;
+   overflow: hidden;
 }
 section{padding-top: 50px;}
 /* header */
@@ -157,6 +159,7 @@ nav #main-nav li.logoPym a:hover span{
     margin: 150px;
     font-size: 25px;
     line-height: 50px;
+    overflow: hidden;
 }
 
 .social-iconz i{

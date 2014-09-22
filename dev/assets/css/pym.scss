@@ -5,6 +5,7 @@ $breakpointDesktop : 1025px;
 @import '_scss/_mixins.scss';
 @import '_scss/_leaflet.scss';
 @import '_scss/plugins/_animate.scss';
+@import '_scss/plugins/grid/_component.scss';
 @import '_scss/_common.scss';
 @import '_scss/_mobile.scss';
 @media screen and (min-width: $breakpointTablet) {
