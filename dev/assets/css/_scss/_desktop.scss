@@ -97,14 +97,69 @@ nav #main-nav li.logoPym a:hover span{
    background-repeat: no-repeat;
    background-attachment: fixed;
 }
-.hero h1{position: fixed; top:50%; @include elasticAnimation(450ms); background:rgba(255, 255, 255, 0.4);}
+.hero h1{position: fixed; top:50%; @include elasticAnimation(450ms); background:rgba(255, 255, 255, 1); z-index: 2;}
 .hero h1 a{ bottom:10px; background: transparent url('../img/pym.png') center no-repeat; background-size:contain;}
 
-.outLogo .hero h1{position: absolute; top: auto; bottom:-60px; opacity: 0;}
-.outLogo .hero h1 a{display:block; position:absolute; -webkit-animation: rotating 500ms linear infinite;}
+/* .outLogo .hero h1{position: absolute; top: 50%; opacity: 0;}
+.outLogo .hero h1 a{display:block; position:absolute; -webkit-animation: rotating 500ms linear infinite;} */
 .bgImage {display: none;}
 
+/* twitter */
+#social{display: none;}
+#social-dk{
+    position: absolute;
+    bottom:0;
+    padding: 20px 50px 20px;
+    line-height: 1;
+    width: 100%;
+    margin:  0;
+    height: 85px;
+    display: block;
+    background: $bg;
+    font-size: 18px;
+    z-index: 10;
+    & > ul > li{
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+    & a{
+        color: #999;
+        text-decoration: none;
+    }
+    &:after{
+        content:'';
+        position: absolute;
+        height:1px;
+        background: $subtleColor;
+        width: 800px;
+        bottom:0px;
+        left:50%;
+        margin-left: -400px;
+    }
+}
 /* about */
 .about h1{
    margin-top: 50px;
+}
+
+/* MAP */
+/* open map */
+.closet{
+    & input{display: none;}
+    & label{display: none;}
+    input ~ .closet-content{
+        height: 450px;
+        overflow: hidden;
+    }
+}
+.social-iconz{
+    margin: 150px;
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.social-iconz i{
+    font-size: 50px;
+    line-height: 50px;
 }

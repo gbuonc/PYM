@@ -1,7 +1,7 @@
 app.tablet ={
     init: function(){
        app.touch.init();
-       console.log('init tablet');
+       app.common.initMap(15);
        $(function(){
           // $('.fancyBox').fancybox(app.common.fancyboxConfig);
        });

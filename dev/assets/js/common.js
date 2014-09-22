@@ -1,10 +1,10 @@
 app.common = {
-   initMap: function(){
+   initMap: function(zoom){
       var map = L.map('map', {
       attributionControl: false,
       scrollWheelZoom: false,
       zoomControl:true
-    }).setView([45.4640, 9.1796], 15);
+  }).setView([45.4640, 9.1796], zoom);
       L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
       attribution: '&copy;2014 Esri & Stamen, Data from OSM and Natural Earth',
       subdomains: '0123',

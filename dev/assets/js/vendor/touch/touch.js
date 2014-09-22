@@ -6,6 +6,7 @@ init: function(){
 	//FastClick.attach(document.body);
 	$('.fancyBox').fluidbox();
 	app.common.getTwitter(app.touch.initSocialSlider);
+	$('.hero').parallax();
 // 	   console.warn('init touch');
 },
 // 	// touch sliders ----------------------------------------------------
@@ -77,6 +78,5 @@ $(function(){
 	for(var i =0, l = sliderz.onload.length; i<l; i++){
 		app.touch.initSliders(sliderz.onload[i])
 	}
-	// map
-	app.common.initMap();
+
 });

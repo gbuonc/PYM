@@ -172,6 +172,21 @@ strong{
 section{
     margin-bottom: 15px;
 }
+footer > span{
+    position: absolute;
+    color: #444;
+    font-size: 12px;
+    top:80%;
+    right:0;
+    left:0;
+    text-align: center;
+}
+
+i{@include animate(250ms);}
+.icon-fb:hover{color: #3b5998;}
+.icon-tw:hover{ color:#00aced}
+.icon-instagram:hover{color:#517fa4}
+
 
 // accordion --------------------
 .accordion-label > .icon-cancel:before{
@@ -217,3 +232,5 @@ section{
     letter-spacing: 0.05em;
     margin: 10px auto;
 }
+
+/* Modale +++++++++++++++++++++++ */

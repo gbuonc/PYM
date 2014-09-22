@@ -538,7 +538,21 @@ height: 180px !important;
     overflow: hidden;
     height: 150px;
 }
-.gmap{position: absolute; bottom:0; left:0; right:0; text-align:center; display:none;}
+.gmap{
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    text-align: center;
+    background: $bg;
+    padding: 3px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 1px 1px 30px #999;
+}
 input:checked ~ .closet-content .gmap{
   display:block;
 }
@@ -605,8 +619,20 @@ input:checked ~ .closet-content .gmap{
     }
 }
 footer{
-    padding: 30px 0;
+    position: relative;
+    padding: 100px 0;
     background: url('../img/test/graphic3.jpg') center no-repeat;
     background-size: cover;
     margin-bottom: 0;
+}
+footer:before {
+content: '';
+position: absolute;
+bottom: 100%;
+left: 0;
+right: 0;
+height: 25px;
+background: #fff;
+box-shadow: 0px 6px 10px -5px#000;
+z-index: 1;
 }

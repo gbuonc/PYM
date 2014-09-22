@@ -1,7 +1,6 @@
 app.windowHeight = $.waypoints('viewportHeight');
 app.desktop ={
     init: function(){
-       console.log('init desktop');
        app.common.getTwitter(app.desktop.initTwitter);
         $('#home').height(app.windowHeight);
     },
@@ -70,7 +69,7 @@ app.desktop ={
       var $tile= $('.parallax');
       $tile.each(function(){
          var $bgobj = $(this);
-         var speed = 0.1; //$bgobj.data('speed') || 0.75;
+         var speed = 0.30; //$bgobj.data('speed') || 0.75;
          $window.scroll(function() {
             var scrollTop = $(window).scrollTop();
             var offset = $bgobj.offset().top;
@@ -99,7 +98,7 @@ app.desktop ={
    },
    initTwitter: function(socialData, spinner){
       var content = '';
-       var string = '<div class="tw-content"><a href="{url}" target="_blank"><p><strong 				class="date">{date}</strong>{content}</p></a></div>'
+       var string = '<li class="tw-content"><i class="icon-tw"></i><strong class="date">{date}</strong><p><a href="{url}" target="_blank"> {content}</a></p></li>'
        var l = socialData.length;
        for(i=0; i<l; i++){
           var obj = socialData[i];
@@ -107,7 +106,7 @@ app.desktop ={
           content += t+'\n';
        }
         spinner.spin(false);
-       $('#social-content').html(content);
+       var tk = $('#social-dk-content').html(content).newsTicker(); 
    },
     clear: function(){
        console.log('desktop clear');
@@ -115,15 +114,16 @@ app.desktop ={
 }
 
 $(function(){
-   app.common.initMap();
+   app.common.initMap(15);
    app.desktop.initAnimations(anims);
    app.desktop.initNav();
    app.desktop.setScrollSpy();
    app.desktop.doParallax();
+   new WOW().init();
 });
 
 // waypoints animations ----------------------------------------------------------------
 var anims = [
-   {offset: app.windowHeight, cls: 'shrink'},
-   {offset: app.windowHeight/2.8, cls: 'outLogo'}
+   {offset: app.windowHeight/1.8, cls: 'shrink'},
+   {offset: app.windowHeight/4.8, cls: 'outLogo'}
 ]
