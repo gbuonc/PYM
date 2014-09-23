@@ -6,6 +6,7 @@
         <title>Studio PYM</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
         <meta http-equiv="cleartype" content="on">
         <link href='http://fonts.googleapis.com/css?family=Oswald:300, 400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link href="assets/css/pym.css" rel="stylesheet" type="text/css">
@@ -13,10 +14,11 @@
         <script src="assets/js/vendor/head.js"></script>
     </head>
 
-   <body class="">
+   <body class="" id="pym">
       <div class="main-wrap">
         <header>
     <nav>
+        <div class="nav-title"><strong>Studio Pym</strong> - Editoria e Comunicazione</div>
         <ul id="main-nav">
             <li class="logoPym"><a href="#home"><span><img class="" src="assets/img/pym.png" /></span></a></li>
             <li><a href="#about"><span data-hover="Chi Siamo">Chi Siamo</span></a></li>
@@ -240,9 +242,9 @@
 
 
 
+        <!-- DESKTOP & TABLET ONLY -->
 
-
-          <div id="masonry-grid-gallery" class="masonry-grid-gallery">
+          <div id="masonry-grid-gallery" class="masonry-grid-gallery no-mobile">
             <section class="masonry-grid-wrap">
               <ul class="masonry-grid">
                 <li class="masonry-grid-sizer"></li><!-- for Masonry column width -->
@@ -392,7 +394,7 @@
                 </li>
               </ul>
             </section><!-- // grid-wrap -->
-            <section class="slideshow">
+            <section class="slideshow no-mobile">
               <ul>
                 <li>
                   <figure>
@@ -740,6 +742,7 @@
         </section>
         <!-- ........................................................... -->
         <footer>
+            <p class="copyright">&copy; 2014 Studio Pym Srl - P. IVA 123456789012<br>Capitale Sociale 35.000€ I.V.</p>
         </footer>
       </div>
     <!-- ...................................... -->

@@ -735,4 +735,3 @@ if (typeof define !== 'undefined' && define.amd) {
 } else {
 	window.FastClick = FastClick;
 }
-

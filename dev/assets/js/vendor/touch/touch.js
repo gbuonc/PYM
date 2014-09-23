@@ -1,13 +1,12 @@
 MBP.hideUrlBarOnLoad();
 MBP.scaleFix();
+window.addEventListener('load', function() {
+	FastClick.attach(document.body);
+}, false);
 
 app.touch ={
 init: function(){
-	//FastClick.attach(document.body);
-	$('.fancyBox').fluidbox();
 	app.common.getTwitter(app.touch.initSocialSlider);
-	$('.hero').parallax();
-// 	   console.warn('init touch');
 },
 // 	// touch sliders ----------------------------------------------------
 	initSliders: function(cat){
@@ -78,5 +77,4 @@ $(function(){
 	for(var i =0, l = sliderz.onload.length; i<l; i++){
 		app.touch.initSliders(sliderz.onload[i])
 	}
-
 });

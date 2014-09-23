@@ -1,8 +1,9 @@
 /* Common
 ====================================================== */
-*{box-sizing: border-box;}
-.tabletOnly{display: none;}
-.desktopOnly{display: none;}
+*{box-sizing: border-box; -webkit-backface-visibility:none;}
+.tabletOnly,
+.desktopOnly,
+.no-mobile{display: none;}
 
 a{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 body{ font-size: 15px; line-height: 1.2;
@@ -148,7 +149,26 @@ nav:after{
    font-size:24px;
    line-height:40px;
 }
+.nav-title{
+    position: absolute;
+    bottom:3px;
+    left:6px;
+    right:6px;
+    font-size:13px;
+    line-height:35px;
+    text-transform: uppercase;
+    color: $subtleColor;
+    text-align: center;
+    padding: 0 35px;
+    background: url('../img/pym.png') center left no-repeat;
+    background-size: contain;
+    & strong{
+        color: $mainColor;
+        font-weight: 300;
+    }
+}
 header.open nav:after{   content:'';}
+header.open .nav-title{display: none;}
 #main-nav{
    margin:0 auto;
    position: relative;
@@ -210,14 +230,14 @@ header.open nav:after{   content:'';}
    font-size:0;
    z-index: 2;
     border-radius: 50%;
-   background: rgba(255,255,255, 0.6) url('../img/pym.png') 50% no-repeat;
+   background: #fff url('../img/pym.png') 50% no-repeat;
    background-size: 100px auto;
    width: 120px;
    height: 120px;
    left: 50%;
    top: 50%;
    transform: translate3d(-50%,-38%,0);
-   box-shadow: 0px 22px 15px -18px #779241, 23px -22px 15px -28px #779241;
+   box-shadow: 0px 22px 15px -18px #444, 23px -22px 15px -28px #444;
    }
 .hero h1 a{
    display:block;
@@ -343,6 +363,7 @@ height: 180px !important;
                //background: lighten($mainColor, 45%);
                text-align: left;
                line-height: 1.3;
+               letter-spacing: -0.02em;
             }
             .date{
                display: block;
@@ -556,6 +577,10 @@ height: 180px !important;
 input:checked ~ .closet-content .gmap{
   display:block;
 }
+input:checked ~ .closet-label .basicBtn{
+  background: $mainColor;
+  color: $bg;
+}
 #map{
     height: 150px;
     margin:0;
@@ -635,4 +660,16 @@ height: 25px;
 background: #fff;
 box-shadow: 0px 6px 10px -5px#000;
 z-index: 1;
+}
+.copyright{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    text-align: center;
+    background: #000;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    margin-bottom: 0;
+    padding: 8px;
 }

@@ -46,20 +46,10 @@ app.common = {
 			$social.spin(false);
          console.log('Error retrieving twitter stream');
       });
-   },
-   fancyboxConfig:{
-      helpers : {
-         overlay : {
-            css : {
-               'background' : 'rgba(255, 255, 255, 0.85)'
-            }
-         }
-      }
    }
 }
 
 // Common helpers -------------------------------------------------------------
-var fbPostsGraph = 'https://graph.facebook.com/letlovin/posts?access_token=390253567719306%7C-MSuVYmEpw5bLY-bsmopJd4ISS8&limit=3&callback=?';
 var twitterStream = 'http://gianlucabuoncompagni.net/twitter/sample.php?callback=?';
 function urlHyperlinks(str){
 	//return str.replace(/\b((http|https):\/\/\S+)/g, '<a href="$1" target="_blank">$1</a>');
