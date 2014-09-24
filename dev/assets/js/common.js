@@ -52,7 +52,13 @@ app.common = {
        for(var i=0, l = grids.length; i<=l;  i++){
            new CBPGridGallery( document.getElementById( 'masonry-grid-gallery-'+grids[i]));
        }
-   }
+   },
+   toggleCloset: function(trigger){
+    $('.main-wrap').on(trigger, '.toggle-label', function(e){
+      e.preventDefault();
+      $(this).closest('.toggle').toggleClass('open');
+    });
+  }
 }
 
 // Common helpers -------------------------------------------------------------

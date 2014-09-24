@@ -5723,7 +5723,13 @@ app.common = {
        for(var i=0, l = grids.length; i<=l;  i++){
            new CBPGridGallery( document.getElementById( 'masonry-grid-gallery-'+grids[i]));
        }
-   }
+   },
+   toggleCloset: function(trigger){
+    $('.main-wrap').on(trigger, '.toggle-label', function(e){
+      e.preventDefault();
+      $(this).closest('.toggle').toggleClass('open');
+    });
+  }
 }
 
 // Common helpers -------------------------------------------------------------
@@ -5860,13 +5866,13 @@ app.desktop ={
 }
 
 $(function(){
-   app.common.initMap(15);
+   app.common.initMap(16);
+   app.common.toggleCloset('click');
    app.desktop.initAnimations(anims);
    app.desktop.initNav();
    app.desktop.setScrollSpy();
    app.desktop.doParallax();
    new WOW().init();
-   new CBPGridGallery( document.getElementById( 'masonry-grid-gallery' ) );
 });
 
 // waypoints animations ----------------------------------------------------------------

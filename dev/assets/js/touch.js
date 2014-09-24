@@ -58,6 +58,7 @@ var sliderz ={
    onload: ['cover', 'graphic', 'editing', 'adv']
 }
 $(function(){
+	app.common.toggleCloset('tap');
 	// main menu & Closets------------------------------
 	$('.main-wrap')
 	.on('tap', 'header', function(){
@@ -69,10 +70,6 @@ $(function(){
 		$('html, body').animate({
 			scrollTop: $(el).offset().top-50
 		}, 600);
-	})
-	.on('tap', '.toggle-label', function(e){
-		e.preventDefault();
-		$(this).closest('.toggle').toggleClass('open');
 	});
 
 	// sliders

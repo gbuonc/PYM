@@ -4,7 +4,7 @@
 .no-tablet{display: none;}
 .no-mobile{display: block;}
 .padded{
-    max-width: 680px;
+    max-width: 740px;
     margin: 0 auto;
 }
 /* common */
@@ -38,7 +38,11 @@ header.open {@include translateY(-80px);}
 .pyms > img,
 .pyms > span img {float: left; width: 10%; height:auto; margin: 0;}
 .about h2 {font-size: 24px; margin-top: 0; margin-bottom: 1em;}
-.small.small{font-size: 22px;}
+.small.small {
+font-size: 24px;
+line-height: 1.4;
+margin: 10px 30px;
+}
 
 /* twitter */
 #social-content {
@@ -76,25 +80,17 @@ header.open {@include translateY(-80px);}
 .clientGrid li{width: 23.40426%;  margin-bottom: 15px;}
 
 /* map */
-.swiper-container-map{width: 100%;}
-.swiper-container-map,
-.swiper-wrapper,
-.contacts-map-wrapper,
-.contact-details,
-#map-content .swiper-slide,
-#map {height: 450px !important;    font-size: 20px;    }
-#map{left:0; right:0; position: absolute; z-index: 2;}
-.slide-contacts{width: 40%;}
-.slide-map:before{content:''; display: none;}
-.see-map {bottom: 15px; right: 15px; font-size: 18px; white-space: nowrap;}
-.legals p{font-size: 16px;}
-
+#map{height: 450px;}
+.closet.open .closet-content{
+    height: 450px;
+}
 
 #contacts{
-    overflow: visible;
-  font-size: 18px;
+  overflow: visible;
+  font-size: 24px;
 }
-/* open map */
-.open .closet-content {
-height: 450px;
+.social-iconz{
+  font-size: 18px;
+  line-height: 40px;
+  i{font-size: 30px;}
 }
