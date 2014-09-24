@@ -195,30 +195,26 @@ i{@include animate(250ms);}
 }
 .accordion{
     margin:10px;
-	& input{display: none;}
-	input ~ .accordion-content{
+	.accordion-content{
 		display: none;
 		animation: fadeSubMenu 150ms ease-out;
 	}
-	input:checked ~ .accordion-content{
+	&.open .accordion-content{
 		display: block;
 	}
-	input:checked ~ .accordion-label > .icon-cancel:before{
+	&.open .accordion-label > .icon-cancel:before{
         transform: rotate(0);
     }
 }
 
 // cassetto ---------------------
 .closet{
-    & input{display: none;}
     .closet-content{
         @include animate(400ms);
-    }
-    input ~ .closet-content{
         height: 0px;
         overflow: hidden;
     }
-    input:checked ~ .closet-content{
+    &.open .closet-content{
         height: 150px;
     }
 }

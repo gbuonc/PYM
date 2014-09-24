@@ -4,7 +4,7 @@ app.common = {
       attributionControl: false,
       scrollWheelZoom: false,
       zoomControl:true
-  }).setView([45.4640, 9.1796], zoom);
+    }).setView([45.4640, 9.1796], zoom);
       L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
       attribution: '&copy;2014 Esri & Stamen, Data from OSM and Natural Earth',
       subdomains: '0123',
@@ -24,9 +24,9 @@ app.common = {
    getTwitter: function(callback){
 		var $social = $('#social');
 		$social.spin();
-      var getTweets = $.getJSON(twitterStream);
-      $.when(getTweets)
-      .then(function(twitterResponse){
+        var getTweets = $.getJSON(twitterStream);
+        $.when(getTweets)
+        .then(function(twitterResponse){
          // success
          var TWR = twitterResponse[1];
          var socialArray = [];
@@ -41,11 +41,17 @@ app.common = {
          }
          // callback function
          if(callback) callback(socialArray, $social);
-      }, function(){
+        }, function(){
          // error
 			$social.spin(false);
          console.log('Error retrieving twitter stream');
-      });
+        });
+   },
+   initGrids: function(){
+       var grids = ['adv', 'copertine', 'grafica', 'editing'];
+       for(var i=0, l = grids.length; i<=l;  i++){
+           new CBPGridGallery( document.getElementById( 'masonry-grid-gallery-'+grids[i]));
+       }
    }
 }
 

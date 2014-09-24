@@ -1,8 +1,9 @@
 app.windowHeight = $.waypoints('viewportHeight');
 app.desktop ={
     init: function(){
-       app.common.getTwitter(app.desktop.initTwitter);
         $('#home').height(app.windowHeight);
+        app.common.getTwitter(app.desktop.initTwitter);
+        app.common.initGrids();
     },
     initAnimations: function(anims){
        var $body = $('body');

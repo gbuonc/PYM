@@ -602,10 +602,10 @@ position: relative;
     font-weight: bold;
     box-shadow: 1px 1px 30px #999;
 }
-input:checked ~ .closet-content .gmap{
+.closet.open .closet-content .gmap{
   display:block;
 }
-input:checked ~ .closet-label .basicBtn{
+.closet.open .closet-label{
   background: $mainColor;
   color: $bg;
 }

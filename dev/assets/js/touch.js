@@ -1,8 +1,5 @@
 MBP.hideUrlBarOnLoad();
 MBP.scaleFix();
-// window.addEventListener('load', function() {
-// 	FastClick.attach(document.body);
-// }, false);
 app.touch ={
 init: function(){
 	app.common.getTwitter(app.touch.initSocialSlider);
@@ -60,18 +57,24 @@ var sliderz ={
    slide:{},
    onload: ['cover', 'graphic', 'editing', 'adv']
 }
-
 $(function(){
-	// main menu -----------------------------------------
-	$('.main-wrap').on('click', 'header', function(){
+	// main menu & Closets------------------------------
+	$('.main-wrap')
+	.on('tap', 'header', function(){
 		$(this).toggleClass('open');
-		}).on('click', '#main-nav a', function(e){
+	})
+	.on('tap', '#main-nav a', function(e){
 		e.preventDefault();
 		var el = $(this).attr('href');
 		$('html, body').animate({
 			scrollTop: $(el).offset().top-50
 		}, 600);
+	})
+	.on('tap', '.toggle-label', function(e){
+		e.preventDefault();
+		$(this).closest('.toggle').toggleClass('open');
 	});
+
 	// sliders
 	for(var i =0, l = sliderz.onload.length; i<l; i++){
 		app.touch.initSliders(sliderz.onload[i])

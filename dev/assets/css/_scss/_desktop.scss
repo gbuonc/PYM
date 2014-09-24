@@ -2,7 +2,8 @@
 .tablet-only{display: none!important;}
 .desktopOnly{display: block !important;}
 .no-desktop{display: none!important;}
-
+.no-mobile{display: block!important;}
+.no-tablet{display: block!important;}
 @-webkit-keyframes rotating {
     from{-webkit-transform: rotate(0deg);
     }

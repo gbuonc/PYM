@@ -1,7 +1,12 @@
 .mobileOnly{display: none;}
 .tabletOnly{display: block;}
 .desktopOnly{display: none;}
-
+.no-tablet{display: none;}
+.no-mobile{display: block;}
+.padded{
+    max-width: 680px;
+    margin: 0 auto;
+}
 /* common */
 .main-wrap{min-width:640px; overflow: hidden;}
 .content-wrap{ min-width: 640px;  max-width: 800px; margin:0 auto; overflow:visible;}
@@ -19,6 +24,7 @@ header.open {@include translateY(-80px);}
 #main-nav li {font-size: 24px;}
 #main-nav li a img {width: auto; height: 100px;}
 #main-nav li a span {padding: 10px;}
+.nav-title {font-size: 18px; line-height: 50px;}
 
 /* hero */
 .hero {height: 450px;}
@@ -35,6 +41,10 @@ header.open {@include translateY(-80px);}
 .small.small{font-size: 22px;}
 
 /* twitter */
+#social-content {
+    height: 200px!important;
+    &:after{    bottom:0;}
+    &:before{   top: 0; }}
 .swiper-container-social {width: 160%; margin-left: -30%;}
 .swiper-container-social .swiper-slide p { height: 220px; padding: 30px; font-size: 24px;}
 .pager {margin-top: 10px;}
@@ -85,6 +95,6 @@ header.open {@include translateY(-80px);}
   font-size: 18px;
 }
 /* open map */
-.closet input:checked~.closet-content {
+.open .closet-content {
 height: 450px;
 }

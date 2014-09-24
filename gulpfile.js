@@ -124,7 +124,7 @@ gulp.task('serve', function () {
   gulp.watch(['dev/**/*.html'], ['fileinclude', 'temp'],reload);
   gulp.watch(['dev/assets/css/**/*.{css,scss}'], ['scss'], reload);
   gulp.watch(['dev/assets/img{,/**}'], ['img'], reload);
-  gulp.watch(['dev/assets/js/**/*.js'], ['scripts-libs', 'scripts-mobile', 'scripts-desktop', 'head'], reload);
+  gulp.watch(['dev/assets/js/**/*.js'], ['scripts-libs', 'scripts-mobile', 'scripts-tablet', 'scripts-desktop', 'head'], reload);
   gulp.watch(['dev/assets/icon-fonts{,/**}'], ['fonts'], reload);
 });
 gulp.task('clean', function () {
