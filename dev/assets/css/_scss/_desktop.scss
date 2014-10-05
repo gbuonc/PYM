@@ -13,6 +13,23 @@
 .rotating {
    animation: rotating 2s linear infinite;
 }
+.alternate{
+background:$lightBg;
+& .section-title{
+	background:$lightBg;
+}
+}
+.content{
+	max-width:960px;	
+	margin:0 auto;
+	padding:25px 0;
+	text-align:left;
+}
+.left-column,
+.right-column{
+	width: grid-span(6);
+}
+
 
 /* common */
 body.init .main-wrap {
@@ -20,8 +37,9 @@ body.init .main-wrap {
    top:0;
    width:100%;
    overflow: hidden;
+	font-size:14px;
 }
-section{padding-top: 50px;}
+section{padding: 25px 0;}
 /* header */
 header{
    top:0;
@@ -141,10 +159,41 @@ nav #main-nav li.logoPym a:hover span{
         margin-left: -400px;
     }
 }
-/* about */
-.about h1{
-   margin-top: 50px;
+
+.title{
+	padding:0;
+	margin:0;
+	text-align:left;
 }
+.section-title{
+	font-size:24px;
+	font-weight:300;
+	text-align:left;
+	padding-right:20px;
+}
+/* about */
+section .content{
+	h1{
+   	margin: 0 0 30px;
+		padding:0;
+		text-align:left;
+	}
+	p{
+		padding:0;
+		font-size:20px;
+	}
+	h2{
+	font-size: 22px;
+	margin-bottom:5px;
+	}
+	.small.small {
+		font-size: 16px;
+		line-height: 1.4;
+		margin: 10px 0;
+		background:none;
+	}
+}
+
 
 /* MAP */
 /* open map */

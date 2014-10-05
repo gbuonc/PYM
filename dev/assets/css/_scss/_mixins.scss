@@ -15,8 +15,6 @@
 	1%{	opacity:0; display:block; transform: translate3d(0, -5px, 0);}
 	100%{	opacity:1; display:block; transform: translate3d(0, 0, 0);}
 }
-
-
 @mixin elasticAnimation($duration, $delay:0){
 	transition-property:all;
 	transition-duration: $duration;
@@ -32,5 +30,46 @@
 	}
 	.cf:after {
 	clear: both;
+	}
+}
+
+// ungrid ----------------
+.ungrid-row { width: 100%; display: table; table-layout: fixed; }
+.ungrid-col { display: table-cell; vertical-align: top;}
+%ungrid-row { width: 100%; display: table; table-layout: fixed; }
+%ungrid-col { display: table-cell; vertical-align: top;}
+
+// jGrid -----------------
+$columns: 12 !default;
+$column-width: 4em !default;
+$gutter-width: 1.8em !default;
+
+%grid {
+  text-align: justify !important;
+  text-justify: distribute-all-lines;
+  font-size: 0 !important;
+  & > * {
+    text-align: left;
+    font-size: medium;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+%grid-cell {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+}
+@function grid-span($cols, $total: $columns) {
+  @return ($column-width * $cols  + $gutter-width * ($cols  - 1)) /
+          ($column-width * $total + $gutter-width * ($total - 1)) * 100%;
+}
+.jgrid{
+	@extend %grid;
+	& > *{
+		@extend %grid-cell;
 	}
 }

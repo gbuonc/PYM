@@ -11,10 +11,10 @@
 .main-wrap{min-width:640px; overflow: hidden;}
 .content-wrap{ min-width: 640px;  max-width: 800px; margin:0 auto; overflow:visible;}
 
-section {margin-bottom: 2em; padding-top: 40px;}
+section {margin-bottom: 0; padding-top: 40px;}
 .title{ margin:0 2em 1em;}
-.section-title{font-size: 50px;}
-.section-intro {font-size: 32px; padding: 0 2em;}
+.section-title{font-size: 32px;}
+.section-intro {font-size: 20px; padding: 0 2em;}
 
 /* header */
 nav{padding:55px 0;}
@@ -32,8 +32,8 @@ header.open {@include translateY(-80px);}
 .hero h1 {background-size: 160px auto; width: 200px; height: 200px;}
 
 /* about */
-.about h1 {font-size: 54px;}
-.about p {margin-bottom: 1em; font-size: 32px; padding: 0 20px;}
+.about h1 {font-size: 34px;}
+.about p {margin-bottom: 1em; font-size: 22px; padding: 0 20px;}
 .pyms{   margin: 0 1em;   position: relative;}
 .pyms > img,
 .pyms > span img {float: left; width: 10%; height:auto; margin: 0;}

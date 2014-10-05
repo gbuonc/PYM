@@ -9,7 +9,7 @@ a{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 body{ font-size: 15px; line-height: 1.2;
 }
 p{margin:0.5em 0 1em}
-section{ margin-bottom:1em;}
+section{ margin-bottom:0;}
 .title{
    text-align: center;
    position: relative;
@@ -649,11 +649,9 @@ position: relative;
     margin-bottom: 0;
     font-size: 18px;
     h3{
-        background: $bg;
         display: inline-block;
     }
     p{
-        background: $bg;
         display: inline-block;
         padding: 3px;
         margin: 0;
