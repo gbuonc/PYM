@@ -13,22 +13,6 @@
 .rotating {
    animation: rotating 2s linear infinite;
 }
-.alternate{
-background:$lightBg;
-& .section-title{
-	background:$lightBg;
-}
-}
-.content{
-	max-width:960px;	
-	margin:0 auto;
-	padding:25px 0;
-	text-align:left;
-}
-.left-column,
-.right-column{
-	width: grid-span(6);
-}
 
 
 /* common */
@@ -118,7 +102,7 @@ nav #main-nav li.logoPym a:hover span{
    background-repeat: no-repeat;
    background-attachment: fixed;
 }
-.hero h1{position: fixed; top:50%; @include elasticAnimation(450ms); background:rgba(255, 255, 255, 1); z-index: 2;}
+.hero h1{position: fixed; top:230px; @include elasticAnimation(450ms); background:rgba(255, 255, 255, 1); z-index: 2;}
 .hero h1 a{ bottom:10px; background: transparent url('../img/pym.png') center no-repeat; background-size:contain;}
 
 /* .outLogo .hero h1{position: absolute; top: 50%; opacity: 0;}
@@ -197,6 +181,8 @@ section .content{
 
 /* MAP */
 /* open map */
+
+
 .closet{
     & input{display: none;}
     & label{display: none;}
@@ -216,3 +202,137 @@ section .content{
     font-size: 50px;
     line-height: 50px;
 }
+
+
+
+/* RESTYLE */
+.alternate{
+  background:$lightBg;
+  & .section-title{
+    background:$lightBg;
+  }
+}
+.content{
+  max-width:960px;  
+  margin:0 auto 30px;
+  padding:25px 0;
+  text-align:left;
+}
+.standalone{
+  display: block;
+  text-align: left;
+  margin: 7px 30px 0 0;
+  padding: 4px 0;
+  border-bottom: 1px solid $mainColor;
+}
+.left-column,
+.right-column{
+  width: grid-span(6);
+}
+section .content{
+  .tit1{
+    margin: 30px;
+    font-size: 50px;
+    padding:0;
+    color: #000;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  p.txt1{
+    padding:0;
+    font-size:20px;
+  }
+  .tit2{
+    margin-top: 10px;
+    font-size: 22px;
+    margin-bottom:5px;
+  }
+  p.txt2 {
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 10px 0;
+    background:none;
+  }
+}
+#map,
+.map-wrapper{height: 450px; position: relative;}
+.gmap{
+  display: block;
+}
+#contacts{
+  background:#fff;
+  font-size: 20px;
+  text-align: center;
+  h3{
+    display: block;
+    text-align: center; 
+  }
+  p{
+    display: block;
+  }
+  .icon{
+    padding: 15px 0;
+    font-size: 25px;
+  }
+}
+.clientGrid{
+  margin: 30px 0 0;
+  width: auto;
+}
+.clientGrid li{
+  width: grid-span(3);
+  background:#efefef;
+  margin-bottom: 24px;
+}
+.portfolio.jgrid .portfolio-item{
+  width: grid-span(4);
+  figure{
+    display: block;
+    margin:0 10px;
+    position: relative;
+    padding: 5px;
+    background:#fff;
+    margin-bottom: 15px;
+    img{
+      display: block;
+      width: 206px;
+      height: 260px;
+      margin: 0 auto 5px;
+    }
+  }
+}
+.portfolio-more.jgrid .portfolio-item{
+  width: grid-span(4);
+  figure{
+    display: block;
+    margin:0 10px;
+    position: relative;
+    padding: 5px;
+    background:#fff;
+    margin-bottom: 15px;
+    img{
+      display: block;
+      width: 128px;
+      height: 180px;
+      margin: 0 auto 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

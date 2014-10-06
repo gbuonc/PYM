@@ -1,7 +1,7 @@
 app.windowHeight = $.waypoints('viewportHeight');
 app.desktop ={
     init: function(){
-        $('#home').height(app.windowHeight);
+        //$('#home').height(app.windowHeight);
         app.common.getTwitter(app.desktop.initTwitter);
         app.common.initGrids();
     },
@@ -83,12 +83,6 @@ app.desktop ={
             $bgobj.css('background-position', 'center ' + yBgPosition + 'px');
          });
       });
-   },
-   initMenu : function(){
-       var spacer = $('<li class="empty"></li>');
-       var lis = $('nav').find('li');
-       var middle = Math.ceil(lis.size()/2)-1;
-       spacer.insertAfter(lis.eq(middle));
    },
    initNav : function(){
       var $navLinks = $('header').find('a');
