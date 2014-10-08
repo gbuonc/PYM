@@ -1,11 +1,12 @@
 app.windowHeight = $.waypoints('viewportHeight');
 app.desktop ={
     init: function(){
+		 var s = skrollr.init();
         //$('#home').height(app.windowHeight);
         app.common.getTwitter(app.desktop.initTwitter);
-        app.common.initGrids();
+        //app.common.initGrids();
     },
-    initAnimations: function(anims){
+    /* initAnimations: function(anims){
        var $body = $('body');
        var h =  $body.height();
        var l = anims.length;
@@ -18,7 +19,7 @@ app.desktop ={
               }, {offset: '-'+o+'px'});
           })(i);
        }
-    },
+    }, */
     setScrollSpy :function(){
       // http://jsfiddle.net/mekwall/up4nu/
       var lastId,
@@ -64,7 +65,7 @@ app.desktop ={
          }
       });
    },
-   doParallax : function(){
+   /* doParallax : function(){
       var $window = $(window);
       var windowHeight = $window.height();
       var $tile= $('.parallax');
@@ -83,7 +84,7 @@ app.desktop ={
             $bgobj.css('background-position', 'center ' + yBgPosition + 'px');
          });
       });
-   },
+   }, */
    initNav : function(){
       var $navLinks = $('header').find('a');
       $navLinks.on('click', function(){
@@ -111,11 +112,11 @@ app.desktop ={
 $(function(){
    app.common.initMap(16);
    app.common.toggleCloset('click');
-   app.desktop.initAnimations(anims);
+   //app.desktop.initAnimations(anims);
    app.desktop.initNav();
    app.desktop.setScrollSpy();
-   app.desktop.doParallax();
-   new WOW().init();
+   // app.desktop.doParallax();
+   // new WOW().init();
 });
 
 // waypoints animations ----------------------------------------------------------------

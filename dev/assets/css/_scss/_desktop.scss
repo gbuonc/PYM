@@ -212,6 +212,45 @@ section .content{
     background:$lightBg;
   }
 }
+.parallax{
+	height:200px;
+	background-position:center center;
+	background-size:cover;
+	background-attachment: fixed;
+	position:relative;
+	overflow:hidden !important;
+   &:after{
+       content:'';
+       position: absolute;
+       bottom:0;
+       left:0;
+       right:0;
+       height: 1px;
+		 background: #fff;
+       box-shadow: -6px 0px 6px #000;
+       z-index: 1;
+   }
+   &:before{
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       height: 1px;
+       background: #fff;
+       box-shadow: 6px 0px 6px #000;
+       z-index: 1;
+   }
+	.section-title{
+	font-size:50px;
+	line-height:200px;
+	text-align:center;
+	background:none;
+	color:#fff;
+	text-transform:uppercase;
+	text-shadow: 2px 2px 25px #000;
+	}
+}
 .content{
   max-width:960px;  
   margin:0 auto 30px;
@@ -221,13 +260,14 @@ section .content{
 .standalone{
   display: block;
   text-align: left;
-  margin: 7px 30px 0 0;
+  margin: 7px 7px 0 0;
   padding: 4px 0;
-  border-bottom: 1px solid $mainColor;
 }
-.left-column,
 .right-column{
   width: grid-span(6);
+}
+.left-column{
+  width: grid-span(5);
 }
 section .content{
   .tit1{
@@ -242,6 +282,7 @@ section .content{
   p.txt1{
     padding:0;
     font-size:20px;
+	 margin:0 0 30px;
   }
   .tit2{
     margin-top: 10px;
@@ -255,22 +296,19 @@ section .content{
     background:none;
   }
 }
+.hero.parallax{height:450px;}
+.editorial{background-image: url('../img/test/_a.jpg');}
+.adv{background-image: url('../img/test/_e.jpg');}
+.clienti{background-image: url('../img/test/_c.jpg');}
+.contatti{background-image: url('../img/test/_f.jpg');}
+
 #map,
 .map-wrapper{height: 450px; position: relative;}
 .gmap{
   display: block;
 }
-#contacts{
-  background:#fff;
-  font-size: 20px;
-  text-align: center;
-  h3{
-    display: block;
-    text-align: center; 
-  }
-  p{
-    display: block;
-  }
+.content-contatti{
+
   .icon{
     padding: 15px 0;
     font-size: 25px;
@@ -286,7 +324,7 @@ section .content{
   margin-bottom: 24px;
 }
 .portfolio.jgrid .portfolio-item{
-  width: grid-span(4);
+  width: grid-span(3);
   figure{
     display: block;
     margin:0 10px;
@@ -296,14 +334,14 @@ section .content{
     margin-bottom: 15px;
     img{
       display: block;
-      width: 206px;
-      height: 260px;
+      width: 100%;
+      height: auto;
       margin: 0 auto 5px;
     }
   }
 }
-.portfolio-more.jgrid .portfolio-item{
-  width: grid-span(4);
+.portfolio.jgrid .portfolio-item{
+  width: grid-span(3);
   figure{
     display: block;
     margin:0 10px;
@@ -313,14 +351,70 @@ section .content{
     margin-bottom: 15px;
     img{
       display: block;
-      width: 128px;
-      height: 180px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 5px;
+    }
+  }
+}
+.portfolio.jgrid .portfolio-item.double{
+  width: grid-span(6);
+}
+.portfolio.jgrid .portfolio-item.squared{
+  width: grid-span(4.5);
+}
+.portfolio-more.jgrid .portfolio-item{
+  width: grid-span(1.5);
+  figure{
+    display: block;
+    margin:0 10px;
+    position: relative;
+    padding: 5px;
+    background:#fff;
+    margin-bottom: 15px;
+    img{
+      display: block;
+      width: 100%;
+      height: auto;
       margin: 0 auto 0;
     }
   }
 }
-
-
+.contacts{
+padding:0;
+overflow:hidden;
+p{margin:0;}
+}
+.map-wrapper .section-title{
+position:absolute;
+top:-50px;
+left:0;
+width:100%;
+}
+.content-contatti{
+	position:absolute;
+	width:auto;
+	height:auto;
+	padding:50px 50px 50px 150px;
+	background: rgba(255,255,255,0.9);
+	top:50%;
+	left:0px;
+	transform: translateY(-50%);
+}
+footer{
+position:relative;
+overflow:hidden;
+}
+footer:before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+right:0;
+height:8px;
+background:#fff;
+box-shadow:0 0 85px #fff,0 0 15px #fff,0 0 75px #fff,0 0 65px #fff,0 0 55px #fff,0 0 45px #fff,0 0 35px #fff,0 0 25px #fff,0 0 15px #fff,0 0 5px #fff,0 0 5px #fff,0 0 5px #fff,0 0 85px #fff,0 0 15px #fff,0 0 75px #fff,0 0 65px #fff,0 0 55px #fff,0 0 45px #fff,0 0 35px #fff,0 0 25px #fff,0 0 15px #fff,0 0 5px #fff,0 0 5px #fff,0 0 5px #fff;
+}
 
 
 

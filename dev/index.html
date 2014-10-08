@@ -3,118 +3,1189 @@ __include('partials/head.html')
         <div class="main-wrap">
             __include('partials/header.html')
             <!-- ........................................................... -->
-            <section class="hero parallax" id="home">
-                <div class="bgImage" id="bgImage">
+            <section class="hero parallax" id="home" data-400-bottom="background-position:50% 0%;" data-top-bottom="background-position:50% 90%;">
+                <div class="bgImage" id="bgImage" >
                    <div class="shadow" id="shadow"></div>
                 </div>
                 <div class="welcome" id="welcome"></div>
                 <h1 id="logo" class="logo"><a href="#home">Studio Pym</a></h1>
             </section>
             <!-- ........................................................... -->
-            <section class="about alternate" id="about">
-					<div class="content jgrid">
-						<h1 class="wow">La velocità è solo l'inizio</h1>
-						<div class="left-column">
-	                           <p class="wow">Siamo uno studio editoriale, un'agenzia di comunicazione, una squadra di redattori e copywriter,grafici e impaginatori, traduttori, ghostwriter e correttori.</p>
-							<h2>Mettetevi nelle nostre mani.<br>Ne abbiamo tante.</h2>
-						</div>
-						<div class="right-column">
-							<p class="small">Studio Pym è uno studio editoriale, di grafica e comunicazione nato nell'aprile del 2013 da un gruppo di affermati professionisti con alle spalle anni di esperienza. Offre la curatela di libri a pacchetto completo - copertina, progetto grafico e illustrazioni impaginazione e programmazione ebook, editing e revisione, ghostwriting, traduzione, rapporto con autori, traduttori o curatori, redazione, correzione bozze, realizzazione indici - o eventualmente la cura di singole fasi della lavorazione. Si occupa inoltre della creazione di campagne stampa, web, tv e radio, e della progettazione di materiali promozionali, copertinari, brochure e booktrailer. La redazione si appoggia a una rete di esperti e collaudati collaboratori sia in ambito redazionale che grafico.</p>
-					          </div>
-					      </div>
-						</div>
-                  
-					</div>
-					<!-- ><div class="content">
-                  <h1 class="wow fadeInUp">La velocità è solo l'inizio</h1>
-                  <p class="wow fadeInUp">Siamo uno studio editoriale, un'agenzia di comunicazione, una squadra di redattori e copywriter,
-                      grafici e impaginatori, traduttori, ghostwriter e correttori.</p>
-					</div> -->
+            <section class="about" id="about">
+                <div class="content jgrid">
+                    <h1 class="tit1">La velocità è solo l'inizio</h1>
+                    <div class="left-column">
+                        <h2 class="tit2">Mettetevi nelle nostre mani.<br>Ne abbiamo tante.</h2>
+                        <p class="txt1">Siamo uno studio editoriale, un'agenzia di comunicazione, una squadra di redattori e copywriter,grafici e impaginatori, traduttori, ghostwriter e correttori.</p>
+                    </div>
+                    <div class="right-column">
+                        <p class="txt2">Studio Pym è uno studio editoriale, di grafica e comunicazione nato nell'aprile del 2013 da un gruppo di affermati professionisti con alle spalle anni di esperienza. Offre la curatela di libri a pacchetto completo - copertina, progetto grafico e illustrazioni impaginazione e programmazione ebook, editing e revisione, ghostwriting, traduzione, rapporto con autori, traduttori o curatori, redazione, correzione bozze, realizzazione indici - o eventualmente la cura di singole fasi della lavorazione. Si occupa inoltre della creazione di campagne stampa, web, tv e radio, e della progettazione di materiali promozionali, copertinari, brochure e booktrailer. La redazione si appoggia a una rete di esperti e collaudati collaboratori sia in ambito redazionale che grafico.</p>
+                    </div>
+                </div>
             </section>
-
-             <section class="social" id="social">
+            <!-- ........................................................... -->
+            <section class="social" id="social">
                 <div class="swiper-container-social">
                    <div class="swiper-wrapper" id="social-content">
                    </div>
                 </div>
                 <div class="pager"></div>
-             </section>
+            </section>
             <!-- ........................................................... -->
             __include('partials/pyms.html')
             <!-- ........................................................... -->
-            <section id="editorial" class="alternate">
-					<div class="content">
-                <div class="title">
-                    <h2 class="section-title wow zoomIn">Libri</h2>
-                </div>
-					 <div class="jgrid">
-					  <div class="left-column">
-	                 <p>Qualunque sia il libro, qualunque sia il tipo di lavoro&#8230;<br> 
-							  Potete contare su di noi:<br>
-	                     <strong>ghostwriting</strong>, <strong>copywriting</strong>, <strong>traduzione</strong>, <strong>editing</strong>,
-	                     <strong>testi di copertina</strong>, <strong>correzione bozze</strong>, <strong>revisione</strong>, <strong>progetto
-	                      grafico</strong>, <strong>impaginazione</strong>, <strong>indici</strong>.</p>
-						 </div>
- 					  <div class="right-column">
-						  <p class="small">
-							  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							 </p>	
- 						 </div>
-					 </div>
-                
-                <div class="cover-portfolio">
-                    <div class="standalone">copertine</div>
-                    __include('partials/mobile_copertine.html')
-                    __include('partials/copertine.html')
-                </div>
-                <!-- ............. -->
-                <div class="editing-portfolio">
-                    <div class="standalone">editing e redazione</div>
-                    __include('partials/mobile_editing.html')
-                    __include('partials/editing.html')
-                </div>
-                <!-- ............. -->
-                <div class="graphic-portfolio">
-                    <div class="standalone">progetto grafico interni</div>
-                    __include('partials/mobile_progettografico.html')
-                    __include('partials/progettografico.html')
-                </div>
-				 </div>
-            </section>
-            <!-- ........................................................... -->
-            <section id="adv" class="">
-				<div class="content">
-                    <div class="title">
-                        <h2 class="section-title wow zoomIn">Adv &amp;<br>Comunicazione</h2>
-                    </div>
-                    <p class="section-intro">Avere una bella idea è solo l'inizio.<br />
-                        Da quel momento bisogna riuscire a dare una forma, un colore, quel "qualcosa" che gli altri non hanno.<br />
-                        È in quel momento che tocca a noi.</p>
-                    <div class="adv-portfolio">
-                        __include('partials/mobile_adv.html')
-                        __include('partials/adv.html')
-                    </div>
+            
+
+				<div class="parallax editorial" id="editorial" data-400-bottom="background-position:50% 20%;" data-top-bottom="background-position:50% 80%;">
+					<h2 class="section-title" data-400-bottom="opacity:0" data-center="opacity:0.8" >Libri</h2>
 				</div>
+            <section  class="alternate">
+                <div class="content">
+                    <div class="jgrid">
+                        <div class="left-column">
+                            <p class="txt1">Qualunque sia il libro, qualunque sia il tipo di lavoro&#8230;<br> 
+                                Potete contare su di noi:<br>
+                                <em>ghostwriting</em>, <em>copywriting</em>, <em>traduzione</em>, <em>editing</em>,
+                                <em>testi di copertina</em>, <em>correzione bozze</em>, <em>revisione</em>, <em>progetto
+                                grafico</em>, <em>impaginazione</em>, <em>indici</em>.</p>
+                        </div>
+                        <div class="right-column">
+                            <p class="txt2">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>   
+                        </div>
+                    </div>
+                    <div class="cover-portfolio">
+                        <div class="jgrid">
+                            <div class="left-column">
+                                <div class="standalone">copertine</div>
+                                <p class="txt1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                            </div>
+                           
+                        </div>
+                        <div class="portfolio jgrid">
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item double">
+                                <figure>
+                                    <img src="http://placehold.it/150x92" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item squared">
+                                <figure>
+                                    <img src="http://placehold.it/150x126" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item squared">
+                                <figure>
+                                    <img src="http://placehold.it/150x126" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item" style="clear:both"></div>
+                            <div class="portfolio-item"></div>
+									 <div class="portfolio-item"></div>
+                        </div>
+								
+						      <div class="accordion toggle">
+						          <div class="accordion-label toggle-label"><i class="icon-cancel"></i></div>
+						          <div class="accordion-content">
+		
+		                        	<div class="portfolio portfolio-more jgrid">
+	                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                        </div>
+						          </div>
+						      </div>
+                    </div>
+                    <!-- ............. -->
+                    <div class="editing-portfolio">
+                        <div class="jgrid">
+                            <div class="left-column">
+                                <div class="standalone">editing e redazione</div>
+                                <p class="txt1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                            </div>
+                            <div class="right-column">
+                                <p class="txt2">
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>   
+                            </div>
+                        </div>
+                        <div class="portfolio jgrid">
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item"></div>
+                            <div class="portfolio-item"></div>
+                        </div>
+						      <div class="accordion toggle">
+						          <div class="accordion-label toggle-label"><i class="icon-cancel"></i></div>
+						          <div class="accordion-content">
+		
+		                        	<div class="portfolio portfolio-more jgrid">
+	                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                        </div>
+						          </div>
+						      </div>
+                    </div>
+                    <!-- ............. -->
+                    <div class="graphic-portfolio">
+                        <div class="jgrid">
+                            <div class="left-column">
+                                <div class="standalone">progetto grafico interni</div>
+                                <p class="txt1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                            </div>
+                            <div class="right-column">
+                                <p class="txt2">
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>   
+                            </div>
+                        </div>
+                        <div class="portfolio jgrid">
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item"></div>
+                            <div class="portfolio-item"></div>
+                        </div>
+						      <div class="accordion toggle">
+						          <div class="accordion-label toggle-label"><i class="icon-cancel"></i></div>
+						          <div class="accordion-content">
+		
+		                        	<div class="portfolio portfolio-more jgrid">
+	                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                        </div>
+						          </div>
+						      </div>
+                    </div>
+                    <!-- ............. -->
+                    <div class="traduzioni">
+                        <div class="jgrid">
+                            <div class="left-column">
+                                <div class="standalone">traduzioni</div>
+                                <p class="txt1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                            </div>
+                            <div class="right-column">
+                                <p class="txt2">
+                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>   
+                            </div>
+                        </div>
+                        <div class="portfolio jgrid">
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item"></div>
+                            <div class="portfolio-item"></div>
+                        </div>
+						      <div class="accordion toggle">
+						          <div class="accordion-label toggle-label"><i class="icon-cancel"></i></div>
+						          <div class="accordion-content">
+		
+		                        	<div class="portfolio portfolio-more jgrid">
+	                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                        </div>
+						          </div>
+						      </div>
+                    </div>
+                </div>
             </section>
             <!-- ........................................................... -->
-            <section id="clients" class="alternate">
-					<div class="content">
-                <div class="title">
-                    <h2 class="section-title wow zoomIn">Clienti</h2>
+				<div class="parallax adv"  id="adv" data-400-bottom="background-position:50% 20%;" data-top-bottom="background-position:50% 80%;">
+					<h2 class="section-title" data-400-bottom="opacity:0" data-center="opacity:0.8">Adv &amp;Comunicazione</h2>
+				</div>
+            <section class="">
+                <div class="content">
+                    <div class="jgrid">
+                        <div class="left-column">
+                            <p class="txt1">Avere una bella idea è solo l'inizio.<br />
+                            Da quel momento bisogna riuscire a dare una forma, un colore, quel "qualcosa" che gli altri non hanno.<br />
+                            È in quel momento che tocca a noi.</p>
+                        </div>
+                        <div class="right-column">
+                            <p class="txt2">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>   
+                        </div>
+                    </div>
+                    <div class="adv-portfolio">
+                        <div class="portfolio jgrid">
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item">
+                                <figure>
+                                    <img src="http://placehold.it/150x200" alt="" />
+                                    <figcaption>
+                                        Nome Autore<br />
+                                        <strong>Titolo del Volume</strong><br />
+                                        <em>Casa Editrice</em>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="portfolio-item"></div>
+                            <div class="portfolio-item"></div>
+                        </div>
+						      <div class="accordion toggle">
+						          <div class="accordion-label toggle-label"><i class="icon-cancel"></i></div>
+						          <div class="accordion-content">
+		
+		                        	<div class="portfolio portfolio-more jgrid">
+	                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item">
+		                                <figure>
+		                                    <img src="http://placehold.it/150x200" alt="" />
+		                                </figure>
+		                            </div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                            <div class="portfolio-item"></div>
+		                        </div>
+						          </div>
+						      </div>
+                    </div>
                 </div>
-                <p class="section-intro">Lo studio pym ha solo un anno, ma  si è fatto sentire.<br />
-                    Ecco chi l'ha ascoltato!</p>
-                __include('partials/clients.html')
-				 </div>
             </section>
             <!-- ........................................................... -->
-            <section id="contacts" class="">
-					<div class="content">
-                <div class="title">
-                    <h2 class="section-title wow zoomIn">Contatti</h2>
+				<div class="parallax clienti" id="clients" data-400-bottom="background-position:50% 20%;" data-top-bottom="background-position:50% 80%;">
+					<h2 class="section-title" data-400-bottom="opacity:0" data-center="opacity:0.8">Clienti</h2>
+				</div>
+            <section class="alternate">
+                <div class="content">
+                    <div class="jgrid">
+                        <div class="left-column">
+                            <p class="txt1">Lo studio pym ha solo un anno, ma  si è fatto sentire.<br />
+                            Ecco chi l'ha ascoltato!</p>
+                        </div>
+                        <div class="right-column">
+                            <p class="txt2">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>   
+                        </div>
+                    </div>
+                    <ul class="jgrid clientGrid">
+                        <li><img class="wow fadeIn" data-wow-delay="100ms" src="http://placehold.it/200x100" /></li>
+                        <li><img class="wow fadeIn" data-wow-delay="200ms" src="http://placehold.it/200x100" /></li>
+                        <li><img class="wow fadeIn" data-wow-delay="300ms" src="http://placehold.it/200x100" /></li>
+                        <li><img class="wow fadeIn" data-wow-delay="400ms" src="http://placehold.it/200x100" /></li>
+                        <li><img class="wow fadeIn" data-wow-delay="100ms" src="http://placehold.it/200x100" /></li>
+                        <li><img class="wow fadeIn" data-wow-delay="200ms" src="http://placehold.it/200x100" /></li>
+                        <li><img class="wow fadeIn" data-wow-delay="300ms" src="http://placehold.it/200x100" /></li>
+                        <li><img class="wow fadeIn" data-wow-delay="400ms" src="http://placehold.it/200x100" /></li>
+                        <li><img class="wow fadeIn" data-wow-delay="100ms" src="http://placehold.it/200x100" /></li>
+                        <li><img class="wow fadeIn" data-wow-delay="200ms" src="http://placehold.it/200x100" /></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                 </div>
+            </section>
+            <!-- ........................................................... -->
+				<!-- ><div class="parallax contatti" id="contacts" data-400-bottom="background-position:50% 20%;" data-top-bottom="background-position:50% 80%;">
+					<h2 class="section-title" data-400-bottom="opacity:0" data-center="opacity:0.8">Contatti</h2>
+				</div> -->
+            <section class="contacts" id="contacts">
+                <div class="map-wrapper parallax">
+                    <div id='map'><!-- leaflet map --></div>
+						  <h2 class="section-title" data-400-bottom="opacity:0" data-center="opacity:0.8">Contatti</h2>
+	                 <div class="content-contatti">
+	                     <h3>studio pym srl</h3>
+	                     <p>Via Cappuccio, 18 20123 Milano</p>
+	                     <p>Tel. 02 366 966 78</p>
+	                     <p>Email: <a href="mailto:info@studiopym.com">info@studiopym.com</a></p>
+	                     <a class="icon wow"  target="_blank" href="https://www.facebook.com/pages/Studio-Pym/482484418494069"><i class="icon-fb"></i></a>
+	                     <a class="icon wow" data-wow-delay="300ms" target="_blank" href="https://twitter.com/@studiopym"><i class="icon-tw"></i></a>
+	                     <a class="icon wow" data-wow-delay="600ms" target="_blank" href="http://instagram.com/studiopym"><i class="icon-instagram"></i></a>
+	                 </div>
+						  
+                    <a class="gmap" href="http://goo.gl/maps/s8IbV" target="_blank">Apri in Google Maps</a>
                 </div>
-                __include('partials/contacts.html')
-				 </div>
+                
             </section>
             <!-- ........................................................... -->
             <footer>

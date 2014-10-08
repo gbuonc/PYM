@@ -1247,8 +1247,11 @@
         device = isPhone ? 'mobile': device;
         device = isTablet ? 'tablet': device;
     // load assets based on device
-    head.load(["./assets/js/pym-"+device+".js"], function(){
-        app[device].init();
+    //head.load(["./assets/js/pym-"+device+".js"], function(){
+    //    app[device].init();
+    //});
+    head.load(["./assets/js/pym-desktop.js"], function(){
+        app['desktop'].init();
     });
 </script>
 
