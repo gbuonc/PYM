@@ -35,14 +35,13 @@ nav{
    padding: 5px 0px;
    @include elasticAnimation(250ms);
 }
-.shrink nav{padding: 15px 0px;}
 nav:after {content: '';}
 nav:before{
    content:'';
    z-index: -1;
    position: absolute;
-   left:18%;
-   right:18%;
+   left:5%;
+   right:5%;
    bottom:3px;
    height:10px;
    @include border-radius(50%);
@@ -50,11 +49,11 @@ nav:before{
 
 }
 #main-nav{display: inline-block;}
-#main-nav li {font-size: 16px; display: inline-block; padding: 0 30px; @include elasticAnimation(250ms);}
-.shrink nav #main-nav li {padding: 0 10px;}
+#main-nav li {font-size: 16px; display: inline-block; padding: 0 70px; @include elasticAnimation(250ms);}
 #main-nav li a span{border:none; padding:0;}
-#main-nav li.logoPym{position: absolute; top:-16px; right:100%;}
-#main-nav li.logoPym a{opacity:0; @include scale(3); @include elasticAnimation(250ms, 0ms);}
+#main-nav li.logoPym{position: absolute; top:-5px; right:100%; margin-right:-110px;}
+#main-nav li.logoPym a{opacity:0; @include scale(3); @include elasticAnimation(250ms, 0ms); border:1px solid #ddd; background:#fff; border-radius:50%;}
+
 #main-nav li.logoPym img{height: 50px; width: auto;}
 .shrink nav #main-nav li.logoPym a{opacity:1; @include scale(1); @include elasticAnimation(250ms, 500ms);}
 #main-nav li.logoPym a{height:auto;}
@@ -219,6 +218,7 @@ section .content{
 	background-attachment: fixed;
 	position:relative;
 	overflow:hidden !important;
+	background-color:$mainColor;
    &:after{
        content:'';
        position: absolute;
@@ -248,7 +248,7 @@ section .content{
 	background:none;
 	color:#fff;
 	text-transform:uppercase;
-	text-shadow: 2px 2px 25px #000;
+	/* text-shadow: 2px 2px 25px #000; */
 	}
 }
 .content{
@@ -265,9 +265,11 @@ section .content{
 }
 .right-column{
   width: grid-span(6);
+  padding:40px 0;
 }
 .left-column{
   width: grid-span(5);
+  padding:40px 0;
 }
 section .content{
   .tit1{
@@ -282,7 +284,7 @@ section .content{
   p.txt1{
     padding:0;
     font-size:20px;
-	 margin:0 0 30px;
+	 margin:10px 0 30px;
   }
   .tit2{
     margin-top: 10px;
@@ -297,10 +299,10 @@ section .content{
   }
 }
 .hero.parallax{height:450px;}
-.editorial{background-image: url('../img/test/_a.jpg');}
+/*.editorial{background-image: url('../img/test/_a.jpg');}
 .adv{background-image: url('../img/test/_e.jpg');}
 .clienti{background-image: url('../img/test/_c.jpg');}
-.contatti{background-image: url('../img/test/_f.jpg');}
+.contatti{background-image: url('../img/test/_f.jpg');} */
 
 #map,
 .map-wrapper{height: 450px; position: relative;}

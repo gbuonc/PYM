@@ -6,7 +6,7 @@ app.desktop ={
         app.common.getTwitter(app.desktop.initTwitter);
         //app.common.initGrids();
     },
-    /* initAnimations: function(anims){
+    initAnimations: function(anims){
        var $body = $('body');
        var h =  $body.height();
        var l = anims.length;
@@ -19,7 +19,8 @@ app.desktop ={
               }, {offset: '-'+o+'px'});
           })(i);
        }
-    }, */
+    },
+	 
     setScrollSpy :function(){
       // http://jsfiddle.net/mekwall/up4nu/
       var lastId,
@@ -112,7 +113,7 @@ app.desktop ={
 $(function(){
    app.common.initMap(16);
    app.common.toggleCloset('click');
-   //app.desktop.initAnimations(anims);
+   app.desktop.initAnimations(anims);
    app.desktop.initNav();
    app.desktop.setScrollSpy();
    // app.desktop.doParallax();
