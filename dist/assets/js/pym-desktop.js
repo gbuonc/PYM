@@ -5671,26 +5671,89 @@ if ( typeof define === 'function' && define.amd ) {
 }(jQuery));
 app.common = {
    initMap: function(zoom){
-      var map = L.map('map', {
-      attributionControl: false,
-      scrollWheelZoom: false,
-      zoomControl:true
-    }).setView([45.4640, 9.1796], zoom);
-      L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
-      attribution: '&copy;2014 Esri & Stamen, Data from OSM and Natural Earth',
-      subdomains: '0123',
-      minZoom: 13,
-      maxZoom: 17,
-      detectRetina: true
-      }).addTo(map);
-      var pymIcon = L.icon({
-         iconUrl: 'assets/img/marker.png',
-         iconRetinaUrl: 'assets/img/marker.png',
-         iconSize: [120, 100],
-         iconAnchor: [60, 100],
-      });
-      L.control.zoom({position: 'topright'});
-      var marker = L.marker([45.4633, 9.1796], {icon: pymIcon}).addTo(map);
+			var mapOptions = {
+				center: { lat: 45.4640, lng: 9.1796},
+				zoom: 15,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				styles: [
+			    {
+			        "elementType": "geometry.fill",
+			        "featureType": "landscape.natural",
+			        "stylers": [
+			            {
+			                "visibility": "on"
+			            },
+			            {
+			                "color": "#f2f2f2"
+			            }
+			        ]
+			    },
+			    {
+			        "elementType": "geometry.fill",
+			        "featureType": "poi",
+			        "stylers": [
+			            {
+			                "visibility": "off"
+							 }
+			        ]
+			    },
+			    {
+			        "elementType": "geometry.fill",
+			        "featureType": "landscape.man_made"
+			    },
+			    {
+			        "elementType": "geometry",
+			        "featureType": "road",
+			        "stylers": [
+			            {
+			                "lightness": 200
+			            },
+			            {
+			                "visibility": "simplified"
+			            }
+			        ]
+			    },
+			    {
+			        "elementType": "labels",
+			        "featureType": "road",
+			        "stylers": [
+			            {
+			                "visibility": "on"
+			            }
+			        ]
+			    },
+			    {
+			        "featureType": "water",
+			        "stylers": [
+			            {
+			                "color": "#7dcdcd"
+			            }
+			        ]
+			    },
+			    {
+			        "elementType": "geometry",
+			        "featureType": "transit.line",
+			        "stylers": [
+			            {
+			                "visibility": "on"
+			            },
+			            {
+			                "lightness": 700
+			            }
+			        ]
+			    }
+			]
+
+			};
+		   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+			var image = 'assets/img/marker.png';
+			var myLatLng = new google.maps.LatLng(45.4634107, 9.179323);
+			var pymMarker = new google.maps.Marker({
+			      position: myLatLng,
+			      map: map,
+			      icon: image
+			  });
+		  
    },
    getTwitter: function(callback){
 		var $social = $('#social');
@@ -5854,7 +5917,12 @@ app.desktop ={
           content += t+'\n';
        }
         spinner.spin(false);
-       var tk = $('#social-dk-content').html(content).newsTicker();
+       var tk = $('#social-dk-content').html(content).newsTicker({
+			 	row_height: 50,
+				max_row: 1,
+			   speed: 500,
+			   duration: 4000
+		 });
    },
     clear: function(){
        console.log('desktop clear');

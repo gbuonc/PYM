@@ -3459,26 +3459,89 @@ if (typeof define !== 'undefined' && define.amd) {
 (function(e,t){function n(e,t){return(h?t.originalEvent.touches[0]:t)["page"+e.toUpperCase()]}function a(t,n,a){var r=e.Event(n,b);e.event.trigger(r,{originalEvent:t},t.target),r.isDefaultPrevented()&&t.preventDefault(),a&&(e.event.remove(D,x+"."+y,o),e.event.remove(D,p+"."+y,i))}function r(t){var r=t.timeStamp||+new Date;l!=r&&(l=r,T.x=b.x=n("x",t),T.y=b.y=n("y",t),T.time=r,T.target=t.target,b.orientation=null,b.end=!1,d=!1,u=!1,v=setTimeout(function(){u=!0,a(t,"press")},e.Finger.pressDuration),e.event.add(D,x+"."+y,o),e.event.add(D,p+"."+y,i),w.preventDefault&&t.preventDefault())}function o(t){return b.x=n("x",t),b.y=n("y",t),b.dx=b.x-T.x,b.dy=b.y-T.y,b.adx=Math.abs(b.dx),b.ady=Math.abs(b.dy),(d=b.adx>w.motionThreshold||b.ady>w.motionThreshold)?(clearTimeout(v),b.orientation||(b.adx>b.ady?(b.orientation="horizontal",b.direction=b.dx>0?1:-1):(b.orientation="vertical",b.direction=b.dy>0?1:-1)),t.target!==T.target?(t.target=T.target,i.call(this,e.Event(p+"."+y,t)),void 0):(a(t,"drag"),void 0)):void 0}function i(e){var t,n=e.timeStamp||+new Date,r=n-T.time;if(clearTimeout(v),e.target===T.target){if(d||u)w.flickDuration>r&&a(e,"flick"),b.end=!0,t="drag";else{var o=c===e.target&&w.doubleTapInterval>n-s;t=o?"doubletap":"tap",c=o?null:T.target,s=n}a(e,t,!0)}}var d,u,l,v,c,s,g=/chrome/i.exec(t),m=/android/i.exec(t),h="ontouchstart"in window&&!(g&&!m),f=h?"touchstart":"mousedown",p=h?"touchend touchcancel":"mouseup mouseleave",x=h?"touchmove":"mousemove",y="finger",D=e("html")[0],T={},b={},w=e.Finger={pressDuration:300,doubleTapInterval:300,flickDuration:150,motionThreshold:5};e.event.add(D,f+"."+y,r)})(jQuery,navigator.userAgent);
 app.common = {
    initMap: function(zoom){
-      var map = L.map('map', {
-      attributionControl: false,
-      scrollWheelZoom: false,
-      zoomControl:true
-    }).setView([45.4640, 9.1796], zoom);
-      L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
-      attribution: '&copy;2014 Esri & Stamen, Data from OSM and Natural Earth',
-      subdomains: '0123',
-      minZoom: 13,
-      maxZoom: 17,
-      detectRetina: true
-      }).addTo(map);
-      var pymIcon = L.icon({
-         iconUrl: 'assets/img/marker.png',
-         iconRetinaUrl: 'assets/img/marker.png',
-         iconSize: [120, 100],
-         iconAnchor: [60, 100],
-      });
-      L.control.zoom({position: 'topright'});
-      var marker = L.marker([45.4633, 9.1796], {icon: pymIcon}).addTo(map);
+			var mapOptions = {
+				center: { lat: 45.4640, lng: 9.1796},
+				zoom: 15,
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				styles: [
+			    {
+			        "elementType": "geometry.fill",
+			        "featureType": "landscape.natural",
+			        "stylers": [
+			            {
+			                "visibility": "on"
+			            },
+			            {
+			                "color": "#f2f2f2"
+			            }
+			        ]
+			    },
+			    {
+			        "elementType": "geometry.fill",
+			        "featureType": "poi",
+			        "stylers": [
+			            {
+			                "visibility": "off"
+							 }
+			        ]
+			    },
+			    {
+			        "elementType": "geometry.fill",
+			        "featureType": "landscape.man_made"
+			    },
+			    {
+			        "elementType": "geometry",
+			        "featureType": "road",
+			        "stylers": [
+			            {
+			                "lightness": 200
+			            },
+			            {
+			                "visibility": "simplified"
+			            }
+			        ]
+			    },
+			    {
+			        "elementType": "labels",
+			        "featureType": "road",
+			        "stylers": [
+			            {
+			                "visibility": "on"
+			            }
+			        ]
+			    },
+			    {
+			        "featureType": "water",
+			        "stylers": [
+			            {
+			                "color": "#7dcdcd"
+			            }
+			        ]
+			    },
+			    {
+			        "elementType": "geometry",
+			        "featureType": "transit.line",
+			        "stylers": [
+			            {
+			                "visibility": "on"
+			            },
+			            {
+			                "lightness": 700
+			            }
+			        ]
+			    }
+			]
+
+			};
+		   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+			var image = 'assets/img/marker.png';
+			var myLatLng = new google.maps.LatLng(45.4634107, 9.179323);
+			var pymMarker = new google.maps.Marker({
+			      position: myLatLng,
+			      map: map,
+			      icon: image
+			  });
+		  
    },
    getTwitter: function(callback){
 		var $social = $('#social');

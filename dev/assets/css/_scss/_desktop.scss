@@ -100,6 +100,7 @@ nav #main-nav li.logoPym a:hover span{
    background-size:cover;
    background-repeat: no-repeat;
    background-attachment: fixed;
+	z-index:2;
 }
 .hero h1{position: fixed; top:230px; @include elasticAnimation(450ms); background:rgba(255, 255, 255, 1); z-index: 2;}
 .hero h1 a{ bottom:10px; background: transparent url('../img/pym.png') center no-repeat; background-size:contain;}
@@ -110,37 +111,21 @@ nav #main-nav li.logoPym a:hover span{
 
 /* twitter */
 #social{display: none;}
-#social-dk{
-    position: absolute;
-    bottom:0;
-    padding: 20px 50px 20px;
-    line-height: 1;
-    width: 100%;
-    margin:  0;
-    height: 85px;
-    display: block;
-    background: $bg;
-    font-size: 18px;
-    z-index: 10;
-    & > ul > li{
-        display: block;
-        padding: 0;
-        margin: 0;
-    }
-    & a{
-        color: #999;
-        text-decoration: none;
-    }
-    &:after{
-        content:'';
-        position: absolute;
-        height:1px;
-        background: $subtleColor;
-        width: 800px;
-        bottom:0px;
-        left:50%;
-        margin-left: -400px;
-    }
+.social-dk-content-wrapper{
+	height:68px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background: rgba(255,255,255, 0.8);
+	padding: 15px;
+	overflow:hidden;
+	#social-dk-content{
+		li{
+			line-height:1;
+		}
+	}
 }
 
 .title{
@@ -198,10 +183,9 @@ section .content{
 }
 
 .social-iconz i{
-    font-size: 50px;
+    font-size: 25px;
     line-height: 50px;
 }
-
 
 
 /* RESTYLE */

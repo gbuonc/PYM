@@ -9,6 +9,10 @@ __include('partials/head.html')
                 </div>
                 <div class="welcome" id="welcome"></div>
                 <h1 id="logo" class="logo"><a href="#home">Studio Pym</a></h1>
+					 <div class="social-dk-content-wrapper">
+	 	 				 <ul id="social-dk-content">
+	 	 				 </ul>
+					 </div>
             </section>
             <!-- ........................................................... -->
             <section class="about" id="about">
@@ -1176,23 +1180,11 @@ __include('partials/head.html')
                  </div>
             </section>
             <!-- ........................................................... -->
-            <section class="contacts" id="contacts">
-                <div class="map-wrapper parallax">
-                    <div id='map'><!-- leaflet map --></div>
-						  <h2 class="section-title" data-400-bottom="opacity:0" data-center="opacity:1">Contatti</h2>
-	                 <div class="content-contatti">
-	                     <h3>studio pym srl</h3>
-	                     <p>Via Cappuccio, 18 20123 Milano</p>
-	                     <p>Tel. 02 366 966 78</p>
-	                     <p>Email: <a href="mailto:info@studiopym.com">info@studiopym.com</a></p>
-	                     <a class="icon wow"  target="_blank" href="https://www.facebook.com/pages/Studio-Pym/482484418494069"><i class="icon-fb"></i></a>
-	                     <a class="icon wow" data-wow-delay="300ms" target="_blank" href="https://twitter.com/@studiopym"><i class="icon-tw"></i></a>
-	                     <a class="icon wow" data-wow-delay="600ms" target="_blank" href="http://instagram.com/studiopym"><i class="icon-instagram"></i></a>
-	                 </div>
-						  
-                    <a class="gmap" href="http://goo.gl/maps/s8IbV" target="_blank">Apri in Google Maps</a>
-                </div>
-                
+				<div class="parallax contatti" id="contacts">
+					<h2 class="section-title" data-400-bottom="opacity:0" data-center="opacity:1">Contatti</h2>
+				</div>
+            <section>
+            	 __include('partials/contacts.html')
             </section>
             <!-- ........................................................... -->
             <footer>

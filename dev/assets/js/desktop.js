@@ -103,7 +103,12 @@ app.desktop ={
           content += t+'\n';
        }
         spinner.spin(false);
-       var tk = $('#social-dk-content').html(content).newsTicker();
+       var tk = $('#social-dk-content').html(content).newsTicker({
+			 	row_height: 50,
+				max_row: 1,
+			   speed: 500,
+			   duration: 4000
+		 });
    },
     clear: function(){
        console.log('desktop clear');
