@@ -23,7 +23,7 @@ body.init .main-wrap {
    overflow: hidden;
 	font-size:14px;
 }
-section{padding: 25px 0;}
+section{padding:0;}
 /* header */
 header{
    top:0;
@@ -91,7 +91,7 @@ nav #main-nav li.logoPym a:hover span{
 }
 
 #main-nav li a.active span{cursor: default;}
-
+.depth-wrapper{position:relative; z-index: 2; background:#fff;}
 /* hero */
 .hero{
    position: relative;
@@ -100,11 +100,21 @@ nav #main-nav li.logoPym a:hover span{
    background-size:cover;
    background-repeat: no-repeat;
    background-attachment: fixed;
-	z-index:2;
+	overflow:hidden;
+	z-index: 1;
 }
 .hero h1{position: fixed; top:230px; @include elasticAnimation(450ms); background:rgba(255, 255, 255, 1); z-index: 2;}
-.hero h1 a{ bottom:10px; background: transparent url('../img/pym.png') center no-repeat; background-size:contain;}
+.hero h1 a{display:block; bottom:10px; background: transparent url('../img/pym.png') center no-repeat; background-size:contain;}
 
+.hero .tit1{
+	position:absolute; 
+	bottom: 26px; 
+	left:0; 
+	right:0;
+	font-size: 50px;
+	text-transform: uppercase;
+	font-family: $montserrat;
+}
 /* .outLogo .hero h1{position: absolute; top: 50%; opacity: 0;}
 .outLogo .hero h1 a{display:block; position:absolute; -webkit-animation: rotating 500ms linear infinite;} */
 .bgImage {display: none;}
@@ -112,21 +122,23 @@ nav #main-nav li.logoPym a:hover span{
 /* twitter */
 #social{display: none;}
 .social-dk-content-wrapper{
-	height:68px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	text-align: center;
+	height:65px;
+	margin-top:20px;
+	position: static;
 	background: rgba(255,255,255, 0.8);
-	padding: 15px;
+	padding: 0;
+	font-size:14px;
+	text-align: left;
 	overflow:hidden;
 	#social-dk-content{
-		li{
-			line-height:1;
+		li, p{
+			font-size:14px;
+			text-align: left;
+			line-height:1.3;
 		}
 	}
 }
+
 
 .title{
 	padding:0;
@@ -139,7 +151,6 @@ nav #main-nav li.logoPym a:hover span{
 	text-align:left;
 	padding-right:20px;
 }
-/* about */
 section .content{
 	h1{
    	margin: 0 0 30px;
@@ -162,9 +173,9 @@ section .content{
 	}
 }
 
-
-/* MAP */
-/* open map */
+.pyms{
+margin-bottom:60px;
+}
 
 
 .closet{
@@ -237,23 +248,27 @@ section .content{
 }
 .content{
   max-width:960px;  
-  margin:0 auto 30px;
-  padding:25px 0;
+  margin:0 auto 0;
+  padding:80px 0;
   text-align:left;
 }
 .standalone{
   display: block;
-  text-align: left;
-  margin: 7px 7px 0 0;
-  padding: 4px 0;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 0.07em;
+  font-weight: 400;
+}
+.subsection{
+	padding:40px 0;
 }
 .right-column{
   width: grid-span(6);
-  padding:40px 0;
+  padding:0;
 }
 .left-column{
   width: grid-span(5);
-  padding:40px 0;
+  padding:0;
 }
 section .content{
   .tit1{
@@ -264,25 +279,27 @@ section .content{
     text-align: center;
     font-weight: 300;
   }
-
+  .tit2{
+  	font-family: $montserrat;
+    font-size: 26px;
+    line-height: 1.3;
+	 color: $mainColor;
+	 text-transform:uppercase;
+  }
   p.txt1{
     padding:0;
     font-size:20px;
 	 margin:10px 0 30px;
   }
-  .tit2{
-    margin-top: 10px;
-    font-size: 22px;
-    margin-bottom:5px;
-  }
   p.txt2 {
     font-size: 16px;
     line-height: 1.4;
-    margin: 10px 0;
+    margin: 10px 0 20px;
     background:none;
+	 color: #767676;
   }
 }
-.hero.parallax{height:450px;}
+.hero.parallax{height:500px;}
 /*.editorial{background-image: url('../img/test/_a.jpg');}
 .adv{background-image: url('../img/test/_e.jpg');}
 .clienti{background-image: url('../img/test/_c.jpg');}
@@ -293,15 +310,8 @@ section .content{
 .gmap{
   display: block;
 }
-.content-contatti{
 
-  .icon{
-    padding: 15px 0;
-    font-size: 25px;
-  }
-}
 .clientGrid{
-  margin: 30px 0 0;
   width: auto;
 }
 .clientGrid li{
@@ -377,15 +387,14 @@ top:-50px;
 left:0;
 width:100%;
 }
-.content-contatti{
-	position:absolute;
-	width:auto;
-	height:auto;
-	padding:50px 50px 50px 150px;
-	background: rgba(255,255,255,0.9);
-	top:50%;
-	left:0px;
-	transform: translateY(-50%);
+
+.contatti{
+line-height: 1.5em; 
+font-size: 18px;
+text-align:center;
+}
+.contatti-wrapper{
+margin-top:60px;
 }
 footer{
 position:relative;

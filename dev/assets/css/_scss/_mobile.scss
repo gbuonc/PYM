@@ -4,12 +4,11 @@
 .tabletOnly,
 .desktopOnly,
 .no-mobile{display: none;}
-
 a{-webkit-tap-highlight-color: rgba(0,0,0,0);}
 body{ font-size: 15px; line-height: 1.2;
 }
 p{margin:0.5em 0 1em}
-section{ margin-bottom:0;}
+
 .title{
    text-align: center;
    position: relative;
@@ -279,13 +278,7 @@ header.open .nav-title{display: none;}
 
 /* About
 ====================================================== */
-.about{
-   font-family: $oswald;
-   font-size: 15px;
-   text-align:center;
-   line-height:1.2;
-   padding: 0 0.5em;
-}
+
 .about h1{
    text-align:center;
    font-family: $montserrat;
@@ -654,8 +647,6 @@ position: relative;
 .social-iconz{
     display: inline-block;
     padding:5px 20px;
-    border-top: 1px solid $subtleColor;
-    border-bottom: 1px solid $subtleColor;
     margin: 30px auto;
     background: $bg;
     line-height: 20px;
@@ -673,17 +664,6 @@ footer{
     background-size: cover;
     margin-bottom: 0;
 }
-/* footer:before {
-content: '';
-position: absolute;
-bottom: 100%;
-left: 0;
-right: 0;
-height: 25px;
-background: #fff;
-box-shadow: 0px 6px 10px -5px#000;
-z-index: 1;
-} */
 .copyright{
     position: absolute;
     bottom: 0;
@@ -691,8 +671,8 @@ z-index: 1;
     width: 100%;
     text-align: center;
     background: #000;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
+    background: rgba(255,255,255,0.5);
+    color: #000;
     margin-bottom: 0;
     padding: 8px;
 }

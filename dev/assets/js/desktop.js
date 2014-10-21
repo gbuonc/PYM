@@ -104,7 +104,7 @@ app.desktop ={
        }
         spinner.spin(false);
        var tk = $('#social-dk-content').html(content).newsTicker({
-			 	row_height: 50,
+			 	row_height: 65,
 				max_row: 1,
 			   speed: 500,
 			   duration: 4000
