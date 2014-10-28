@@ -258,6 +258,7 @@ margin-bottom:60px;
   font-size: 25px;
   letter-spacing: 0.07em;
   font-weight: 400;
+  margin-bottom:30px;
 }
 .subsection{
 	padding:40px 0;
@@ -301,6 +302,20 @@ section .content{
 	 text-transform:uppercase;
   }
 .hero.parallax{height:500px;}
+.masonry-wrapper{
+position:relative;
+text-align:center;
+	width:780px;
+	margin:0 auto;
+}
+.item{
+width:25%;
+height:auto;
+margin-bottom:10px;
+}
+.item.double{
+width:48%;
+}
 /*.editorial{background-image: url('../img/test/_a.jpg');}
 .adv{background-image: url('../img/test/_e.jpg');}
 .clienti{background-image: url('../img/test/_c.jpg');}
