@@ -566,7 +566,6 @@ position: relative;
 }
 .clientGrid li img{
    display: block;
-   width: 100%;
    height: auto;
 }
 
@@ -657,8 +656,8 @@ position: relative;
 
 footer{
     position: relative;
-    padding: 100px 0;
-    background-image: url('../img/test/graphic3.jpg');
+    padding: 40px 0;
+    /* background-image: url('../img/test/graphic3.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

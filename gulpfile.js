@@ -118,7 +118,7 @@ gulp.task('serve', function () {
     server: {
       baseDir: ['dist'] //, 'dev', '.tmp']
     },
-	 tunnel: 'spym'
+	 //tunnel: 'spym'
     //notify: true
   });
   gulp.watch(['dev/**/*.html'], ['fileinclude', 'temp'],reload);

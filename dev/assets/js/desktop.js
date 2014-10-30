@@ -121,8 +121,8 @@ $(function(){
    app.desktop.initAnimations(anims);
    app.desktop.initNav();
    app.desktop.setScrollSpy();
+	new WOW().init();
    // app.desktop.doParallax();
-   // new WOW().init();
 });
 
 // waypoints animations ----------------------------------------------------------------
