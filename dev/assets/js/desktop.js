@@ -117,6 +117,7 @@ app.desktop ={
 
 $(function(){
    app.common.initMap(16);
+	app.common.initTooltip();
    app.common.toggleCloset('click');
    app.desktop.initAnimations(anims);
    app.desktop.initNav();

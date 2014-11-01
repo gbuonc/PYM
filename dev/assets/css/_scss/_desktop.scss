@@ -312,12 +312,15 @@ text-align:center;
 width:25%;
 height:auto;
 margin-bottom:10px;
+float:left;
 }
 .item.double{
 width:48%;
 }
 .item img{
 border:1px solid #efefef;
+max-width: 100%;
+height: auto;
 }
 /*.editorial{background-image: url('../img/test/_a.jpg');}
 .adv{background-image: url('../img/test/_e.jpg');}
@@ -334,8 +337,8 @@ border:1px solid #efefef;
   width: auto;
 }
 .clientGrid li{
-  width: grid-span(2.2);
-  height: 80px;
+  width: grid-span(2.5);
+  height: 65px;
   text-align: center;
   position: relative;
   img{
@@ -344,8 +347,9 @@ border:1px solid #efefef;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  } 
+  }
 }
+
 .portfolio.jgrid .portfolio-item{
   width: grid-span(3);
   figure{

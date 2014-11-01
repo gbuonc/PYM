@@ -232,3 +232,44 @@ i{@include animate(250ms);}
 }
 
 /* Modale +++++++++++++++++++++++ */
+
+
+/* tooltip */
+.tooltip{
+    text-align: center;
+    color: #fff;
+    background: $mainColor;
+    position: absolute;
+    z-index: 100;
+    padding: 15px;
+	 border-radius:3px;
+	 
+	 &:after{
+	    width: 0;
+	    height: 0;
+	    border-left: 10px solid transparent;
+	    border-right: 10px solid transparent;
+	    border-top: 10px solid $mainColor;
+	    content: '';
+	    position: absolute;
+	    left: 50%;
+	    bottom: -10px;
+	    margin-left: -10px;
+	 }
+	 &.top:after{
+		border-top-color: transparent;
+		border-bottom: 10px solid $mainColor;
+		top: -20px;
+		bottom: auto;
+		}
+		&.left:after{
+			left: 10px;
+			margin: 0;
+		}
+		&.right:after{
+			right: 10px;
+			left: auto;
+			margin: 0;
+		}
+}
+ 
