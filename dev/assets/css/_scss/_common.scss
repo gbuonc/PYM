@@ -237,19 +237,20 @@ i{@include animate(250ms);}
 /* tooltip */
 .tooltip{
     text-align: center;
-    color: #fff;
-    background: $mainColor;
+    color: $mainColor;
+    background: $lightBg;
     position: absolute;
     z-index: 100;
     padding: 15px;
 	 border-radius:3px;
+	 letter-spacing:0.08em;
 	 
 	 &:after{
 	    width: 0;
 	    height: 0;
 	    border-left: 10px solid transparent;
 	    border-right: 10px solid transparent;
-	    border-top: 10px solid $mainColor;
+	    border-top: 10px solid $lightBg;
 	    content: '';
 	    position: absolute;
 	    left: 50%;
@@ -258,7 +259,7 @@ i{@include animate(250ms);}
 	 }
 	 &.top:after{
 		border-top-color: transparent;
-		border-bottom: 10px solid $mainColor;
+		border-bottom: 10px solid $lightBg;
 		top: -20px;
 		bottom: auto;
 		}
