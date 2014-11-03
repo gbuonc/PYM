@@ -1,92 +1,61 @@
-app.windowHeight = $.waypoints('viewportHeight');
 app.desktop ={
-    init: function(){
-		 var s = skrollr.init();
-        //$('#home').height(app.windowHeight);
+	init: function(){
         app.common.getTwitter(app.desktop.initTwitter);
-        //app.common.initGrids();
-    },
-    initAnimations: function(anims){
-       var $body = $('body');
-       var h =  $body.height();
-       var l = anims.length;
-       for(var i=0; i<l; i++){
-          (function(e){
-             var k = anims[e].cls;
-             var o = anims[e].offset
-             $body.waypoint(function(){
-                 $body.toggleClass(k);
-              }, {offset: '-'+o+'px'});
-          })(i);
-       }
-    },
-	 
-    setScrollSpy :function(){
-      // http://jsfiddle.net/mekwall/up4nu/
-      var lastId,
-      topMenu = $("header"),
-      topMenuHeight = topMenu.height(),
-      menuItems = topMenu.find("nav li a"),
-      // Anchors corresponding to menu items
-      scrollItems = menuItems.map(function(){
-         var item = $($(this).attr("href"));
-         if (item.length) { return item; }
-      });
-      // fancy scroll animation
-      menuItems.click(function(e){
-         var href = $(this).attr("href") || '#home',
-         offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-         $('html, body').stop().animate({
-            scrollTop: offsetTop
-         }, 300);
-         e.preventDefault();
-      });
-      // Bind to scroll
-      $(window).scroll(function(){
-         var fromTop = $(this).scrollTop()+($(window).height()/2);
-         var cur = scrollItems.map(function(i){
-            // check if current scroll item is in page
-            if ($(this).offset().top < fromTop){
-               // return previous items if is fully visible in page (needs sonar.js)
-               if($(scrollItems[i-1]).sonar(0, true)){
-                  return scrollItems[i-1];
-               }else{
-                  return this;
-               }
-            }
-         });
-         // Get the id of the current element
-         cur = cur[cur.length-1];
-         var id = cur && cur.length ? cur[0].id : "";
-         if (lastId !== id) {
-            lastId = id;
-            // Set/remove active class
-            menuItems.removeClass("active")
-            .filter("[href=#"+id+"]").addClass("active");
-         }
-      });
+		  app.common.toggleCloset('click');
    },
-   /* doParallax : function(){
-      var $window = $(window);
-      var windowHeight = $window.height();
-      var $tile= $('.parallax');
-      $tile.each(function(){
-         var $bgobj = $(this);
-         var speed = 0.30; //$bgobj.data('speed') || 0.75;
-         $window.scroll(function() {
-            var scrollTop = $(window).scrollTop();
-            var offset = $bgobj.offset().top;
-            var height = $bgobj.outerHeight();
-            // Check if above or below viewport
-            if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
-               return;
-            }
-            var yBgPosition = Math.round((offset - scrollTop) * speed);
-            $bgobj.css('background-position', 'center ' + yBgPosition + 'px');
-         });
-      });
-   }, */
-   initNav : function(){
+	initAnimations: function(){
+		new WOW().init();
+	},
+	logoAnimation: function(){
+		var $body = $('body');
+      $body.waypoint(function()
+			{$body.toggleClass('shrink');},
+		 	{offset: '-'+($.waypoints('viewportHeight')/1.8)+'px'
+		});
+	},
+	setScrollSpy :function(){
+		// http://jsfiddle.net/mekwall/up4nu/
+		var lastId,
+		topMenu = $("header"),
+		topMenuHeight = topMenu.height(),
+		menuItems = topMenu.find("nav li a"),
+		scrollItems = menuItems.map(function(){
+			var item = $($(this).attr("href"));
+			if (item.length) { return item; }
+		});
+		menuItems.click(function(e){
+			var href = $(this).attr("href") || '#home',
+			offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+			$('html, body').stop().animate({
+			scrollTop: offsetTop
+			}, 300);
+			e.preventDefault();
+		});
+		$(window).scroll(function(){
+			var fromTop = $(this).scrollTop()+($(window).height()/2);
+			var cur = scrollItems.map(function(i){
+				// check if current scroll item is in page
+				if ($(this).offset().top < fromTop){
+					// return previous items if is fully visible in page (needs sonar.js)
+					if($(scrollItems[i-1]).sonar(0, true)){
+						return scrollItems[i-1];
+					}else{
+						return this;
+					}
+				}
+			});
+			// Get the id of the current element
+			cur = cur[cur.length-1];
+			var id = cur && cur.length ? cur[0].id : "";
+			if (lastId !== id) {
+				lastId = id;
+				// Set/remove active class
+				menuItems.removeClass("active")
+				.filter("[href=#"+id+"]").addClass("active");
+			}
+		});
+	},
+	initNav : function(){
       var $navLinks = $('header').find('a');
       $navLinks.on('click', function(){
          $navLinks.removeClass('active');
@@ -110,23 +79,103 @@ app.desktop ={
 			   duration: 4000
 		 });
    },
-    clear: function(){
-       console.log('desktop clear');
-    }
+	initTooltip: function(){
+		var targets = $( '[rel~=tooltip]' ),
+		target  = false,
+		tooltip = false,
+		title   = false;
+		targets.bind( 'mouseenter', function(){
+			target  = $( this );
+			tip     = target.attr( 'title' );
+			tooltip = $( '<div class="tooltip"></div>' );
+			if( !tip || tip == '' ) return false;
+			target.removeAttr( 'title' );
+			tooltip.css( 'opacity', 0 ).html( tip ).appendTo( 'body' );
+			var init_tooltip = function(){
+				if( $( window ).width() < tooltip.outerWidth() * 1.5 )
+					tooltip.css( 'max-width', $( window ).width() / 2 );
+				else
+					tooltip.css( 'max-width', 340 );
+				var pos_left = target.offset().left + ( target.outerWidth() / 2 ) - ( tooltip.outerWidth() / 2 ),
+				pos_top  = target.offset().top - tooltip.outerHeight() - 20;
+				if( pos_left < 0 ){
+					pos_left = target.offset().left + target.outerWidth() / 2 - 20;
+					tooltip.addClass( 'left' );
+				}
+				else{
+					tooltip.removeClass( 'left' );
+				}
+				if( pos_left + tooltip.outerWidth() > $( window ).width() ){
+					pos_left = target.offset().left - tooltip.outerWidth() + target.outerWidth() / 2 + 20;
+					tooltip.addClass( 'right' );
+				}else{
+					tooltip.removeClass( 'right' );
+				}
+				if( pos_top < 0 ){
+					var pos_top  = target.offset().top + target.outerHeight();
+					tooltip.addClass( 'top' );
+				}
+				else{
+					tooltip.removeClass( 'top' );
+				}
+				tooltip.css( { left: pos_left, top: pos_top }).animate( { top: '+=10', opacity: 1 }, 50 );
+			};
+			init_tooltip();
+			$(window).resize(init_tooltip);
+			var remove_tooltip = function(){
+				tooltip.animate( { top: '-=10', opacity: 0 }, 50, function(){
+					$( this ).remove();
+				});
+				target.attr( 'title', tip );
+			};
+			target.bind( 'mouseleave', remove_tooltip );
+			tooltip.bind( 'click', remove_tooltip );
+		});
+	},
+	initMasonry: function(){
+	  var $grid = $('.js-masonry');
+	  $grid.each(function(){
+		  $(this).packery({
+		    itemSelector: '.item'
+		  });
+	  });
+	},
+	initSmoothState: function(){
+      var $body    = $('html, body'),
+       content  = $('#main').smoothState({
+           prefetch: true,
+           pageCacheSize: 4,
+			  blacklist:'nav a',
+           onStart: {
+               duration: 250,
+               render: function (url, $container) {
+                   content.toggleAnimationClass('is-exiting');
+                   $body.css('height', 'auto').animate({
+                       scrollTop: 0
+                   });
+               }
+           }
+       }).data('smoothState');
+	},
+	initCarousel: function(){
+		$('.gallery-content').slick({
+		  dots: true,
+		  autoplay:true,
+		  fade: true,
+		  arrows:true,
+		  speed: 600,
+		  adaptiveHeight: true
+		});
+	}
 }
 
+app.desktop.setScrollSpy();
+app.desktop.initAnimations();
+app.desktop.initTooltip();
+
 $(function(){
-   app.common.initMap(16);
-	app.common.initTooltip();
-   app.common.toggleCloset('click');
-   app.desktop.initAnimations(anims);
+   app.desktop.logoAnimation();
    app.desktop.initNav();
-   app.desktop.setScrollSpy();
-	new WOW().init();
-   // app.desktop.doParallax();
+	app.desktop.initCarousel();
 });
 
-// waypoints animations ----------------------------------------------------------------
-var anims = [
-   {offset: app.windowHeight/1.8, cls: 'shrink'}
-]

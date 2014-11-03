@@ -4,15 +4,6 @@
 .no-desktop{display: none!important;}
 .no-mobile{display: block!important;}
 .no-tablet{display: block!important;}
-@-webkit-keyframes rotating {
-    from{-webkit-transform: rotate(0deg);
-    }
-    to{-webkit-transform: rotate(360deg);
-    }
-}
-.rotating {
-   animation: rotating 2s linear infinite;
-}
 
 
 /* common */
@@ -309,18 +300,15 @@ text-align:center;
 	margin:0 auto;
 }
 .item{
-width:25%;
-height:auto;
-margin-bottom:10px;
+width:23%;
+margin: 0 1% 10px;
 float:left;
 }
 .item.double{
-width:48%;
+width:46%;
 }
 .item img{
-border:1px solid #efefef;
-max-width: 100%;
-height: auto;
+	width:100%;
 }
 /*.editorial{background-image: url('../img/test/_a.jpg');}
 .adv{background-image: url('../img/test/_e.jpg');}
@@ -443,8 +431,47 @@ box-shadow:0 0 85px #fff,0 0 15px #fff,0 0 75px #fff,0 0 65px #fff,0 0 55px #fff
 }
 
 
+.gallery-container{
+background:#efefef;
+position:relative;
+}
 
+/*
+ * CSS Animations
+ * Don't forget to add vendor prefixes!
+ */
+.m-scene .scene_element {
+  animation-duration: 0.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+}
 
+.m-scene .scene_element--fadein {
+  animation-name: fadeIn;
+}
+
+.m-scene.is-exiting .scene_element {
+  animation-direction: alternate-reverse;
+}
+
+/*
+ * Keyframes
+ */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.gallery-content{
+margin-top:50px;
+position:relative;
+width:100%;
+text-align:center;
+img{
+display:block;
+margin:0 auto;
+}
+}
 
 
 
