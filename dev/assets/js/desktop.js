@@ -1,7 +1,11 @@
 app.desktop ={
 	init: function(){
         app.common.getTwitter(app.desktop.initTwitter);
-		  app.common.toggleCloset('click');
+		app.common.toggleCloset('click');
+        $('.back').on('click', function(e){
+            history.back();
+            e.preventDefault();
+        });
    },
 	initAnimations: function(){
 		new WOW().init();
@@ -176,6 +180,7 @@ app.desktop.initTooltip();
 $(function(){
    app.desktop.logoAnimation();
    app.desktop.initNav();
-	app.desktop.initCarousel();
+app.desktop.initCarousel();
+
 });
 
