@@ -8949,7 +8949,15 @@ s.parentNode.insertBefore(g,s)}(document,'script'));
 app.desktop ={
 	init: function(){
         app.common.getTwitter(app.desktop.initTwitter);
+<<<<<<< HEAD
 		  app.common.toggleCloset('click');
+=======
+		app.common.toggleCloset('click');
+        $('.back').on('click', function(e){
+            history.back();
+            e.preventDefault();
+        });
+>>>>>>> 5242288c49445ff186999e5a75aab5417260ff00
    },
 	initAnimations: function(){
 		new WOW().init();
@@ -9124,6 +9132,11 @@ app.desktop.initTooltip();
 $(function(){
    app.desktop.logoAnimation();
    app.desktop.initNav();
+<<<<<<< HEAD
 	app.desktop.initCarousel();
+=======
+app.desktop.initCarousel();
+
+>>>>>>> 5242288c49445ff186999e5a75aab5417260ff00
 });
 
