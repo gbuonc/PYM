@@ -162,7 +162,8 @@ app.desktop ={
        }).data('smoothState');
 	},
 	initCarousel: function(){
-		$('.gallery-content').slick({
+		var $carousel = $('.gallery-content');
+		$carousel.slick({
 		  dots: true,
 		  autoplay:true,
 		  fade: true,
@@ -170,6 +171,17 @@ app.desktop ={
 		  speed: 600,
 		  adaptiveHeight: true
 		});
+		// vimeo helper in carousel
+	    var iframe = $('#vimeoplayer')[0];
+	    var player = $f(iframe);
+	    player.addEvent('ready', function() {
+	        player.addEvent('finish',  function(){
+				  $carousel.slickPlay();
+			  });
+	        player.addEvent('play',  function(){
+				  $carousel.slickPause();
+			  });
+	    });
 	}
 }
 
