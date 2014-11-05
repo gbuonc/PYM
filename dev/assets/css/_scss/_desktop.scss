@@ -80,13 +80,12 @@ nav #main-nav li.logoPym a:hover span,
 nav #main-nav li.logoPym a:hover span{
 @include scale(0.8);
 }
-
 #main-nav li a.active span{cursor: default;}
 .depth-wrapper{position:relative; z-index: 2; background:#fff;}
 /* hero */
 .hero{
    position: relative;
-   background-image: url('../img/bg2.jpg');
+   background-image: url('../img/bg.jpg');
    background-position: center;
    background-size:cover;
    background-repeat: no-repeat;
@@ -111,7 +110,7 @@ nav #main-nav li.logoPym a:hover span{
 
 /* .outLogo .hero h1{position: absolute; top: 50%; opacity: 0;}
 .outLogo .hero h1 a{display:block; position:absolute; -webkit-animation: rotating 500ms linear infinite;} */
-.bgImage {display: none;}
+
 
 /* twitter */
 #social{display: none;}

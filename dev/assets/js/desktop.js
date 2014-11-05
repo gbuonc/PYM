@@ -6,10 +6,11 @@ app.desktop ={
             history.back();
             e.preventDefault();
         });
+        var s = skrollr.init();
    },
 	initAnimations: function(){
 		new WOW().init();
-	},
+	}, 
 	logoAnimation: function(){
 		var $body = $('body');
       $body.waypoint(function()
