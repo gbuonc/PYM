@@ -204,7 +204,7 @@ margin-bottom:20px;
 }
 .parallax{
 	height:200px;
-	background-position:center center;
+	background-position:top center;
 	background-size:cover;
 	background-attachment: fixed;
 	position:relative;
@@ -325,8 +325,8 @@ width:46%;
 	&:before{
 	content: '';
 	position:absolute;
-	width:88%;
-	top:2px;
+	width:89%;
+	top:0px;
 	bottom:2px;
 	box-shadow: 5px 5px 30px #666;
 	}
@@ -334,8 +334,8 @@ width:46%;
 
 
 
-/*.editorial{background-image: url('../img/test/_a.jpg');}
-.adv{background-image: url('../img/test/_e.jpg');}
+.editorial{background-image: url('../img/parallax_libri.jpg');}
+/*.adv{background-image: url('../img/test/_e.jpg');}
 .clienti{background-image: url('../img/test/_c.jpg');}
 .contatti{background-image: url('../img/test/_f.jpg');} */
 
@@ -503,6 +503,10 @@ opacity:1;
 img{
 display:block;
 margin:0 auto;
+}
+span{
+  display:block;
+  padding: 10px;
 }
 }
 

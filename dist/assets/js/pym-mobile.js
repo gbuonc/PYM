@@ -3488,6 +3488,7 @@ app.common = {
 		var mapOptions = {
 			center: { lat: 45.4640, lng: 9.1796},
 			zoom: 15,
+			scrollwheel: false,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			styles: [
 		    {
@@ -3557,7 +3558,7 @@ app.common = {
 		        ]
 		    }
 		]};
-	   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 		var image = 'assets/img/marker.png';
 		var myLatLng = new google.maps.LatLng(45.4634107, 9.179323);
 		var pymMarker = new google.maps.Marker({
