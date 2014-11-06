@@ -6,7 +6,12 @@ app.desktop ={
             history.back();
             e.preventDefault();
         });
-        var s = skrollr.init();
+        var s = skrollr.init({
+            render: function(data) {
+                $('.js-masonry').packery();
+                $('body').css('height', 'auto');
+            }
+        });
    },
 	initAnimations: function(){
 		new WOW().init();
@@ -137,14 +142,6 @@ app.desktop ={
 			tooltip.bind( 'click', remove_tooltip );
 		});
 	},
-	initMasonry: function(){
-	  var $grid = $('.js-masonry');
-	  $grid.each(function(){
-		  $(this).packery({
-		    itemSelector: '.item'
-		  });
-	  });
-	},
 	initSmoothState: function(){
       var $body    = $('html, body'),
        content  = $('#main').smoothState({
@@ -172,28 +169,16 @@ app.desktop ={
 		  speed: 600,
 		  adaptiveHeight: true
 		});
-		// vimeo helper in carousel
-	    var iframe = $('#vimeoplayer')[0];
-	    var player = $f(iframe);
-	    player.addEvent('ready', function() {
-	        player.addEvent('finish',  function(){
-				  $carousel.slickPlay();
-			  });
-	        player.addEvent('play',  function(){
-				  $carousel.slickPause();
-			  });
-	    });
 	}
-}
+};
 
 app.desktop.setScrollSpy();
 app.desktop.initAnimations();
 app.desktop.initTooltip();
 
 $(function(){
-   app.desktop.logoAnimation();
-   app.desktop.initNav();
-app.desktop.initCarousel();
-
+    app.desktop.logoAnimation();
+    app.desktop.initNav();
+    app.desktop.initCarousel();
 });
 

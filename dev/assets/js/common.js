@@ -115,10 +115,10 @@ app.common = {
 			$(this).closest('.toggle').toggleClass('open');
 		});
 	}
-}
+};
 
 // Common helpers -------------------------------------------------------------
-var twitterStream = 'http://gianlucabuoncompagni.net/twitter/sample.php?callback=?';
+var twitterStream = 'http://studiopym.com/twitter/proxy.php?callback=?';
 function urlHyperlinks(str){
 	//return str.replace(/\b((http|https):\/\/\S+)/g, '<a href="$1" target="_blank">$1</a>');
 	return str.replace(/\b((http|https):\/\/t.co\S+)/g,'');

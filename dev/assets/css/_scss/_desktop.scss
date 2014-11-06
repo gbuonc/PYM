@@ -1,4 +1,4 @@
-.mobile-only{display: none!important;}
+  .mobile-only{display: none!important;}
 .tablet-only{display: none!important;}
 .desktopOnly{display: block !important;}
 .no-desktop{display: none!important;}
@@ -204,12 +204,13 @@ margin-bottom:20px;
 }
 .parallax{
 	height:200px;
-	background-position:top center;
+	background-position:center;
 	background-size:cover;
 	background-attachment: fixed;
 	position:relative;
 	overflow:hidden !important;
 	background-color:$mainColor;
+  z-index: -1;
    &:after{
        content:'';
        position: absolute;
@@ -239,9 +240,13 @@ margin-bottom:20px;
 	background:none;
 	color:#fff;
 	text-transform:uppercase;
-	/* text-shadow: 2px 2px 25px #000; */
 	}
 }
+.editorial{background-image: url('../img/parallax_libri.jpg');}
+.adv{background-image: url('../img/parallax_adv.jpg');}
+.clienti{background-image: url('../img/parallax_clienti.jpg');}
+.contacts{background-image: url('../img/parallax_contatti.jpg');}
+
 .content{
   max-width:960px;  
   margin:0 auto 0;
@@ -331,13 +336,6 @@ width:46%;
 	box-shadow: 5px 5px 30px #666;
 	}
 }
-
-
-
-.editorial{background-image: url('../img/parallax_libri.jpg');}
-/*.adv{background-image: url('../img/test/_e.jpg');}
-.clienti{background-image: url('../img/test/_c.jpg');}
-.contatti{background-image: url('../img/test/_f.jpg');} */
 
 #map,
 .map-wrapper{height: 450px; position: relative;}
