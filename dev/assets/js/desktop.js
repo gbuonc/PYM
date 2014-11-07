@@ -12,15 +12,32 @@ app.desktop ={
                 $('body').css('height', 'auto');
             }
         });
+        var vh = ($.waypoints('viewportHeight')+200)+'px';
+        console.log(vh);
+        $('.contatti').waypoint({
+        	handler: function(d){
+        		console.log('trigger', d)
+        		var el = $(this).find('.contatti-wrapper');
+        		d == 'up' ? el.hide() : el.show();
+        	},
+        	offset: vh
+        })
    },
 	initAnimations: function(){
 		new WOW().init();
 	}, 
 	logoAnimation: function(){
 		var $body = $('body');
-      $body.waypoint(function()
-			{$body.toggleClass('shrink');},
-		 	{offset: '-'+($.waypoints('viewportHeight')/1.8)+'px'
+		var $logo = $('.logo');
+      	$body.waypoint(function(dir){
+	      	$body.toggleClass('shrink');
+	      	if(dir == 'down'){
+	      		$logo.hide();
+	      	}else{
+				$logo.show();
+	      	}
+	      },
+			{offset: '-300px'
 		});
 	},
 	setScrollSpy :function(){
@@ -28,7 +45,7 @@ app.desktop ={
 		var lastId,
 		topMenu = $("header"),
 		topMenuHeight = topMenu.height(),
-		menuItems = topMenu.find("nav li a"),
+		menuItems = topMenu.find("nav.hp li a"),
 		scrollItems = menuItems.map(function(){
 			var item = $($(this).attr("href"));
 			if (item.length) { return item; }

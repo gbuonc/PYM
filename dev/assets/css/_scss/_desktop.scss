@@ -40,7 +40,7 @@ nav:before{
 
 }
 #main-nav{display: inline-block;}
-#main-nav li {font-size: 16px; display: inline-block; padding: 0 70px; @include elasticAnimation(250ms);}
+#main-nav li {font-size: 16px; line-height: 1; display: inline-block; padding: 0 70px; @include elasticAnimation(250ms);}
 #main-nav li a span{border:none; padding:0;}
 #main-nav li.logoPym{position: absolute; top:-5px; right:100%; margin-right:-110px;}
 #main-nav li.logoPym a{opacity:0; @include scale(3); @include elasticAnimation(250ms, 0ms); border:1px solid #ddd; background:#fff; border-radius:50%;}
@@ -85,20 +85,21 @@ nav #main-nav li.logoPym a:hover span{
 /* hero */
 .hero{
    position: relative;
-   background-image: url('../img/bg.jpg');
+   /*background-image: url('../img/bg.jpg');
    background-position: center;
    background-size:cover;
    background-repeat: no-repeat;
-   background-attachment: fixed;
+   background-attachment: fixed;*/
 	overflow:hidden;
 	z-index: 1;
 }
+.bgImage{background-position: 50% 75%;}
 .hero h1{position: fixed; top:230px; @include elasticAnimation(450ms); background:rgba(255, 255, 255, 1); z-index: 2;}
 .hero h1 a{display:block; bottom:10px; background: transparent url('../img/pym.png') center no-repeat; background-size:contain;}
 
 .hero .tit1{
 	position: absolute;
-	bottom: 26px;
+	bottom: 0px;
 	left: 0;
 	right: 0;
 	font-size: 47px;
@@ -139,6 +140,7 @@ nav #main-nav li.logoPym a:hover span{
 	text-align:left;
 }
 .section-title{
+  font-family: Montserrat,sans-serif;
 	font-size:24px;
 	font-weight:300;
 	text-align:left;
@@ -433,9 +435,11 @@ width:100%;
 line-height: 1.5em; 
 font-size: 18px;
 text-align:center;
+height:550px;
 }
 .contatti-wrapper{
 margin-top:60px;
+display:none;
 }
 footer{
 position:relative;
@@ -452,6 +456,12 @@ background:#fff;
 box-shadow:0 0 85px #fff,0 0 15px #fff,0 0 75px #fff,0 0 65px #fff,0 0 55px #fff,0 0 45px #fff,0 0 35px #fff,0 0 25px #fff,0 0 15px #fff,0 0 5px #fff,0 0 5px #fff,0 0 5px #fff,0 0 85px #fff,0 0 15px #fff,0 0 75px #fff,0 0 65px #fff,0 0 55px #fff,0 0 45px #fff,0 0 35px #fff,0 0 25px #fff,0 0 15px #fff,0 0 5px #fff,0 0 5px #fff,0 0 5px #fff;
 }
 
+footer strong{
+  display: inline-block;
+  padding: 2px 6px;
+  background: $lightBg;
+
+}
 
 .gallery-container{
 background:#efefef;
@@ -508,6 +518,9 @@ span{
 }
 }
 
+.clip{
+
+}
 
 
 
