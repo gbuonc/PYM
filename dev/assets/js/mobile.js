@@ -2,7 +2,13 @@ app.mobile ={
     init: function(){
         app.touch.init();
         app.common.initTooltip();
-        app.common.initMap();
+        if($('#map').size() > 0){
+        	app.common.initMap();
+        };
+        $('.back').on('click', function(e){
+            history.back();
+            e.preventDefault();
+        });
     }
 }
 setInterval(function(){

@@ -6625,30 +6625,36 @@ init: function(){
          useCSS3Transforms: true,
          pagination: '.pager'
       });
-      jsSwiper.reInit();
+      //if(jsSwiper) jsSwiper.reInit();
 	},
 	clear: function(){
 	   console.log('mobile clear');
 	}
 }
-var sliderz ={
-   slide:{},
-   onload: ['cover', 'graphic', 'editing', 'adv']
-}
+// var sliderz ={
+//    slide:{},
+//    onload: ['cover', 'graphic', 'editing', 'adv']
+// }
 $(function(){
 	app.common.toggleCloset('tap');
 	// main menu & Closets------------------------------
 	$('.main-wrap')
-	.on('tap', 'header', function(){
+	.on('tap', '.hp-header', function(){
 		$(this).toggleClass('open');
 	})
-	.on('tap', '#main-nav a', function(e){
+	.on('tap', '.hp a', function(e){
 		e.preventDefault();
 		var el = $(this).attr('href');
 		$('html, body').animate({
 			scrollTop: $(el).offset().top-50
-		}, 600);
+		}, 600)
+	.on('tap', '.back', function(e){
+		console.log('dasd');
+		history.back();
+		e.preventDefault();
+		});
 	});
+
 
 	// sliders
 	// for(var i =0, l = sliderz.onload.length; i<l; i++){
@@ -6660,7 +6666,13 @@ app.mobile ={
     init: function(){
         app.touch.init();
         app.common.initTooltip();
-        app.common.initMap();
+        if($('#map').size() > 0){
+        	app.common.initMap();
+        };
+        $('.back').on('click', function(e){
+            history.back();
+            e.preventDefault();
+        });
     }
 }
 setInterval(function(){

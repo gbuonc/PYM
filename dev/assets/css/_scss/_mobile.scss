@@ -696,7 +696,7 @@ footer{
     position: absolute;
     bottom: 0;
     left:0;
-    width: 100%;
+    right:0;
 	 font-size:12px;
     text-align: center;
     background: #000;
@@ -704,4 +704,19 @@ footer{
     color: #000;
     margin-bottom: 0;
     padding: 8px;
+}
+.mobile .gallery-content{
+  text-align: center;
+  img{
+    width: 100%;
+    height:auto;
+  }
+  span{
+    display: block;
+    margin-bottom: 10px;
+  }
+#vimeoplayer, iframe{
+  width: 100% !important;
+  height: auto !important;
+}
 }
