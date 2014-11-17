@@ -5,27 +5,27 @@ init: function(){
 	app.common.getTwitter(app.touch.initSocialSlider);
 },
 // 	// touch sliders ----------------------------------------------------
-	initSliders: function(cat){
-		if(sliderz.slide[cat]){
-			sliderz.slide[cat].reInit();
-		}else{
-			var category = '.swiper-container-'+cat;
-			var $caption = $(category).find('.bCaption');
-			var setInfo = function(){
-			var $current = $(sliderz.slide[cat].activeSlide());
-			var captionContent = $current.find('.caption').html();
-			$caption.html(captionContent);
-		}
-		sliderz.slide[cat] = new Swiper(category,{
-			mode:'horizontal',
-			loop: true,
-			centeredSlides:true,
-			slidesPerView: 3,
-			onSlideChangeEnd:setInfo
-		});
-			setInfo();
-		}
-	},
+	// initSliders: function(cat){
+	// 	if(sliderz.slide[cat]){
+	// 		sliderz.slide[cat].reInit();
+	// 	}else{
+	// 		var category = '.swiper-container-'+cat;
+	// 		var $caption = $(category).find('.bCaption');
+	// 		var setInfo = function(){
+	// 		var $current = $(sliderz.slide[cat].activeSlide());
+	// 		var captionContent = $current.find('.caption').html();
+	// 		$caption.html(captionContent);
+	// 	}
+	// 	sliderz.slide[cat] = new Swiper(category,{
+	// 		mode:'horizontal',
+	// 		loop: true,
+	// 		centeredSlides:true,
+	// 		slidesPerView: 3,
+	// 		onSlideChangeEnd:setInfo
+	// 	});
+	// 		setInfo();
+	// 	}
+	// },
 	initSocialSlider: function(socialData, spinner){
 	   var content = '';
 	   var string = '<div class="swiper-slide"><a href="{url}" target="_blank"><p><strong class="date center"><span><i class="icon-tw"></i></span><br>{date}</strong>{content}</p></a></div>'
@@ -73,7 +73,7 @@ $(function(){
 	});
 
 	// sliders
-	for(var i =0, l = sliderz.onload.length; i<l; i++){
-		app.touch.initSliders(sliderz.onload[i])
-	}
+	// for(var i =0, l = sliderz.onload.length; i<l; i++){
+	// 	app.touch.initSliders(sliderz.onload[i])
+	// }
 });

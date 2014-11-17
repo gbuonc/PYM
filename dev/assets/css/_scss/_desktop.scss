@@ -1,4 +1,4 @@
-  .mobile-only{display: none!important;}
+.mobile-only{display: none!important;}
 .tablet-only{display: none!important;}
 .desktopOnly{display: block !important;}
 .no-desktop{display: none!important;}
@@ -93,24 +93,13 @@ nav #main-nav li.logoPym a:hover span{
 	overflow:hidden;
 	z-index: 1;
 }
-.bgImage{background-position: 50% 75%;}
+.bgImage{height:450px; background-position: 50% 75%;}
 .hero h1{position: fixed; top:230px; @include elasticAnimation(450ms); background:rgba(255, 255, 255, 1); z-index: 2;}
 .hero h1 a{display:block; bottom:10px; background: transparent url('../img/pym.png') center no-repeat; background-size:contain;}
 
-.hero .tit1{
-	position: absolute;
-	bottom: 0px;
-	left: 0;
-	right: 0;
-	font-size: 47px;
-	text-transform: uppercase;
-	font-family: Montserrat,sans-serif;
-	background-color: rgba(255,255,255,0.5);
-	padding-top: 4px;
-}
+.hero .tit1{font-size: 47px;}
 
-/* .outLogo .hero h1{position: absolute; top: 50%; opacity: 0;}
-.outLogo .hero h1 a{display:block; position:absolute; -webkit-animation: rotating 500ms linear infinite;} */
+
 
 
 /* twitter */
@@ -168,10 +157,10 @@ section .content{
 	}
 }
 
+.about h2{text-align:left;}
 .pyms{
 margin-bottom:60px;
 }
-
 
 .closet{
     & input{display: none;}
@@ -187,7 +176,6 @@ margin-bottom:60px;
     line-height: 50px;
     overflow: hidden;
 }
-
 .social-iconz i{
     font-size: 25px;
     line-height: 50px;
@@ -205,49 +193,15 @@ margin-bottom:20px;
   }
 }
 .parallax{
-	height:200px;
-	background-position:center;
-	background-size:cover;
-	background-attachment: fixed;
-	position:relative;
-	overflow:hidden !important;
-	background-color:$mainColor;
-  z-index: -1;
-   &:after{
-       content:'';
-       position: absolute;
-       bottom:0;
-       left:0;
-       right:0;
-       height: 1px;
-		 background: #fff;
-       box-shadow: -6px 0px 6px #000;
-       z-index: 1;
-   }
-   &:before{
-       content: '';
-       position: absolute;
-       top: 0;
-       left: 0;
-       right: 0;
-       height: 1px;
-       background: #fff;
-       box-shadow: 6px 0px 6px #000;
-       z-index: 1;
-   }
-	.section-title{
-	font-size:50px;
-	line-height:200px;
-	text-align:center;
-	background:none;
-	color:#fff;
-	text-transform:uppercase;
-	}
+  height:200px;
+  background-attachment: fixed;
+  .section-title{
+  font-size:50px;
+  line-height:200px;
+  text-shadow:none;
+  margin-bottom: 0;
 }
-.editorial{background-image: url('../img/parallax_libri.jpg');}
-.adv{background-image: url('../img/parallax_adv.jpg');}
-.clienti{background-image: url('../img/parallax_clienti.jpg');}
-.contacts{background-image: url('../img/parallax_contatti.jpg');}
+}
 
 .content{
   max-width:960px;  
@@ -421,6 +375,7 @@ width:46%;
 }
 .contacts{
 padding:0;
+margin-bottom: 0;
 overflow:hidden;
 p{margin:0;}
 }
@@ -461,6 +416,9 @@ footer strong{
   padding: 2px 6px;
   background: $lightBg;
 
+}
+.copyright br{
+  display: none;
 }
 
 .gallery-container{

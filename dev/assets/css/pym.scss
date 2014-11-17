@@ -9,8 +9,8 @@ $breakpointDesktop : 1025px;
 @import '_scss/plugins/grid/_component.scss';
 @import '_scss/_mobile.scss';
 @media screen and (min-width: $breakpointTablet) {
-    @import '_scss/_tablet.scss';
+   @import '_scss/_tablet.scss';
 }
 @media screen and (min-width: $breakpointDesktop) {
-	@import '_scss/_desktop.scss';
+   @import '_scss/_desktop.scss';
 }

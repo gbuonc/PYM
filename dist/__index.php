@@ -1,67 +1,61 @@
-
-    <?php require('inc/head.php');?>
-    <body class="" id="pym">
-        <div class="main-wrap m-scene" id="main" >
-            <header>
-    <nav class="hp">
-        <div class="nav-title no-desktop"><strong>Studio Pym</strong> - Editoria e Comunicazione</div>
-        <ul id="main-nav">
-            <li class="logoPym"><a href="#home"><span><img class="" src="assets/img/pym.png" /></span></a></li>
-            <li><a href="#about"><span data-hover="Chi Siamo">Chi Siamo</span></a></li>
-            <li><a href="#editorial"><span data-hover="Libri">Libri</span></a></li>
-            <li><a href="#adv"><span data-hover="Adv &amp; Comunicazione">Adv &amp; Comunicazione</span></a></li>
-            <li><a href="#clients"><span data-hover="Clienti">Clienti</span></a></li>
-            <li><a href="#contacts"><span data-hover="Contatti">Contatti</span></a></li>
-        </ul>
-    </nav>
-</header>
-
-				<div  class="scene_element scene_element--fadein">
-            <!-- ........................................................... -->
-            <section class="hero" id="home" >
-                <div class="bgImage" data-top="background-position:50% 75%;" data-top-bottom="background-position:50% 100%;" id="bgImage" >
+<?php require('inc/head.php');?>
+<body class="" id="pym">
+    <div class="main-wrap m-scene" id="main" >
+        <header>
+            <nav class="hp">
+                <div class="nav-title no-desktop"><strong>Studio Pym</strong> - Editoria e Comunicazione</div>
+                <ul id="main-nav">
+                    <li class="logoPym"><a href="#home"><span><img class="" src="assets/img/pym.png" /></span></a></li>
+                    <li><a href="#about"><span data-hover="Chi Siamo">Chi Siamo</span></a></li>
+                    <li><a href="#editorial"><span data-hover="Libri">Libri</span></a></li>
+                    <li><a href="#adv"><span data-hover="Adv &amp; Comunicazione">Adv &amp; Comunicazione</span></a></li>
+                    <li><a href="#clients"><span data-hover="Clienti">Clienti</span></a></li>
+                    <li><a href="#contacts"><span data-hover="Contatti">Contatti</span></a></li>
+                </ul>
+            </nav>
+        </header>
+		<div  class="scene_element scene_element--fadein">
+        <!-- ........................................................... -->
+        <section class="hero" id="home" >
+            <div class="bgImage" data-top="background-position:50% 75%;" data-top-bottom="background-position:50% 100%;" id="bgImage" >
+            </div>
+            <h1 id="logo" class="logo"><a href="#home">Studio Pym</a></h1>
+			<h2 class="tit1">La velocità è solo l’inizio</h2>
+        </section>
+        <!-- ........................................................... -->
+		<div class="depth-wrapper">         
+            <section class="about" id="about">
+                <div class="content jgrid">
+                    <div class="left-column">
+                        <h2 class="tit2">Mettetevi nelle<br> nostre mani.<br>Ne abbiamo tante.</h2>
+                    </div>
+                    <div class="right-column">
+                        <p class="txt2">Uno studio editoriale, un'agenzia di comunicazione, un team di grafici, redattori, ghostwriter, traduttori e copywriter. Tutto questo è studio pym: nato nell'aprile del 2013 da un gruppo di affermati professionisti con alle spalle anni di esperienza, offre la curatela di libri a pacchetto completo, dalla copertina al progretto grafico, dall'editing all'esecutivo, e la creazione di campagne stampa, web, tv, radio e materiali promozionali. </p>
+                        <hr>
+                        <div class="social-dk-content-wrapper">
+                            <ul id="social-dk-content"></ul>
+                        </div>
+                    </div>
                 </div>
-                <h1 id="logo" class="logo"><a href="#home">Studio Pym</a></h1>
-				<h2 class="tit1">La velocità è solo l’inizio</h2>
-            </section>
-				<div class="depth-wrapper">
-            <!-- ........................................................... -->
-				<section class="about" id="about">
-					<div class="content jgrid">
-						<div class="left-column">
-				      	<h2 class="tit2">
-								Mettetevi nelle<br> nostre mani.<br>Ne abbiamo tante.
-							</h2>
-                  </div>
-				   	<div class="right-column">
-					   <p class="txt2">Uno studio editoriale, un'agenzia di comunicazione, un team di grafici, redattori, ghostwriter, traduttori e copywriter. Tutto questo è studio pym: nato nell'aprile del 2013 da un gruppo di affermati professionisti con alle spalle anni di esperienza, offre la curatela di libri a pacchetto completo, dalla copertina al progretto grafico, dall'editing all'esecutivo, e la creazione di campagne stampa, web, tv, radio e materiali promozionali. </p>
-					   <hr>
-					  	<div class="social-dk-content-wrapper">
-					   	<ul id="social-dk-content"></ul>
-					   </div>
-					</div>
-					</div>
-					
-<section class="pyms">
-<img rel="tooltip" title="Andrea Acquani" class="lazyload" data-src="assets/img/pyms/01.jpg" width="340" height="340" alt="01">
-<img rel="tooltip" title="Teresa Bava" class="lazyload" data-src="assets/img/pyms/02.jpg" width="340" height="340" alt="02">
-<img rel="tooltip" title="Gianluca Bavagnoli" class="lazyload" data-src="assets/img/pyms/03.jpg" width="340" height="340" alt="03">
-<img rel="tooltip" title="Laura Cantarelli" class="lazyload" data-src="assets/img/pyms/04.jpg" width="340" height="340" alt="04">
-<img rel="tooltip" title="Luca Dentale" class="lazyload" data-src="assets/img/pyms/05.jpg" width="340" height="340" alt="05">
-<img rel="tooltip" title="Aurelia Di Meo" class="lazyload" data-src="assets/img/pyms/06.jpg" width="340" height="340" alt="06">
-<img rel="tooltip" title="Cristina Giubaldo" class="lazyload" data-src="assets/img/pyms/07.jpg" width="340" height="340" alt="07">
-<img rel="tooltip" title="Alessandra Mascaretti" class="lazyload" data-src="assets/img/pyms/08.jpg" width="340" height="340" alt="08">
-<img rel="tooltip" title="Paola Mazzucchelli" class="lazyload" data-src="assets/img/pyms/09.jpg" width="340" height="340" alt="09">
-<img rel="tooltip" title="Rachele Moscatelli" class="lazyload" data-src="assets/img/pyms/10.jpg" width="340" height="340" alt="10">
-<img rel="tooltip" title="Marcella Nicodemo" class="lazyload" data-src="assets/img/pyms/11.jpg" width="340" height="340" alt="11">
-<img rel="tooltip" title="Valeria Parise" class="lazyload" data-src="assets/img/pyms/12.jpg" width="340" height="340" alt="12">
-<img rel="tooltip" title="Silvia Luisa Sartorio" class="lazyload" data-src="assets/img/pyms/13.jpg" width="340" height="340" alt="13">
-<img rel="tooltip" title="Lucia Emilia Stipari" class="lazyload" data-src="assets/img/pyms/14.jpg" width="340" height="340" alt="14">
-<img rel="tooltip" title="Michele Turazzi" class="lazyload" data-src="assets/img/pyms/15.jpg" width="340" height="340" alt="15">
-<img rel="tooltip" title="Viola Vastola" class="lazyload" data-src="assets/img/pyms/16.jpg" width="340" height="340" alt="16">
-</section>
-					
-				</section>
+                <section class="pyms">
+                    <img rel="tooltip" title="Andrea Acquani" class="lazyload" data-src="assets/img/pyms/01.jpg" width="340" height="340" alt="01">
+                    <img rel="tooltip" title="Teresa Bava" class="lazyload" data-src="assets/img/pyms/02.jpg" width="340" height="340" alt="02">
+                    <img rel="tooltip" title="Gianluca Bavagnoli" class="lazyload" data-src="assets/img/pyms/03.jpg" width="340" height="340" alt="03">
+                    <img rel="tooltip" title="Laura Cantarelli" class="lazyload" data-src="assets/img/pyms/04.jpg" width="340" height="340" alt="04">
+                    <img rel="tooltip" title="Luca Dentale" class="lazyload" data-src="assets/img/pyms/05.jpg" width="340" height="340" alt="05">
+                    <img rel="tooltip" title="Aurelia Di Meo" class="lazyload" data-src="assets/img/pyms/06.jpg" width="340" height="340" alt="06">
+                    <img rel="tooltip" title="Cristina Giubaldo" class="lazyload" data-src="assets/img/pyms/07.jpg" width="340" height="340" alt="07">
+                    <img rel="tooltip" title="Alessandra Mascaretti" class="lazyload" data-src="assets/img/pyms/08.jpg" width="340" height="340" alt="08">
+                    <img rel="tooltip" title="Paola Mazzucchelli" class="lazyload" data-src="assets/img/pyms/09.jpg" width="340" height="340" alt="09">
+                    <img rel="tooltip" title="Rachele Moscatelli" class="lazyload" data-src="assets/img/pyms/10.jpg" width="340" height="340" alt="10">
+                    <img rel="tooltip" title="Marcella Nicodemo" class="lazyload" data-src="assets/img/pyms/11.jpg" width="340" height="340" alt="11">
+                    <img rel="tooltip" title="Valeria Parise" class="lazyload" data-src="assets/img/pyms/12.jpg" width="340" height="340" alt="12">
+                    <img rel="tooltip" title="Silvia Luisa Sartorio" class="lazyload" data-src="assets/img/pyms/13.jpg" width="340" height="340" alt="13">
+                    <img rel="tooltip" title="Lucia Emilia Stipari" class="lazyload" data-src="assets/img/pyms/14.jpg" width="340" height="340" alt="14">
+                    <img rel="tooltip" title="Michele Turazzi" class="lazyload" data-src="assets/img/pyms/15.jpg" width="340" height="340" alt="15">
+                    <img rel="tooltip" title="Viola Vastola" class="lazyload" data-src="assets/img/pyms/16.jpg" width="340" height="340" alt="16">
+                </section>
+			</section>
             <!-- ........................................................... -->
             <section class="social" id="social">
                 <div class="swiper-container-social">
@@ -71,7 +65,6 @@
                 <div class="pager"></div>
             </section>
             <!-- ........................................................... -->
-            
 			<div class="parallax editorial" id="editorial">
 				<div class="clip">
 				<h2 class="section-title" >Libri</h2>
@@ -270,7 +263,6 @@
             </section>
             <!-- ........................................................... -->
 			</div>
-			
-    <?php require('inc/footer.php'); ?>
+            <?php require('inc/footer.php'); ?>
    </body>
 </html>
