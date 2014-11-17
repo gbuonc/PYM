@@ -4,24 +4,20 @@ app.mobile ={
         app.common.initTooltip();
         if($('#map').size() > 0){
         	app.common.initMap();
-        };
+        }
         $('.back').on('click', function(e){
             history.back();
             e.preventDefault();
         });
     }
-}
-setInterval(function(){
-$('.js-masonry').each(function(){
-	var $el = $(this);
-	$el.masonry();
-	});
-}, 500);
+};
+$(function(){
+    salvattore.init();
+});
+//setInterval(function(){
+// $('.js-masonry').each(function(){
+// 	var $el = $(this);
+// 	$el.masonry();
+// 	});
+// }, 500);
 	
-
-
-
-
-
-
-

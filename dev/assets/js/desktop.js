@@ -8,7 +8,7 @@ app.desktop ={
         });
         var s = skrollr.init({
             render: function(data) {
-                $('.js-masonry').masonry();
+                $('.xx-masonry').masonry();
                 $('body').css('height', 'auto');
             }
         });
