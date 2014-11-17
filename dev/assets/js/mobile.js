@@ -14,10 +14,5 @@ app.mobile ={
 $(function(){
     salvattore.init();
 });
-//setInterval(function(){
-// $('.js-masonry').each(function(){
-// 	var $el = $(this);
-// 	$el.masonry();
-// 	});
-// }, 500);
+
 	

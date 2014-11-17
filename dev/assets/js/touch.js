@@ -1,34 +1,12 @@
 MBP.hideUrlBarOnLoad();
 MBP.scaleFix();
 app.touch ={
-init: function(){
-	app.common.getTwitter(app.touch.initSocialSlider);
-},
-// 	// touch sliders ----------------------------------------------------
-	// initSliders: function(cat){
-	// 	if(sliderz.slide[cat]){
-	// 		sliderz.slide[cat].reInit();
-	// 	}else{
-	// 		var category = '.swiper-container-'+cat;
-	// 		var $caption = $(category).find('.bCaption');
-	// 		var setInfo = function(){
-	// 		var $current = $(sliderz.slide[cat].activeSlide());
-	// 		var captionContent = $current.find('.caption').html();
-	// 		$caption.html(captionContent);
-	// 	}
-	// 	sliderz.slide[cat] = new Swiper(category,{
-	// 		mode:'horizontal',
-	// 		loop: true,
-	// 		centeredSlides:true,
-	// 		slidesPerView: 3,
-	// 		onSlideChangeEnd:setInfo
-	// 	});
-	// 		setInfo();
-	// 	}
-	// },
+	init: function(){
+		app.common.getTwitter(app.touch.initSocialSlider);
+	},
 	initSocialSlider: function(socialData, spinner){
 	   var content = '';
-	   var string = '<div class="swiper-slide"><a href="{url}" target="_blank"><p><strong class="date center"><span><i class="icon-tw"></i></span><br>{date}</strong>{content}</p></a></div>'
+	   var string = '<div class="swiper-slide"><a href="{url}" target="_blank"><p><strong class="date center"><span><i class="icon-tw"></i></span><br>{date}</strong>{content}</p></a></div>';
 	   var l = socialData.length;
 	   for(i=0; i<l; i++){
 	      var obj = socialData[i];
@@ -48,15 +26,9 @@ init: function(){
          pagination: '.pager'
       });
       //if(jsSwiper) jsSwiper.reInit();
-	},
-	clear: function(){
-	   console.log('mobile clear');
 	}
-}
-// var sliderz ={
-//    slide:{},
-//    onload: ['cover', 'graphic', 'editing', 'adv']
-// }
+};
+
 $(function(){
 	app.common.toggleCloset('tap');
 	// main menu & Closets------------------------------
@@ -76,10 +48,4 @@ $(function(){
 		e.preventDefault();
 		});
 	});
-
-
-	// sliders
-	// for(var i =0, l = sliderz.onload.length; i<l; i++){
-	// 	app.touch.initSliders(sliderz.onload[i])
-	// }
 });
