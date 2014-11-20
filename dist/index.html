@@ -79,6 +79,7 @@
 					
 				</section>
             <!-- ........................................................... -->
+
             <section class="social" id="social">
                 <div class="swiper-container-social">
                    <div class="swiper-wrapper" id="social-content">
@@ -86,6 +87,7 @@
                 </div>
                 <div class="pager"></div>
             </section>
+
             <!-- ........................................................... -->
             
 			<div class="parallax editorial" id="editorial">
@@ -104,7 +106,7 @@
 								 </div>
 								 <div class="right-column">
 									 <p class="txt2">
-										 Creazione di progetti editoriali, ghostwriting, copywriting, traduzione, 												editing, rapporto con gli autori, testi di copertina, correzione bozze, 												progetto grafico di copertina e interni, impaginazione.
+										 Creazione di progetti editoriali, ghostwriting, copywriting, traduzione, 										editing, rapporto con gli autori, testi di copertina, correzione bozze, 										progetto grafico di copertina e interni, impaginazione.
 									 </p>
 							 	</div>
                  	 	</div>
@@ -211,7 +213,7 @@
                         </div>
                     </div>
                     <div class="adv-portfolio">
-							  <div class="standalone">&nbsp;</div>
+							 
   							<div class="masonry-wrapper">
   								<div class="xx-masonry" data-columns>
 									<div class="item double">
@@ -307,8 +309,8 @@
     var isTablet = head.touch && head.screen.width > 640 && !head.desktop;
     var isDesktop = head.desktop;
     var device = isDesktop ? 'desktop': 'mobile'; //(isPhone ? 'mobile' : 'tablet');
-        device = isPhone ? 'mobile': device;
-        device = isTablet ? 'tablet': device;
+        //device = isPhone ? 'mobile': device;
+        //device = isTablet ? 'tablet': device;
     // load assets based on device
     head.load(["./assets/js/pym-"+device+".js"], function(){
         app[device].init();

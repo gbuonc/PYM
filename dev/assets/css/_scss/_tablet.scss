@@ -7,15 +7,7 @@
     max-width: 740px;
     margin: 0 auto;
 }
-/* common */
-.main-wrap{min-width:640px; overflow: hidden;}
-.content-wrap{ min-width: 640px;  max-width: 800px; margin:0 auto; overflow:visible;}
 
-.title{ margin:0 2em 1em;}
-.section-title{font-size: 32px;}
-.section-intro {font-size: 20px; padding: 0 2em;}
-
-/* header */
 nav{padding:55px 0;}
 nav:after {font-size: 36px; bottom: 15px; right: 15px;}
 header{top:60px;}
@@ -25,7 +17,7 @@ header.open {@include translateY(-80px);}
 #main-nav li a span {padding: 10px;}
 .nav-title {font-size: 18px; line-height: 50px;}
 
-/* hero */
+
 .hero {height: 450px;}
 .bgImage {height: 450px;}
 .hero h1 {background-size: 160px auto; width: 200px; height: 200px;}
@@ -41,50 +33,30 @@ font-size: 24px;
 line-height: 1.4;
 margin: 10px 30px;
 }
+.hero .tit1{font-size: 34px;}
+.pyms{width: 80%; margin-left: auto; margin-right: auto;}
+.parallax{height: 100px;}
+.parallax .section-title{font-size: 45px; line-height: 100px;}
+.about h2, .tit2{font-size: 22px;}
+.txt2{font-size: 19px;}
 
-/* twitter */
-#social-content {
-    height: 200px!important;
-    &:after{    bottom:0;}
-    &:before{   top: 0; }}
-.swiper-container-social {width: 160%; margin-left: -30%;}
-.swiper-container-social .swiper-slide p { height: 220px; padding: 30px; font-size: 24px;}
-.pager {margin-top: 10px;}
-
-/* sliders */
-.bCaption {font-size: 20px; padding: 12px;}
-.swiper-container{   width: 200%;   margin-left: -50%;}
-.swiper-container .swiper-slide .cover {height: 400px;}
-.swiper-container .swiper-slide .cover img {width: 100%; height: auto;}
-.swiper-container .swiper-wrapper {height: 415px !important;}
-
-/* editorial */
-#editorial{
-    overflow: visible;
+[data-columns]:before {
+  content: '4 .column.size-1of4';
+  display: none;
 }
-/* adv */
-#adv{
-    overflow: visible;
+.subsection{
+  max-width: 650px;
+  margin: 10px auto;
 }
-
-/* cover */
-.swiper-container-cover{   width: 120%;   margin-left: -10%;}
-.swiper-container-cover .swiper-slide .cover {height: 400px;}
-.swiper-container-cover .swiper-wrapper {height: 415px !important;}
-
-/* clienti */
-.clientGrid{width: 92%;}
-.clientGrid li{width: 23.40426%;  margin-bottom: 15px;}
-
-/* map */
-#map{height: 450px;}
-.closet.open .closet-content{
-    height: 450px;
+.standalone{font-size: 26px; margin: 30px auto;}
+.contatti{font-size: 20px;}
+section.gallery-container {max-width: 640px; margin: 30px auto 30px;}
+.mobile .gallery-content span{font-size: 18px; margin-bottom: 20px;}
+.mobile .gallery-content iframe {
+width: 100%!important;
+height: 164px !important;
 }
-
-
-.social-iconz{
-  font-size: 18px;
-  line-height: 40px;
-  i{font-size: 30px;}
+.mobile .gallery-content #vimeoplayer {
+width: 100%!important;
+height: 368px !important;
 }
