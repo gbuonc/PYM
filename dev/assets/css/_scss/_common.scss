@@ -140,6 +140,9 @@ h1, h2, h3, h4{
 strong{
    font-weight: 400;
 }
+.no-menu:after{
+  content:'';
+}
 /* inset bottom border with icon */
 .title:before{
    content:'';
