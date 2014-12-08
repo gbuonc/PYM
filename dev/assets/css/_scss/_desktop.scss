@@ -105,7 +105,7 @@ nav #main-nav li.logoPym a:hover span{
 /* twitter */
 #social{display: none;}
 .social-dk-content-wrapper{
-	height:65px;
+	height:80px;
 	margin-top:20px;
 	position: static;
 	background: rgba(255,255,255, 0.8);
@@ -218,7 +218,7 @@ margin-bottom:20px;
   letter-spacing: 0.07em;
   font-weight: 400;
   margin-top: 0;
-  margin-bottom:60px;
+  margin-bottom:40px;
 }
 .subsection{
   max-width: 100%;
@@ -308,6 +308,7 @@ width:46%;
 
 .clientGrid{
   width: auto;
+  margin-bottom: -15px;
 }
 .clientGrid li{
   width: grid-span(2.5);
@@ -382,6 +383,9 @@ width:46%;
     }
   }
 }
+.adv-portfolio{
+  margin-bottom: 40px;
+}
 .contacts{
 padding:0;
 margin-bottom: 0;
@@ -400,16 +404,17 @@ line-height: 1.5em;
 font-size: 18px;
 text-align:center;
 height:auto;
+margin:40px 0;
 }
 .contatti-wrapper{
-margin-top:60px;
 display:none;
 }
 footer{
 position:relative;
 overflow:hidden;
+padding: 0;
 }
-footer:before{
+/*footer:before{
 content:'';
 position:absolute;
 top:0;
@@ -418,13 +423,18 @@ right:0;
 height:8px;
 background:#fff;
 box-shadow:0 0 85px #fff,0 0 15px #fff,0 0 75px #fff,0 0 65px #fff,0 0 55px #fff,0 0 45px #fff,0 0 35px #fff,0 0 25px #fff,0 0 15px #fff,0 0 5px #fff,0 0 5px #fff,0 0 5px #fff,0 0 85px #fff,0 0 15px #fff,0 0 75px #fff,0 0 65px #fff,0 0 55px #fff,0 0 45px #fff,0 0 35px #fff,0 0 25px #fff,0 0 15px #fff,0 0 5px #fff,0 0 5px #fff,0 0 5px #fff;
-}
+}*/
 
 footer strong{
   display: inline-block;
   padding: 2px 6px;
   background: $lightBg;
 
+}
+
+.copyright{
+  margin:0;
+  position: relative;
 }
 .copyright br{
   display: none;
@@ -487,13 +497,6 @@ span{
   padding: 10px;
 }
 }
-
-.clip{
-
-}
-
-
-
 
 
 

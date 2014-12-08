@@ -97,7 +97,12 @@ app.common = {
             TwObj.site = 'twitter';
             TwObj.date = new Date(TWR[i].created_at).toLocaleDateString();
             TwObj.content = urlHyperlinks(TWR[i].text);
-				TwObj.url = 	TWR[i].entities.urls[TWR[i].entities.urls.length-1].url;
+            var linkz = TWR[i].entities.urls.length;
+   			if(linkz > 0){
+				TwObj.url = TWR[i].entities.urls[linkz-1].url
+   			}else{
+            	TwObj.url='#';
+            }
             socialArray.push(TwObj);
          }
          // callback function
