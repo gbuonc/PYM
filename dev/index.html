@@ -1,37 +1,7 @@
-<!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Studio PYM</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <meta name="format-detection" content="telephone=no">
-        <meta http-equiv="cleartype" content="on">
-        <link href='http://fonts.googleapis.com/css?family=Oswald:300, 400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href="assets/css/pym.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8zgmTXVRW1jHjrQVW1UAX9qFxXn2k3fA"></script>
-        <script src="assets/js/vendor/head.js"></script>
-        <link rel="shortcut icon" href="/favicon.ico">
-        <link rel="icon" href="/favicon.ico">
-    </head>
-
+__include('partials/head.html')
     <body class="" id="pym">
         <div class="main-wrap m-scene" id="main" >
-            <header class="hp-header">
-    <nav class="hp">
-        <div class="nav-title no-desktop"><strong>Studio Pym</strong> - Editoria e Comunicazione</div>
-        <ul id="main-nav">
-            <li class="logoPym"><a href="#home"><span><img class="" src="assets/img/pym.png" /></span></a></li>
-            <li><a href="#about"><span data-hover="Chi Siamo">Chi Siamo</span></a></li>
-            <li><a href="#editorial"><span data-hover="Libri">Libri</span></a></li>
-            <li><a href="#adv"><span data-hover="Adv &amp; Comunicazione">Adv &amp; Comunicazione</span></a></li>
-            <li><a href="#clients"><span data-hover="Clienti">Clienti</span></a></li>
-            <li><a href="#contacts"><span data-hover="Contatti">Contatti</span></a></li>
-        </ul>
-    </nav>
-</header>
-
+            __include('partials/header.html')
 				<div  class="scene_element scene_element--fadein">
             <!-- ........................................................... -->
             <section class="hero" id="home" >
@@ -285,26 +255,9 @@
             	</section>
             <!-- ........................................................... -->
 			</div>
-			<footer>
-    <p class="copyright">&copy; 2014 Studio Pym Srl - P. IVA 08206970967<br> Sede Legale: via Cappuccio, 18 20123 Milano - <strong>Loghi e illustrazioni di <a href="http://riccardoguasco.tumblr.com" target="_blank">
-    Riccardo Guasco</a></strong></p>
-</footer>
+			__include('partials/footer.html')
 			</div>
         </div>
-     <script>
-    var app ={};
-    var isTouch = head.touch;
-    var isPhone =  head.touch && head.screen.width <= 640;
-    var isTablet = head.touch && head.screen.width > 640 && !head.desktop;
-    var isDesktop = head.desktop;
-    var device = isDesktop ? 'desktop': 'mobile'; //(isPhone ? 'mobile' : 'tablet');
-        //device = isPhone ? 'mobile': device;
-        //device = isTablet ? 'tablet': device;
-    // load assets based on device
-    head.load(["./assets/js/pym-"+device+".js"], function(){
-        app[device].init();
-    });
-</script>
-
+     __include('partials/scripts.html')
    </body>
 </html>
