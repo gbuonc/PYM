@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Studio PYM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="cleartype" content="on">
+        <link href='http://fonts.googleapis.com/css?family=Oswald:300, 400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href="assets/css/pym.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8zgmTXVRW1jHjrQVW1UAX9qFxXn2k3fA"></script>
+        <script src="assets/js/vendor/head.js"></script>
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="icon" href="/favicon.ico">
+    </head>
+
+    <body class="" id="pym">
+        <div class="main-wrap m-scene" id="main" >
+				<header>
+	<nav style="text-align:left;">
+	    <div class="nav-title no-desktop"><a class="back" href="index.html"><strong>Studio Pym</strong> - Editoria e Comunicazione</a></div>
+	    <ul id="main-nav">
+	        <li><a class="back" href="index.html"><span data-hover="&laquo; Back">&laquo; Back</span></a></li>
+	    </ul>
+	</nav>
+	<nav class="no-menu">
+	    <div class="nav-title no-desktop back">&laquo; Back</div>
+	</nav>
+</header>
+
+				<div id="main" class="scene_element scene_element--fadein">
+            <!-- ........................................................... -->
+            <section class="gallery-container">
+					<div class="gallery-content">
+						<div>
+						<img src="assets/img/static/adv/interni/MERINI/MER_mockup_bassa.jpg" width="960" height="561" alt="MER Mockup Bassa">
+						<span>Una panoramica sui formati stampa pubblicati su Corriere della Sera</span>
+						</div>
+						<div>
+						<img src="assets/img/static/adv/interni/MERINI/MER_web.jpg" width="960" height="342" alt="MER Web">
+						<span>L'homepage del minisito di Corriere Store</span>
+						</div>
+						<div>
+						<img src="assets/img/static/adv/interni/MERINI/MER_web1.jpg" width="960" height="341" alt="MER Web1">
+						 <span>Pagine interne del minisito di Corriere Store</span>
+						</div>
+						<div>
+						<img src="assets/img/static/adv/interni/MERINI/MER_web2.jpg" width="960" height="341" alt="MER Web2">
+						 <span>Pagine interne del minisito di Corriere Store</span>
+						</div>
+						<div>
+						<img src="assets/img/static/adv/interni/MERINI/MER_web3.jpg" width="960" height="342" alt="MER Web3">
+						<span>Pagine interne del minisito di Corriere Store</span>
+						</div>
+						<div>
+						<iframe width="600" height="180" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175451870&amp;color=839e39&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+						<span>Lo spot radio dedicato alla collana.<br>
+						Voci: Marina Thovez e Gianluca Iacono.</span>
+						</div>
+					</div>
+					<div class="slick-dots"></div>
+            </section>
+				<div class="depth-wrapper">
+            <!-- ........................................................... -->
+				<section class="detail">
+					<div class="content jgrid">
+						<div class="left-column">
+				      	<h2 class="tit2">
+								ALDA MERINI. SEMPLICEMENTE POESIA
+							</h2>
+                  </div>
+				   	<div class="right-column">
+					   <p class="txt2">Da “Vuoto d’amore” a “Superba è la notte”, una collana per celebrare il mito della poetessa italiana più amata.</p>
+				</section>
+            
+            <!-- ........................................................... -->
+			</div>
+				<footer>
+    <p class="copyright">&copy; 2014 Studio Pym Srl - P. IVA 08206970967<br> Sede Legale: via Cappuccio, 18 20123 Milano - <strong>Loghi e illustrazioni di <a href="http://riccardoguasco.tumblr.com" target="_blank">
+    Riccardo Guasco</a></strong></p>
+</footer>
+			</div>
+        </div>
+     <script>
+    var app ={};
+    var isTouch = head.touch;
+    var isPhone =  head.touch && head.screen.width <= 640;
+    var isTablet = head.touch && head.screen.width > 640 && !head.desktop;
+    var isDesktop = head.desktop;
+    var device = isDesktop ? 'desktop': 'mobile'; //(isPhone ? 'mobile' : 'tablet');
+        //device = isPhone ? 'mobile': device;
+        //device = isTablet ? 'tablet': device;
+    // load assets based on device
+    head.load(["./assets/js/pym-"+device+".js"], function(){
+        app[device].init();
+    });
+</script>
+
+   </body>
+</html>

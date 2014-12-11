@@ -21,12 +21,12 @@ gulp.task('fileinclude', function() {
       prefix: '__',
       basepath: '@file'
     }))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('pub'))
 	 .pipe(reload({stream: true}));
 });
 gulp.task('temp', function() {
   gulp.src(['dev/temp/*.html'])
-    .pipe(gulp.dest('dist/temp/'))
+    .pipe(gulp.dest('pub/temp/'))
 	 .pipe(reload({stream: true}));
 });
 
@@ -36,20 +36,20 @@ gulp.task('scss', function () {
     .pipe(rubySass({
       style: 'expanded',
       precision: 10,
-      loadPath: ['dist/assets/css']
+      loadPath: ['pub/assets/css']
     }))
     .pipe(autoprefixer('last 3 versions'))
 	 //.pipe(sourcemaps.init())
 	 .pipe(minifyCSS({compatibility:'ie8'}))
 	 //.pipe(sourcemaps.write())
-	 .pipe(gulp.dest('dist/assets/css'))
+	 .pipe(gulp.dest('pub/assets/css'))
 	 .pipe(reload({stream: true}))
 });
 
 // FONTS --------------------------------------------------------------------
 gulp.task('fonts', function () {
    gulp.src(['dev/assets/icon-fonts{,/**}', 'dev/assets/webfonts{,/**}'])
-     .pipe(gulp.dest('dist/assets'))
+     .pipe(gulp.dest('pub/assets'))
      .pipe(reload({stream: true}))
 });
 
@@ -59,34 +59,34 @@ gulp.task('scripts-libs', function() {
   	 //.pipe(sourcemaps.init())
     .pipe(concat('_libs.js'))
 	 //.pipe(sourcemaps.write())
-	 .pipe(gulp.dest('./dist/assets/js'))
+	 .pipe(gulp.dest('./pub/assets/js'))
 	 .pipe(reload({stream: true}))
 });
 gulp.task('scripts-mobile', function() {
-  return gulp.src(['./dist/assets/js/_libs.js', './dev/assets/js/vendor/touch/*.js', './dev/assets/js/vendor/mobile/**/*.js', './dev/assets/js/common.js', './dev/assets/js/touch.js', './dev/assets/js/mobile.js'])
+  return gulp.src(['./pub/assets/js/_libs.js', './dev/assets/js/vendor/touch/*.js', './dev/assets/js/vendor/mobile/**/*.js', './dev/assets/js/common.js', './dev/assets/js/touch.js', './dev/assets/js/mobile.js'])
   	 //.pipe(sourcemaps.init())
 	 .pipe(concat('pym-mobile.js'))
 	 .pipe(uglify())
 	 //.pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/assets/js'))
+    .pipe(gulp.dest('./pub/assets/js'))
 	 .pipe(reload({stream: true}))
 });
 gulp.task('scripts-tablet', function() {
-  return gulp.src(['./dist/assets/js/_libs.js', './dev/assets/js/vendor/touch/*.js', './dev/assets/js/vendor/tablet/**/*.js', './dev/assets/js/common.js', './dev/assets/js/touch.js', './dev/assets/js/tablet.js'])
+  return gulp.src(['./pub/assets/js/_libs.js', './dev/assets/js/vendor/touch/*.js', './dev/assets/js/vendor/tablet/**/*.js', './dev/assets/js/common.js', './dev/assets/js/touch.js', './dev/assets/js/tablet.js'])
   	 //.pipe(sourcemaps.init())
 	 .pipe(concat('pym-tablet.js'))
 	   .pipe(uglify())
 	 //.pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/assets/js'))
+    .pipe(gulp.dest('./pub/assets/js'))
 	 .pipe(reload({stream: true}))
 });
 gulp.task('scripts-desktop', function() {
-  return gulp.src(['./dist/assets/js/_libs.js', './dev/assets/js/vendor/desktop/**/*.js', './dev/assets/js/common.js', './dev/assets/js/desktop.js'])
+  return gulp.src(['./pub/assets/js/_libs.js', './dev/assets/js/vendor/desktop/**/*.js', './dev/assets/js/common.js', './dev/assets/js/desktop.js'])
   	 //.pipe(sourcemaps.init())
     .pipe(concat('pym-desktop.js'))
 	   .pipe(uglify())
 	 //.pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/assets/js'))
+    .pipe(gulp.dest('./pub/assets/js'))
 	 .pipe(reload({stream: true}))
 });
 gulp.task('head', function() {
@@ -94,7 +94,7 @@ gulp.task('head', function() {
 	  //.pipe(sourcemaps.init())
  	  .pipe(uglify())
 	  //.pipe(sourcemaps.write())
-	  .pipe(gulp.dest('./dist/assets/js/vendor'))
+	  .pipe(gulp.dest('./pub/assets/js/vendor'))
 });
 gulp.task('scripts', function(callback) {
 	runSequence('scripts-libs', 'scripts-mobile', 'scripts-tablet', 'scripts-desktop', 'head');
@@ -103,7 +103,7 @@ gulp.task('scripts', function(callback) {
 gulp.task('img', function () {
   gulp.src(['./dev/assets/img{,/**}'])
   .pipe(imagemin({use: [pngquant()]}))
-  .pipe(gulp.dest('./dist/assets'))
+  .pipe(gulp.dest('./pub/assets'))
 });
 
 // BUILD ---------------------------------------------------------------------
@@ -116,7 +116,7 @@ gulp.task('serve', function () {
 	gulp.task('build');
   browserSync.init({
     server: {
-      baseDir: ['dist'] //, 'dev', '.tmp']
+      baseDir: ['pub'] //, 'dev', '.tmp']
     },
 	 //tunnel: 'spym'
     //notify: true
@@ -128,7 +128,7 @@ gulp.task('serve', function () {
   gulp.watch(['dev/assets/icon-fonts{,/**}'], ['fonts'], reload);
 });
 gulp.task('clean', function () {
-    return gulp.src(['.tmp', 'dist'], { read: false }).pipe(clean());
+    return gulp.src(['.tmp', 'pub'], { read: false }).pipe(clean());
 });
 
 // DEFAULT -------------------------------------------------------------------
