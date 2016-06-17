@@ -1,7 +1,7 @@
 app.common = {
    initMap: function(){
 		var mapOptions = {
-			center: { lat: 45.4640, lng: 9.1796},
+			center: { lat: 45.47542346, lng: 9.22251846},
 			zoom: 15,
 			scrollwheel: false,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -75,7 +75,7 @@ app.common = {
 		]};
 	    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 		var image = 'assets/img/marker.png';
-		var myLatLng = new google.maps.LatLng(45.4634107, 9.179323);
+		var myLatLng = new google.maps.LatLng(45.47542346, 9.22251846);
 		var pymMarker = new google.maps.Marker({
 			position: myLatLng,
 			map: map,
@@ -112,7 +112,7 @@ app.common = {
 			$social.spin(false);
          console.log('Error retrieving twitter stream');
         });
-   },	
+   },
    toggleCloset: function(trigger){
 		$('.main-wrap').on(trigger, '.toggle-label', function(e){
 			e.preventDefault();
@@ -194,4 +194,3 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-56589972-1', 'auto');
 ga('send', 'pageview');
-
